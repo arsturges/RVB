@@ -1,0 +1,13 @@
+<p>
+  <b>Rule type:</b>
+  <%=h @rule_type.rule_type %>
+</p>
+
+<p>
+  <b>Rule type abbreviation:</b>
+  <%=h @rule_type.rule_type_abbreviation %>
+</p>
+
+
+<%= link_to 'Edit', edit_rule_type_path(@rule_type) %> |
+<%= link_to 'Back', rule_types_path %>

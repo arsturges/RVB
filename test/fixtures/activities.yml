@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+framework_public_meeting:
+  activity: Framework_public_meeting
+  activity_abbreviation: Fr. Pub. Mtg
+  sort: 8
+
+omb_review:
+  activity: OMB Review
+  activity_abbreviation: OMB Rev.
+  sort: 12

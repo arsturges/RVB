@@ -1,0 +1,16 @@
+<h1>Editing date_category</h1>
+
+<% form_for(@date_category) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :date_category %><br />
+    <%= f.text_field :date_category %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @date_category %> |
+<%= link_to 'Back', date_categories_path %>

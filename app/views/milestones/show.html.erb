@@ -1,0 +1,28 @@
+<p>
+  <b>Rulemaking:</b>
+  <%=h @milestone.rulemaking_id %>
+</p>
+
+<p>
+  <b>Phase:</b>
+  <%=h @milestone.phase_id %>
+</p>
+
+<p>
+  <b>Activity:</b>
+  <%=h @milestone.activity_id %>
+</p>
+
+<p>
+  <b>Date category:</b>
+  <%=h @milestone.date_category_id %>
+</p>
+
+<p>
+  <b>Milestone:</b>
+  <%=h @milestone.milestone %>
+</p>
+
+
+<%= link_to 'Edit', edit_milestone_path(@milestone) %> |
+<%= link_to 'Back', milestones_path %>

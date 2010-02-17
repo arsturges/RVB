@@ -1,0 +1,19 @@
+<% form_for(@activity) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :activity %><br />
+    <%= f.text_field :activity %>
+  </p>
+  <p>
+    <%= f.label :activity_abbreviation %><br />
+    <%= f.text_field :activity_abbreviation %>
+  </p>
+  <p>
+    <%= f.label :sort %><br />
+    <%= f.text_field :sort %>
+  </p>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>

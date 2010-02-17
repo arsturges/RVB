@@ -1,0 +1,11 @@
+<% form_for(@driver) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :driver %><br />
+    <%= f.text_field :driver %>
+  </p>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>

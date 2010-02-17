@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+standard:
+  rule_type: Standard
+  rule_type_abbreviation: MyString
+
+test_procedure:
+  rule_type: Test Procedure
+  rule_type_abbreviation: MyString

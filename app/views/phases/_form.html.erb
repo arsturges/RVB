@@ -1,0 +1,15 @@
+<% form_for(@phase) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :phase %><br />
+    <%= f.text_field :phase %>
+  </p>
+  <p>
+    <%= f.label :sort %><br />
+    <%= f.text_field :sort %>
+  </p>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>

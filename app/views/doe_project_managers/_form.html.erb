@@ -1,0 +1,11 @@
+<% form_for(@doe_project_manager) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :project_manager %><br />
+    <%= f.text_field :project_manager %>
+  </p>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>

@@ -1,0 +1,37 @@
+<h1>Listing rulemakings</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Rule</th>
+    <th>Rule type</th>
+    <th>Notes</th>
+    <th>DOE project manager</th>
+    <th>Legislative Deadline</th>
+    <th>Phase</th>
+    <th>Activity</th>
+    <th>Short name</th>
+  </tr>
+
+<% @rulemakings.each do |rulemaking| %>
+  <tr>
+    <td><%=h rulemaking.id %></td>
+    <td><%= link_to rulemaking.rule, rulemaking %></td>
+    <td><%=h rulemaking.rule_type_id %></td>
+    <td><%=h rulemaking.notes %></td>
+    <td><%=h rulemaking.doe_project_manager_id %></td>
+    <td><%=h rulemaking.legislative_deadline.to_date %></td>
+    <td><%=h rulemaking.phase_id %></td>
+    <td><%=h rulemaking.activity_id %></td>
+    <td><%=h rulemaking.short_name %></td>
+    <td><%= link_to 'Edit', edit_rulemaking_path(rulemaking) %></td>
+    <td><%= link_to 'Destroy', rulemaking, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New rulemaking', new_rulemaking_path %>
+
+<%= debug(@rulemakings) %>

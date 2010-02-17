@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  driver: EISA 2007
+
+two:
+  driver: 6 year review

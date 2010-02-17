@@ -1,0 +1,32 @@
+<h1>Listing milestones</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Rulemaking</th>
+    <th>Phase</th>
+    <th>Activity</th>
+    <th>Date category</th>
+    <th>Milestone</th>
+  </tr>
+
+<% @milestones.each do |milestone| %>
+  <% #TODO add .to_date to the milestone.milestone.to_date field, but for now it slows it down too much.  %>
+  <tr>
+    <td><%=h milestone.id %></td>
+    <td><%=h milestone.rulemaking_id %></td>
+    <td><%=h milestone.phase_id %></td>
+    <td><%=h milestone.activity_id %></td>
+    <td><%=h milestone.date_category_id %></td>
+    <td><%=h milestone.milestone %></td>
+    <td><%= link_to 'Show', milestone %></td>
+    <td><%= link_to 'Edit', edit_milestone_path(milestone) %></td>
+    <td><%= link_to 'Destroy', milestone, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<br />
+
+<%= link_to 'New milestone', new_milestone_path %>

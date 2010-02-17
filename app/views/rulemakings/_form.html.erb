@@ -1,0 +1,39 @@
+<% form_for(@rulemaking) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :rule %><br />
+    <%= f.text_field :rule %>
+  </p>
+  <p>
+    <%= f.label :rule_type_id %><br />
+    <%= f.collection_select :rule_type_id, RuleType.all, :id, :rule_type %>
+  </p>
+  <p>
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes %>
+  </p>
+  <p>
+    <%= f.label :doe_project_manager_id %><br />
+    <%= f.collection_select :doe_project_manager_id, DoeProjectManager.all, :id, :project_manager %>
+  </p>
+  <p>
+    <%= f.label :legislative_deadline %><br />
+    <%= f.date_select :legislative_deadline %>
+  </p>
+  <p>
+    <%= f.label :phase_id %><br />
+    <%= f.collection_select :phase_id, Phase.all, :id, :phase  %>
+  </p>
+  <p>
+    <%= f.label :activity_id %><br />
+    <%= f.collection_select :activity_id, Activity.all, :id, :activity %>
+  </p>
+  <p>
+    <%= f.label :short_name %><br />
+    <%= f.text_field :short_name %>
+  </p>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>

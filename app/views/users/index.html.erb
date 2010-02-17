@@ -1,0 +1,23 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>user</th>
+    <th>first</th>
+    <th>last</th>
+    <th>crypted_password</th>
+    <th>salt</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%=h user.login %></td>
+    <td><%=h user.first %></td>
+    <td><%=h user.last %></td>
+    <td><%=h user.crypted_password %></td>
+    <td><%=h user.salt %></td>
+  </tr>
+<% end %>
+</table>
+
+<%=debug(@users)%>

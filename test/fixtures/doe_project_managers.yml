@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+jim:
+  project_manager: Jim Jimmy James
+
+bill:
+  project_manager: William Bill Billy

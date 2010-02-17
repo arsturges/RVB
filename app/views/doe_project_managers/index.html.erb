@@ -1,0 +1,20 @@
+<h1>Listing doe_project_managers</h1>
+
+<table>
+  <tr>
+    <th>Project manager</th>
+  </tr>
+
+<% @doe_project_managers.each do |doe_project_manager| %>
+  <tr>
+    <td><%=h doe_project_manager.project_manager %></td>
+    <td><%= link_to 'Show', doe_project_manager %></td>
+    <td><%= link_to 'Edit', edit_doe_project_manager_path(doe_project_manager) %></td>
+    <td><%= link_to 'Destroy', doe_project_manager, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New doe_project_manager', new_doe_project_manager_path %>

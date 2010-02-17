@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  rulemaking: aham-1
+  phase: nopr
+  activity: omb_review
+  date_category: planned_start
+  milestone: 2010-01-19 19:07:17
+
+two:
+  rulemaking: residential_clothes_washers
+  phase: Final_rule
+  activity: omb_review
+  date_category: flanned_finish
+  milestone: 2010-01-19 19:07:17

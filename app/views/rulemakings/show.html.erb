@@ -1,0 +1,337 @@
+<p>
+  <b>Rule:</b>
+  <%=h @rulemaking.rule %>
+</p>
+
+<p>
+  <b>Rule type:</b>
+  <%=h @rulemaking.rule_type_id %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%=h @rulemaking.notes %>
+</p>
+
+<p>
+  <b>Doe project manager:</b>
+  <%=h @rulemaking.doe_project_manager_id%>
+</p>
+
+<p>
+  <b>Legislative deadline:</b>
+  <%=h @rulemaking.legislative_deadline.to_date %>
+</p>
+
+<p>
+  <b>Phase:</b>
+  <%=h @rulemaking.phase_id %>
+</p>
+
+<p>
+  <b>Activity:</b>
+  <%=h @rulemaking.activity_id %>
+</p>
+
+<p>
+  <b>Short name:</b>
+  <%=h @rulemaking.short_name %>
+</p>
+
+<table border="1" cellpadding="4">
+  <tr>
+    <th>Activity</th>
+    <th style="background-color:green">Planned Start</th>
+    <th style="background-color:green">Planned Finish</th>
+    <th style="background-color:yellow">Actual Start</th>
+    <th style="background-color:yellow">Actual Finish</th>
+    <th style="background-color:red">Projected Start</th>
+    <th style="background-color:red">Projected Finish</th>
+  </tr>
+
+  <tr>
+    <td><strong>Framework</strong></td>
+  </tr>
+  <tr>
+    <td>Team Analysis and Document Drafting</td>
+    <td><%= choosemilestone(1, 17, 1) %></td>
+    <td><%= choosemilestone(1, 17, 2) %></td>
+    <td><%= choosemilestone(1, 17, 3) %></td>
+    <td><%= choosemilestone(1, 17, 4) %></td>
+    <td><%= choosemilestone(1, 17, 5) %></td>
+    <td><%= choosemilestone(1, 17, 6) %></td>
+  </tr>
+  <tr>
+    <td>Submit Draft Framework to DOE</td>
+    <td><%= choosemilestone(1, 15, 1) %></td>
+    <td><%= choosemilestone(1, 15, 2) %></td>
+    <td><%= choosemilestone(1, 15, 3) %></td>
+    <td><%= choosemilestone(1, 15, 4) %></td>
+    <td><%= choosemilestone(1, 15, 5) %></td>
+    <td><%= choosemilestone(1, 15, 6) %></td>
+  </tr>
+    <tr>
+    <td>BT Program Review and Revision</td>
+    <td><%= choosemilestone(1, 1, 1) %></td>
+    <td><%= choosemilestone(1, 1, 2) %></td>
+    <td><%= choosemilestone(1, 1, 3) %></td>
+    <td><%= choosemilestone(1, 1, 4) %></td>
+    <td><%= choosemilestone(1, 1, 5) %></td>
+    <td><%= choosemilestone(1, 1, 6) %></td>
+  </tr>
+    <tr>
+    <td>Mandatory Concurrence</td>
+    <td><%= choosemilestone(1, 7, 1) %></td>
+    <td><%= choosemilestone(1, 7, 2) %></td>
+    <td><%= choosemilestone(1, 7, 3) %></td>
+    <td><%= choosemilestone(1, 7, 4) %></td>
+    <td><%= choosemilestone(1, 7, 5) %></td>
+    <td><%= choosemilestone(1, 7, 6) %></td>
+  </tr>
+    <tr>
+    <td>EE Approval and Issuance</td>
+    <td><%= choosemilestone(1, 3, 1) %></td>
+    <td><%= choosemilestone(1, 3, 2) %></td>
+    <td><%= choosemilestone(1, 3, 3) %></td>
+    <td><%= choosemilestone(1, 3, 4) %></td>
+    <td><%= choosemilestone(1, 3, 5) %></td>
+    <td><%= choosemilestone(1, 3, 6) %></td>
+  </tr>
+    <tr>
+    <td>Federal Register Review and Publication</td>
+    <td><%= choosemilestone(1, 4, 1) %></td>
+    <td><%= choosemilestone(1, 4, 2) %></td>
+    <td><%= choosemilestone(1, 4, 3) %></td>
+    <td><%= choosemilestone(1, 4, 4) %></td>
+    <td><%= choosemilestone(1, 4, 5) %></td>
+    <td><%= choosemilestone(1, 4, 6) %></td>
+  </tr>
+    <tr>
+    <td>Framework Public Meeting</td>
+    <td><%= choosemilestone(1, 6, 1) %></td>
+    <td><%= choosemilestone(1, 6, 2) %></td>
+    <td><%= choosemilestone(1, 6, 3) %></td>
+    <td><%= choosemilestone(1, 6, 4) %></td>
+    <td><%= choosemilestone(1, 6, 5) %></td>
+    <td><%= choosemilestone(1, 6, 6) %></td>
+  </tr>
+  <tr>
+    <td><strong>Preliminary Analysis</strong></td>
+  </tr>
+  <tr>
+    <td>Framework Comment Period</td>
+    <td><%= choosemilestone(2, 5, 1) %></td>
+    <td><%= choosemilestone(2, 5, 2) %></td>
+    <td><%= choosemilestone(2, 5, 3) %></td>
+    <td><%= choosemilestone(2, 5, 4) %></td>
+    <td><%= choosemilestone(2, 5, 5) %></td>
+    <td><%= choosemilestone(2, 5, 6) %></td>
+  </tr>
+  <tr>
+    <td>Submit Draft Framework to DOE</td>
+    <td><%= choosemilestone(2, 14, 1) %></td>
+    <td><%= choosemilestone(2, 14, 2) %></td>
+    <td><%= choosemilestone(2, 14, 3) %></td>
+    <td><%= choosemilestone(2, 14, 4) %></td>
+    <td><%= choosemilestone(2, 14, 5) %></td>
+    <td><%= choosemilestone(2, 14, 6) %></td>
+  </tr>
+  <tr>
+    <td>BT Program Review and Revision</td>
+    <td><%= choosemilestone(2, 1, 1) %></td>
+    <td><%= choosemilestone(2, 1, 2) %></td>
+    <td><%= choosemilestone(2, 1, 3) %></td>
+    <td><%= choosemilestone(2, 1, 4) %></td>
+    <td><%= choosemilestone(2, 1, 5) %></td>
+    <td><%= choosemilestone(2, 1, 6) %></td>
+  </tr>
+  <tr>
+    <td>Mandatory Concurrence</td>
+    <td><%= choosemilestone(2, 7, 1) %></td>
+    <td><%= choosemilestone(2, 7, 2) %></td>
+    <td><%= choosemilestone(2, 7, 3) %></td>
+    <td><%= choosemilestone(2, 7, 4) %></td>
+    <td><%= choosemilestone(2, 7, 5) %></td>
+    <td><%= choosemilestone(2, 7, 6) %></td>
+  </tr>
+  <tr>
+    <td>EE Approval and Issuance</td>
+    <td><%= choosemilestone(2, 3, 1) %></td>
+    <td><%= choosemilestone(2, 3, 2) %></td>
+    <td><%= choosemilestone(2, 3, 3) %></td>
+    <td><%= choosemilestone(2, 3, 4) %></td>
+    <td><%= choosemilestone(2, 3, 5) %></td>
+    <td><%= choosemilestone(2, 3, 6) %></td>
+  </tr>
+  <tr>
+    <td>Federal Register Review and Publication</td>
+    <td><%= choosemilestone(2, 4, 1) %></td>
+    <td><%= choosemilestone(2, 4, 2) %></td>
+    <td><%= choosemilestone(2, 4, 3) %></td>
+    <td><%= choosemilestone(2, 4, 4) %></td>
+    <td><%= choosemilestone(2, 4, 5) %></td>
+    <td><%= choosemilestone(2, 4, 6) %></td>
+  </tr>
+  <tr>
+    <td>Preliminary Analysis Public Meeting</td>
+    <td><%= choosemilestone(2, 12, 1) %></td>
+    <td><%= choosemilestone(2, 12, 2) %></td>
+    <td><%= choosemilestone(2, 12, 3) %></td>
+    <td><%= choosemilestone(2, 12, 4) %></td>
+    <td><%= choosemilestone(2, 12, 5) %></td>
+    <td><%= choosemilestone(2, 12, 6) %></td>
+  </tr>
+  <tr>
+    <td><strong>NOPR</strong></td>
+  </tr>
+  <tr>
+    <td>Prelimanary Anylsis Comment Period</td>
+    <td><%= choosemilestone(3, 12, 1) %></td>
+    <td><%= choosemilestone(3, 12, 2) %></td>
+    <td><%= choosemilestone(3, 12, 3) %></td>
+    <td><%= choosemilestone(3, 12, 4) %></td>
+    <td><%= choosemilestone(3, 12, 5) %></td>
+    <td><%= choosemilestone(3, 12, 6) %></td>
+  </tr>
+  <tr>
+    <td>Team Analysis and Document Drafting</td>
+    <td><%= choosemilestone(3, 17, 1) %></td>
+    <td><%= choosemilestone(3, 17, 2) %></td>
+    <td><%= choosemilestone(3, 17, 3) %></td>
+    <td><%= choosemilestone(3, 17, 4) %></td>
+    <td><%= choosemilestone(3, 17, 5) %></td>
+    <td><%= choosemilestone(3, 17, 6) %></td>
+  </tr>
+  <tr>
+    <td>Submit Draft NOPR to DOE</td>
+    <td><%= choosemilestone(3, 15, 1) %></td>
+    <td><%= choosemilestone(3, 15, 2) %></td>
+    <td><%= choosemilestone(3, 15, 3) %></td>
+    <td><%= choosemilestone(3, 15, 4) %></td>
+    <td><%= choosemilestone(3, 15, 5) %></td>
+    <td><%= choosemilestone(3, 15, 6) %></td>
+  </tr>
+  <tr>
+    <td>BT Program Review and Revision</td>
+    <td><%= choosemilestone(3, 1, 1) %></td>
+    <td><%= choosemilestone(3, 1, 2) %></td>
+    <td><%= choosemilestone(3, 1, 3) %></td>
+    <td><%= choosemilestone(3, 1, 4) %></td>
+    <td><%= choosemilestone(3, 1, 5) %></td>
+    <td><%= choosemilestone(3, 1, 6) %></td>
+  </tr>
+  <tr>
+    <td>Mandatory Concurrence</td>
+    <td><%= choosemilestone(3, 7, 1) %></td>
+    <td><%= choosemilestone(3, 7, 2) %></td>
+    <td><%= choosemilestone(3, 7, 3) %></td>
+    <td><%= choosemilestone(3, 7, 4) %></td>
+    <td><%= choosemilestone(3, 7, 5) %></td>
+    <td><%= choosemilestone(3, 7, 6) %></td>
+  </tr>
+  <tr>
+    <td>EE Approval and Issuance</td>
+    <td><%= choosemilestone(3, 3, 1) %></td>
+    <td><%= choosemilestone(3, 3, 2) %></td>
+    <td><%= choosemilestone(3, 3, 3) %></td>
+    <td><%= choosemilestone(3, 3, 4) %></td>
+    <td><%= choosemilestone(3, 3, 5) %></td>
+    <td><%= choosemilestone(3, 3, 6) %></td>
+  </tr>
+  <tr>
+    <td>Federal Register Review and Publication</td>
+    <td><%= choosemilestone(3, 4, 1) %></td>
+    <td><%= choosemilestone(3, 4, 2) %></td>
+    <td><%= choosemilestone(3, 4, 3) %></td>
+    <td><%= choosemilestone(3, 4, 4) %></td>
+    <td><%= choosemilestone(3, 4, 5) %></td>
+    <td><%= choosemilestone(3, 4, 6) %></td>
+  </tr>
+  <tr>
+    <td>NOPR Public Meeting</td>
+    <td><%= choosemilestone(3, 9, 1) %></td>
+    <td><%= choosemilestone(3, 9, 2) %></td>
+    <td><%= choosemilestone(3, 9, 3) %></td>
+    <td><%= choosemilestone(3, 9, 4) %></td>
+    <td><%= choosemilestone(3, 9, 5) %></td>
+    <td><%= choosemilestone(3, 9, 6) %></td>
+  </tr>
+  <tr>
+    <td><strong>Final Rule</strong></td>
+  </tr>
+  <tr>
+    <td>NOPR Comment Period</td>
+    <td><%= choosemilestone(4, 8, 1) %></td>
+    <td><%= choosemilestone(4, 8, 2) %></td>
+    <td><%= choosemilestone(4, 8, 3) %></td>
+    <td><%= choosemilestone(4, 8, 4) %></td>
+    <td><%= choosemilestone(4, 8, 5) %></td>
+    <td><%= choosemilestone(4, 8, 6) %></td>
+  </tr>
+  <tr>
+    <td>Team Analysis and Document Drafting</td>
+    <td><%= choosemilestone(4, 17, 1) %></td>
+    <td><%= choosemilestone(4, 17, 2) %></td>
+    <td><%= choosemilestone(4, 17, 3) %></td>
+    <td><%= choosemilestone(4, 17, 4) %></td>
+    <td><%= choosemilestone(4, 17, 5) %></td>
+    <td><%= choosemilestone(4, 17, 6) %></td>
+  </tr>
+  <tr>
+    <td>Submit Draft Final Rule to DOE</td>
+    <td><%= choosemilestone(4, 13, 1) %></td>
+    <td><%= choosemilestone(4, 13, 2) %></td>
+    <td><%= choosemilestone(4, 13, 3) %></td>
+    <td><%= choosemilestone(4, 13, 4) %></td>
+    <td><%= choosemilestone(4, 13, 5) %></td>
+    <td><%= choosemilestone(4, 13, 6) %></td>
+  </tr>
+  <tr>
+    <td>BT Program Review and Revision</td>
+    <td><%= choosemilestone(4, 8, 1) %></td>
+    <td><%= choosemilestone(4, 8, 2) %></td>
+    <td><%= choosemilestone(4, 8, 3) %></td>
+    <td><%= choosemilestone(4, 8, 4) %></td>
+    <td><%= choosemilestone(4, 8, 5) %></td>
+    <td><%= choosemilestone(4, 8, 6) %></td>
+  </tr>
+  <tr>
+    <td>Mandatory Concurrence</td>
+    <td><%= choosemilestone(4, 7, 1) %></td>
+    <td><%= choosemilestone(4, 7, 2) %></td>
+    <td><%= choosemilestone(4, 7, 3) %></td>
+    <td><%= choosemilestone(4, 7, 4) %></td>
+    <td><%= choosemilestone(4, 7, 5) %></td>
+    <td><%= choosemilestone(4, 7, 6) %></td>
+  </tr>
+  <tr>
+    <td>OMB Review</td>
+    <td><%= choosemilestone(4, 10, 1) %></td>
+    <td><%= choosemilestone(4, 10, 2) %></td>
+    <td><%= choosemilestone(4, 10, 3) %></td>
+    <td><%= choosemilestone(4, 10, 4) %></td>
+    <td><%= choosemilestone(4, 10, 5) %></td>
+    <td><%= choosemilestone(4, 10, 6) %></td>
+  </tr>
+  <tr>
+    <td>EE and Secretary's Approval and Issuance</td>
+    <td><%= choosemilestone(4, 2, 1) %></td>
+    <td><%= choosemilestone(4, 2, 2) %></td>
+    <td><%= choosemilestone(4, 2, 3) %></td>
+    <td><%= choosemilestone(4, 2, 4) %></td>
+    <td><%= choosemilestone(4, 2, 5) %></td>
+    <td><%= choosemilestone(4, 2, 6) %></td>
+  </tr>
+  <tr>
+    <td>Federal Register Review and Publication</td>
+    <td><%= choosemilestone(4, 4, 1) %></td>
+    <td><%= choosemilestone(4, 4, 2) %></td>
+    <td><%= choosemilestone(4, 4, 3) %></td>
+    <td><%= choosemilestone(4, 4, 4) %></td>
+    <td><%= choosemilestone(4, 4, 5) %></td>
+    <td><%= choosemilestone(4, 4, 6) %></td>
+  </tr>
+</table>
+
+<%= link_to 'Edit', edit_rulemaking_path(@rulemaking) %> |
+<%= link_to 'Back', rulemakings_path %>

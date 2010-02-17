@@ -1,0 +1,35 @@
+<% form_for(@milestone) do |f| %>
+  <%= f.error_messages %>
+
+
+  <p>
+    <%= f.label :rulemaking_id %><br />
+    <%= f.collection_select :rulemaking_id, Rulemaking.all, :id, :short_name %>
+    <%= @milestone.rulemaking_id %>
+  </p>
+  <p>
+    <%= f.label :phase_id %><br />
+    <%= f.collection_select :phase_id, Phase.all, :id, :phase %>
+    <%= @milestone.phase_id %>
+  </p>
+  <p>
+    <%= f.label :activity_id %><br />
+    <%= f.collection_select :activity_id, Activity.all, :id, :activity %>
+    <%= @milestone.activity_id %>
+  </p>
+  <p>
+    <%= f.label :date_category_id %><br />
+    <%= f.collection_select :date_category_id, DateCategory.all, :id, :date_category %>
+    <%= @milestone.date_category_id %>
+  </p>
+
+  <p>
+    <%= f.label :milestone %><br />
+    <%= f.date_select :milestone %>
+  </p>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+
+
+<% end %>

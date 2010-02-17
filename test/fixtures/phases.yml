@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+preliminary_analysis:
+  phase: Preliminary Analysis
+  sort: 1
+
+framework:
+  phase: Framework
+  sort: 2
+
+nopr:
+  phase: NOPR
+  sort: 3
+
+final_rule:
+  phase: Final Rule
+  sort: 4
