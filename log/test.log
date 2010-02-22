@@ -34489,3 +34489,804 @@ Rendering template within layouts/application
 Rendering users/new
 Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire]
   [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT "activities".id FROM "activities" WHERE ("activities"."activity" = '') LIMIT 1[0m
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT "activities".id FROM "activities" WHERE ("activities"."sort" IS NULL) LIMIT 1[0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT "activities".id FROM "activities" WHERE ("activities"."activity" = '') LIMIT 1[0m
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT "activities".id FROM "activities" WHERE ("activities"."sort" IS NULL) LIMIT 1[0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT "activities".id FROM "activities" WHERE ("activities"."activity" = 'new activity') LIMIT 1[0m
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT "activities".id FROM "activities" WHERE ("activities"."sort" IS NULL) LIMIT 1[0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT "activities".id FROM "activities" WHERE ("activities"."activity" = 'new activity') LIMIT 1[0m
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT "activities".id FROM "activities" WHERE ("activities"."sort" = 2) LIMIT 1[0m
+  [4;36;1mActivity Create (0.0ms)[0m   [0;1mINSERT INTO "activities" ("updated_at", "activity", "activity_abbreviation", "sort", "created_at") VALUES('2010-02-17 21:49:13', 'new activity', 'abb', 2, '2010-02-17 21:49:13')[0m
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT "activities".id FROM "activities" WHERE ("activities"."activity" = 'new activity') LIMIT 1[0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT "activities".id FROM "activities" WHERE ("activities"."sort" = 2) LIMIT 1[0m
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT "activities".id FROM "activities" WHERE ("activities"."activity" = 'another activity') LIMIT 1[0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT "activities".id FROM "activities" WHERE ("activities"."sort" = 2) LIMIT 1[0m
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT "activities".id FROM "activities" WHERE ("activities"."activity" = 'another activity') LIMIT 1[0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT "activities".id FROM "activities" WHERE ("activities"."sort" = 3) LIMIT 1[0m
+  [4;35;1mActivity Create (0.0ms)[0m   [0mINSERT INTO "activities" ("updated_at", "activity", "activity_abbreviation", "sort", "created_at") VALUES('2010-02-17 21:49:13', 'another activity', 'abbrev', 3, '2010-02-17 21:49:13')[0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT "activities".id FROM "activities" WHERE ("activities"."activity" = 'another activity' AND "activities".id <> 797282603) LIMIT 1[0m
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT "activities".id FROM "activities" WHERE ("activities"."sort" = 0 AND "activities".id <> 797282603) LIMIT 1[0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT "activities".id FROM "activities" WHERE ("activities"."activity" = 'another activity' AND "activities".id <> 797282603) LIMIT 1[0m
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT "activities".id FROM "activities" WHERE ("activities"."sort" = 4 AND "activities".id <> 797282603) LIMIT 1[0m
+  [4;36;1mActivity Update (0.0ms)[0m   [0;1mUPDATE "activities" SET "sort" = 4 WHERE "id" = 797282603[0m
+  [4;35;1mDateCategory Load (0.0ms)[0m   [0mSELECT "date_categories".id FROM "date_categories" WHERE ("date_categories"."date_category" = '') LIMIT 1[0m
+  [4;36;1mDateCategory Load (0.0ms)[0m   [0;1mSELECT "date_categories".id FROM "date_categories" WHERE ("date_categories"."date_category" = 'new date category') LIMIT 1[0m
+  [4;35;1mDateCategory Create (0.0ms)[0m   [0mINSERT INTO "date_categories" ("updated_at", "date_category", "created_at") VALUES('2010-02-17 21:49:13', 'new date category', '2010-02-17 21:49:13')[0m
+  [4;36;1mDateCategory Load (0.0ms)[0m   [0;1mSELECT "date_categories".id FROM "date_categories" WHERE ("date_categories"."date_category" = 'new date category') LIMIT 1[0m
+  [4;35;1mDateCategory Load (0.0ms)[0m   [0mSELECT "date_categories".id FROM "date_categories" WHERE ("date_categories"."date_category" = 'a unique name') LIMIT 1[0m
+  [4;36;1mDateCategory Create (0.0ms)[0m   [0;1mINSERT INTO "date_categories" ("updated_at", "date_category", "created_at") VALUES('2010-02-17 21:49:13', 'a unique name', '2010-02-17 21:49:13')[0m
+  [4;35;1mDoeProjectManager Load (0.0ms)[0m   [0mSELECT "doe_project_managers".id FROM "doe_project_managers" WHERE ("doe_project_managers"."project_manager" = '') LIMIT 1[0m
+  [4;36;1mDoeProjectManager Load (0.0ms)[0m   [0;1mSELECT "doe_project_managers".id FROM "doe_project_managers" WHERE ("doe_project_managers"."project_manager" = 'mike') LIMIT 1[0m
+  [4;35;1mDoeProjectManager Create (15.0ms)[0m   [0mINSERT INTO "doe_project_managers" ("updated_at", "project_manager", "created_at") VALUES('2010-02-17 21:49:14', 'mike', '2010-02-17 21:49:14')[0m
+  [4;36;1mDoeProjectManager Load (0.0ms)[0m   [0;1mSELECT "doe_project_managers".id FROM "doe_project_managers" WHERE ("doe_project_managers"."project_manager" = 'mike') LIMIT 1[0m
+  [4;35;1mDoeProjectManager Load (0.0ms)[0m   [0mSELECT "doe_project_managers".id FROM "doe_project_managers" WHERE ("doe_project_managers"."project_manager" = 'Jon') LIMIT 1[0m
+  [4;36;1mDoeProjectManager Create (0.0ms)[0m   [0;1mINSERT INTO "doe_project_managers" ("updated_at", "project_manager", "created_at") VALUES('2010-02-17 21:49:14', 'Jon', '2010-02-17 21:49:14')[0m
+  [4;35;1mDriver Load (0.0ms)[0m   [0mSELECT "drivers".id FROM "drivers" WHERE ("drivers"."driver" = '') LIMIT 1[0m
+  [4;36;1mDriver Load (0.0ms)[0m   [0;1mSELECT "drivers".id FROM "drivers" WHERE ("drivers"."driver" = 'EISA 2008') LIMIT 1[0m
+  [4;35;1mDriver Create (0.0ms)[0m   [0mINSERT INTO "drivers" ("updated_at", "driver", "created_at") VALUES('2010-02-17 21:49:14', 'EISA 2008', '2010-02-17 21:49:14')[0m
+  [4;36;1mDriver Load (0.0ms)[0m   [0;1mSELECT "drivers".id FROM "drivers" WHERE ("drivers"."driver" = 'EISA 2008') LIMIT 1[0m
+  [4;35;1mDriver Load (0.0ms)[0m   [0mSELECT "drivers".id FROM "drivers" WHERE ("drivers"."driver" = 'new driver') LIMIT 1[0m
+  [4;36;1mDriver Create (0.0ms)[0m   [0;1mINSERT INTO "drivers" ("updated_at", "driver", "created_at") VALUES('2010-02-17 21:49:14', 'new driver', '2010-02-17 21:49:14')[0m
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT "milestones".id FROM "milestones" WHERE ("milestones"."date_category_id" = 3 AND "milestones".activity_id = 4 AND "milestones".phase_id = 2 AND "milestones".rulemaking_id = 30) LIMIT 1[0m
+  [4;36;1mMilestone Create (0.0ms)[0m   [0;1mINSERT INTO "milestones" ("date_category_id", "rulemaking_id", "updated_at", "phase_id", "activity_id", "milestone", "created_at") VALUES(3, 30, '2010-02-17 21:49:14', 2, 4, '2024-01-04 00:00:00', '2010-02-17 21:49:14')[0m
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT "milestones".id FROM "milestones" WHERE ("milestones"."date_category_id" = 4 AND "milestones".activity_id = 4 AND "milestones".phase_id = 2 AND "milestones".rulemaking_id = 30) LIMIT 1[0m
+  [4;36;1mMilestone Create (0.0ms)[0m   [0;1mINSERT INTO "milestones" ("date_category_id", "rulemaking_id", "updated_at", "phase_id", "activity_id", "milestone", "created_at") VALUES(4, 30, '2010-02-17 21:49:14', 2, 4, '2014-03-04 00:00:00', '2010-02-17 21:49:14')[0m
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT "milestones".id FROM "milestones" WHERE ("milestones"."date_category_id" = 5 AND "milestones".activity_id = 4 AND "milestones".phase_id = 2 AND "milestones".rulemaking_id = 30) LIMIT 1[0m
+  [4;36;1mMilestone Create (0.0ms)[0m   [0;1mINSERT INTO "milestones" ("date_category_id", "rulemaking_id", "updated_at", "phase_id", "activity_id", "milestone", "created_at") VALUES(5, 30, '2010-02-17 21:49:14', 2, 4, '2034-07-14 00:00:00', '2010-02-17 21:49:14')[0m
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT "milestones".id FROM "milestones" WHERE ("milestones"."date_category_id" = 3 AND "milestones".activity_id = 4 AND "milestones".phase_id = 2 AND "milestones".rulemaking_id = 30 AND "milestones".id <> 980190964) LIMIT 1[0m
+  [4;36;1mMilestone Load (0.0ms)[0m   [0;1mSELECT "milestones".id FROM "milestones" WHERE ("milestones"."date_category_id" = 3 AND "milestones".activity_id = 4 AND "milestones".phase_id = 2 AND "milestones".rulemaking_id IS NULL AND "milestones".id <> 980190963) LIMIT 1[0m
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT "milestones".id FROM "milestones" WHERE ("milestones"."date_category_id" = 3 AND "milestones".activity_id = 4 AND "milestones".phase_id IS NULL AND "milestones".rulemaking_id = 30 AND "milestones".id <> 980190963) LIMIT 1[0m
+  [4;36;1mMilestone Load (0.0ms)[0m   [0;1mSELECT "milestones".id FROM "milestones" WHERE ("milestones"."date_category_id" = 3 AND "milestones".activity_id IS NULL AND "milestones".phase_id = 3 AND "milestones".rulemaking_id = 30 AND "milestones".id <> 980190963) LIMIT 1[0m
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT "milestones".id FROM "milestones" WHERE ("milestones"."date_category_id" IS NULL AND "milestones".activity_id = 3 AND "milestones".phase_id = 3 AND "milestones".rulemaking_id = 30 AND "milestones".id <> 980190963) LIMIT 1[0m
+  [4;36;1mMilestone Load (0.0ms)[0m   [0;1mSELECT "milestones".id FROM "milestones" WHERE ("milestones"."date_category_id" = 6 AND "milestones".activity_id = 3 AND "milestones".phase_id = 3 AND "milestones".rulemaking_id = 30 AND "milestones".id <> 980190963) LIMIT 1[0m
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT "milestones".id FROM "milestones" WHERE ("milestones"."date_category_id" = 6 AND "milestones".activity_id = 3 AND "milestones".phase_id = 3 AND "milestones".rulemaking_id = 30 AND "milestones".id <> 980190963) LIMIT 1[0m
+  [4;36;1mMilestone Update (0.0ms)[0m   [0;1mUPDATE "milestones" SET "activity_id" = 3, "phase_id" = 3, "milestone" = '1999-09-10 00:00:00', "updated_at" = '2010-02-17 21:49:14', "date_category_id" = 6 WHERE "id" = 980190963[0m
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT "milestones".id FROM "milestones" WHERE ("milestones"."date_category_id" = 6 AND "milestones".activity_id = 3 AND "milestones".phase_id = 3 AND "milestones".rulemaking_id = 30 AND "milestones".id <> 980190963) LIMIT 1[0m
+  [4;36;1mMilestone Load (0.0ms)[0m   [0;1mSELECT "milestones".id FROM "milestones" WHERE ("milestones"."date_category_id" = 5 AND "milestones".activity_id = 4 AND "milestones".phase_id = 2 AND "milestones".rulemaking_id = 30 AND "milestones".id <> 980190965) LIMIT 1[0m
+  [4;35;1mPhase Load (16.0ms)[0m   [0mSELECT "phases".id FROM "phases" WHERE ("phases"."phase" = '') LIMIT 1[0m
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT "phases".id FROM "phases" WHERE ("phases"."sort" IS NULL) LIMIT 1[0m
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT "phases".id FROM "phases" WHERE ("phases"."phase" = 'anew phase') LIMIT 1[0m
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT "phases".id FROM "phases" WHERE ("phases"."sort" IS NULL) LIMIT 1[0m
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT "phases".id FROM "phases" WHERE ("phases"."phase" = 'anew phase') LIMIT 1[0m
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT "phases".id FROM "phases" WHERE ("phases"."sort" = 5) LIMIT 1[0m
+  [4;35;1mPhase Create (0.0ms)[0m   [0mINSERT INTO "phases" ("updated_at", "sort", "phase", "created_at") VALUES('2010-02-17 21:49:14', 5, 'anew phase', '2010-02-17 21:49:14')[0m
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT "phases".id FROM "phases" WHERE ("phases"."phase" = 'anew phase') LIMIT 1[0m
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT "phases".id FROM "phases" WHERE ("phases"."sort" = 7) LIMIT 1[0m
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT "phases".id FROM "phases" WHERE ("phases"."phase" = 'unique phase name') LIMIT 1[0m
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT "phases".id FROM "phases" WHERE ("phases"."sort" = 7) LIMIT 1[0m
+  [4;36;1mPhase Create (0.0ms)[0m   [0;1mINSERT INTO "phases" ("updated_at", "sort", "phase", "created_at") VALUES('2010-02-17 21:49:14', 7, 'unique phase name', '2010-02-17 21:49:14')[0m
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type" = '') LIMIT 1[0m
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type_abbreviation" = '') LIMIT 1[0m
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type" = 'new rule type') LIMIT 1[0m
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type_abbreviation" = '') LIMIT 1[0m
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type" = 'new rule type') LIMIT 1[0m
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type_abbreviation" = 'abbreviation') LIMIT 1[0m
+  [4;35;1mRuleType Create (0.0ms)[0m   [0mINSERT INTO "rule_types" ("updated_at", "rule_type", "rule_type_abbreviation", "created_at") VALUES('2010-02-17 21:49:14', 'new rule type', 'abbreviation', '2010-02-17 21:49:14')[0m
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type" = 'new rule type') LIMIT 1[0m
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type_abbreviation" = 'abbreviation') LIMIT 1[0m
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type" = 'a unique rule type') LIMIT 1[0m
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type_abbreviation" = 'abbreviation') LIMIT 1[0m
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type" = 'a unique rule type') LIMIT 1[0m
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type_abbreviation" = 'unique abbreviation') LIMIT 1[0m
+  [4;36;1mRuleType Create (0.0ms)[0m   [0;1mINSERT INTO "rule_types" ("updated_at", "rule_type", "rule_type_abbreviation", "created_at") VALUES('2010-02-17 21:49:14', 'a unique rule type', 'unique abbreviation', '2010-02-17 21:49:14')[0m
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" = 'text') LIMIT 1[0m
+  [4;36;1mRulemaking Create (0.0ms)[0m   [0;1mINSERT INTO "rulemakings" ("updated_at", "phase_id", "activity_id", "notes", "doe_project_manager_id", "rule_type_id", "short_name", "rule", "legislative_deadline", "created_at") VALUES('2010-02-17 21:49:14', 3, 1, NULL, 3, 2, 'text', 'text', '2010-02-04 00:00:00', '2010-02-17 21:49:14')[0m
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" = 'text') LIMIT 1[0m
+  [4;36;1mRulemaking Load (0.0ms)[0m   [0;1mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" IS NULL) LIMIT 1[0m
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" IS NULL) LIMIT 1[0m
+  [4;36;1mRulemaking Load (0.0ms)[0m   [0;1mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" IS NULL) LIMIT 1[0m
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" IS NULL) LIMIT 1[0m
+  [4;36;1mRulemaking Load (0.0ms)[0m   [0;1mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" IS NULL) LIMIT 1[0m
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" IS NULL) LIMIT 1[0m
+  [4;36;1mRulemaking Load (0.0ms)[0m   [0;1mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" IS NULL) LIMIT 1[0m
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" = 'MWO STD short title') LIMIT 1[0m
+  [4;36;1mRulemaking Create (16.0ms)[0m   [0;1mINSERT INTO "rulemakings" ("updated_at", "phase_id", "activity_id", "notes", "doe_project_manager_id", "rule_type_id", "short_name", "rule", "legislative_deadline", "created_at") VALUES('2010-02-17 21:49:14', 2, 13, NULL, 4, 1, 'MWO STD short title', 'Microwave Ovens', '2010-01-01 00:00:00', '2010-02-17 21:49:14')[0m
+  [4;35;1mRulemaking Load (15.0ms)[0m   [0mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" IS NULL) LIMIT 1[0m
+  [4;36;1mRulemaking Load (0.0ms)[0m   [0;1mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" IS NULL) LIMIT 1[0m
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" IS NULL) LIMIT 1[0m
+  [4;36;1mRulemaking Load (0.0ms)[0m   [0;1mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" IS NULL) LIMIT 1[0m
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" IS NULL) LIMIT 1[0m
+  [4;36;1mRulemaking Load (0.0ms)[0m   [0;1mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" IS NULL) LIMIT 1[0m
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" IS NULL) LIMIT 1[0m
+  [4;36;1mRulemaking Load (0.0ms)[0m   [0;1mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" = 'text') LIMIT 1[0m
+  [4;35;1mRulemaking Create (0.0ms)[0m   [0mINSERT INTO "rulemakings" ("updated_at", "phase_id", "activity_id", "notes", "doe_project_manager_id", "rule_type_id", "short_name", "rule", "legislative_deadline", "created_at") VALUES('2010-02-17 21:49:14', 3, 1, NULL, 3, 2, 'text', 'text', '2010-02-04 00:00:00', '2010-02-17 21:49:14')[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'quentin') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.0ms)[0m   [0mINSERT INTO "users" ("salt", "updated_at", "crypted_password", "last", "remember_token_expires_at", "first", "remember_token", "organization", "login", "email", "created_at") VALUES('ebf993712fe840e0d0e96471e44b17d95e0a6b49', '2010-02-17 21:49:14', 'b36235bd4080fff10f3fd221c2265ebe0e9aa85f', NULL, NULL, NULL, NULL, NULL, 'quire', 'quire@example.com', '2010-02-17 21:49:14')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'quentin2' AND "users".id <> 192593060) LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'quentin@example.com' AND "users".id <> 192593060) LIMIT 1[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE "users" SET "login" = 'quentin2', "updated_at" = '2010-02-17 21:49:14' WHERE "id" = 192593060[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'quentin2') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE "users" SET "remember_token" = '4eae99965d949c32c33c32df81a713afd9f9110c', "remember_token_expires_at" = '2010-03-03 21:49:14', "updated_at" = '2010-02-17 21:49:14' WHERE "id" = 192593060[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE "users" SET "remember_token" = 'c964be26d029420bb68db5dce654035282b27f5d', "remember_token_expires_at" = '2010-02-24 21:49:14', "updated_at" = '2010-02-17 21:49:14' WHERE "id" = 192593060[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE "users" SET "remember_token" = 'c964be26d029420bb68db5dce654035282b27f5d', "remember_token_expires_at" = '2010-02-24 21:49:14', "updated_at" = '2010-02-17 21:49:14' WHERE "id" = 192593060[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" IS NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'quentin' AND "users".id <> 192593060) LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'quentin@example.com' AND "users".id <> 192593060) LIMIT 1[0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE "users" SET "crypted_password" = '4b6dd603c64f03bc2f676658e287094878df9603', "updated_at" = '2010-02-17 21:49:14' WHERE "id" = 192593060[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'quentin') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE "users" SET "remember_token" = '4eae99965d949c32c33c32df81a713afd9f9110c', "remember_token_expires_at" = '2010-03-03 21:49:14', "updated_at" = '2010-02-17 21:49:14' WHERE "id" = 192593060[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE "users" SET "remember_token" = '4eae99965d949c32c33c32df81a713afd9f9110c', "remember_token_expires_at" = '2010-03-03 21:49:14', "updated_at" = '2010-02-17 21:49:14' WHERE "id" = 192593060[0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE "users" SET "remember_token" = NULL, "remember_token_expires_at" = NULL WHERE "id" = 192593060[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "activities" [0m
+
+
+Processing ActivitiesController#create (for 0.0.0.0 at 2010-02-17 13:49:46) [POST]
+  Parameters: {"activity"=>{"activity"=>"a new activity", "sort"=>2, "activity_abbreviation"=>"new activ. abbr."}}
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT "activities".id FROM "activities" WHERE ("activities"."activity" = 'a new activity') LIMIT 1[0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT "activities".id FROM "activities" WHERE ("activities"."sort" = 2) LIMIT 1[0m
+  [4;35;1mActivity Create (0.0ms)[0m   [0mINSERT INTO "activities" ("updated_at", "activity", "activity_abbreviation", "sort", "created_at") VALUES('2010-02-17 21:49:46', 'a new activity', 'new activ. abbr.', 2, '2010-02-17 21:49:46')[0m
+Redirected to http://test.host/activities/797282602
+Completed in 16ms (DB: 16) | 302 Found [http://test.host/activities?activity%5Bactivity%5D=a+new+activity&activity%5Bactivity_abbreviation%5D=new+activ.+abbr.&activity%5Bsort%5D=2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "activities" [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "activities" [0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities"."id" = 563629960) [0m
+
+
+Processing ActivitiesController#destroy (for 0.0.0.0 at 2010-02-17 13:49:46) [DELETE]
+  Parameters: {"id"=>"563629960"}
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities"."id" = 563629960) [0m
+  [4;36;1mActivity Destroy (0.0ms)[0m   [0;1mDELETE FROM "activities" WHERE "id" = 563629960[0m
+Redirected to http://test.host/activities
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/activities/563629960]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "activities" [0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities"."id" = 563629960) [0m
+
+
+Processing ActivitiesController#edit (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+  Parameters: {"id"=>"563629960"}
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities"."id" = 563629960) [0m
+Rendering template within layouts/application
+Rendering activities/edit
+Rendered activities/_form (0.0ms)
+Completed in 47ms (View: 47, DB: 0) | 200 OK [http://test.host/activities/563629960/edit]
+
+
+Processing ActivitiesController#index (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT * FROM "activities" [0m
+Rendering template within layouts/application
+Rendering activities/index
+Completed in 15ms (View: 15, DB: 0) | 200 OK [http://test.host/activities]
+
+
+Processing ActivitiesController#new (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+Rendering template within layouts/application
+Rendering activities/new
+Rendered activities/_form (0.0ms)
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://test.host/activities/new]
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities"."id" = 563629960) [0m
+
+
+Processing ActivitiesController#show (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+  Parameters: {"id"=>"563629960"}
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities"."id" = 563629960) [0m
+Rendering template within layouts/application
+Rendering activities/show
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://test.host/activities/563629960]
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities"."id" = 563629960) [0m
+
+
+Processing ActivitiesController#update (for 0.0.0.0 at 2010-02-17 13:49:46) [PUT]
+  Parameters: {"activity"=>{"activity"=>"updated activity", "sort"=>2, "activity_abbreviation"=>"updated abbrev."}, "id"=>"563629960"}
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities"."id" = 563629960) [0m
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT "activities".id FROM "activities" WHERE ("activities"."activity" = 'updated activity' AND "activities".id <> 563629960) LIMIT 1[0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT "activities".id FROM "activities" WHERE ("activities"."sort" = 2 AND "activities".id <> 563629960) LIMIT 1[0m
+  [4;35;1mActivity Update (0.0ms)[0m   [0mUPDATE "activities" SET "sort" = 2, "activity" = 'updated activity', "updated_at" = '2010-02-17 21:49:46', "activity_abbreviation" = 'updated abbrev.' WHERE "id" = 563629960[0m
+Redirected to http://test.host/activities/563629960
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/activities/563629960?activity%5Bactivity%5D=updated+activity&activity%5Bactivity_abbreviation%5D=updated+abbrev.&activity%5Bsort%5D=2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "date_categories" [0m
+
+
+Processing DateCategoriesController#create (for 0.0.0.0 at 2010-02-17 13:49:46) [POST]
+  Parameters: {"date_category"=>{"date_category"=>"a new date category"}}
+  [4;35;1mDateCategory Load (0.0ms)[0m   [0mSELECT "date_categories".id FROM "date_categories" WHERE ("date_categories"."date_category" = 'a new date category') LIMIT 1[0m
+  [4;36;1mDateCategory Create (0.0ms)[0m   [0;1mINSERT INTO "date_categories" ("updated_at", "date_category", "created_at") VALUES('2010-02-17 21:49:46', 'a new date category', '2010-02-17 21:49:46')[0m
+Redirected to http://test.host/date_categories/388348406
+Completed in 16ms (DB: 0) | 302 Found [http://test.host/date_categories?date_category%5Bdate_category%5D=a+new+date+category]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "date_categories" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "date_categories" [0m
+  [4;35;1mDateCategory Load (0.0ms)[0m   [0mSELECT * FROM "date_categories" WHERE ("date_categories"."id" = 293397019) [0m
+
+
+Processing DateCategoriesController#destroy (for 0.0.0.0 at 2010-02-17 13:49:46) [DELETE]
+  Parameters: {"id"=>"293397019"}
+  [4;36;1mDateCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "date_categories" WHERE ("date_categories"."id" = 293397019) [0m
+  [4;35;1mDateCategory Destroy (0.0ms)[0m   [0mDELETE FROM "date_categories" WHERE "id" = 293397019[0m
+Redirected to http://test.host/date_categories
+Completed in 16ms (DB: 0) | 302 Found [http://test.host/date_categories/293397019]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "date_categories" [0m
+  [4;35;1mDateCategory Load (0.0ms)[0m   [0mSELECT * FROM "date_categories" WHERE ("date_categories"."id" = 293397019) [0m
+
+
+Processing DateCategoriesController#edit (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+  Parameters: {"id"=>"293397019"}
+  [4;36;1mDateCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "date_categories" WHERE ("date_categories"."id" = 293397019) [0m
+Rendering template within layouts/application
+Rendering date_categories/edit
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/date_categories/293397019/edit]
+
+
+Processing DateCategoriesController#index (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+  [4;35;1mDateCategory Load (0.0ms)[0m   [0mSELECT * FROM "date_categories" [0m
+Rendering template within layouts/application
+Rendering date_categories/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/date_categories]
+
+
+Processing DateCategoriesController#new (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+Rendering template within layouts/application
+Rendering date_categories/new
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://test.host/date_categories/new]
+  [4;36;1mDateCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "date_categories" WHERE ("date_categories"."id" = 293397019) [0m
+
+
+Processing DateCategoriesController#show (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+  Parameters: {"id"=>"293397019"}
+  [4;35;1mDateCategory Load (0.0ms)[0m   [0mSELECT * FROM "date_categories" WHERE ("date_categories"."id" = 293397019) [0m
+Rendering template within layouts/application
+Rendering date_categories/show
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://test.host/date_categories/293397019]
+  [4;36;1mDateCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "date_categories" WHERE ("date_categories"."id" = 293397019) [0m
+
+
+Processing DateCategoriesController#update (for 0.0.0.0 at 2010-02-17 13:49:46) [PUT]
+  Parameters: {"id"=>"293397019", "date_category"=>{"date_category"=>"updated date category"}}
+  [4;35;1mDateCategory Load (0.0ms)[0m   [0mSELECT * FROM "date_categories" WHERE ("date_categories"."id" = 293397019) [0m
+  [4;36;1mDateCategory Load (0.0ms)[0m   [0;1mSELECT "date_categories".id FROM "date_categories" WHERE ("date_categories"."date_category" = 'updated date category' AND "date_categories".id <> 293397019) LIMIT 1[0m
+  [4;35;1mDateCategory Update (0.0ms)[0m   [0mUPDATE "date_categories" SET "updated_at" = '2010-02-17 21:49:46', "date_category" = 'updated date category' WHERE "id" = 293397019[0m
+Redirected to http://test.host/date_categories/293397019
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/date_categories/293397019?date_category%5Bdate_category%5D=updated+date+category]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "doe_project_managers" [0m
+
+
+Processing DoeProjectManagersController#create (for 0.0.0.0 at 2010-02-17 13:49:46) [POST]
+  Parameters: {"doe_project_manager"=>{"project_manager"=>"new project manager"}}
+  [4;35;1mDoeProjectManager Load (0.0ms)[0m   [0mSELECT "doe_project_managers".id FROM "doe_project_managers" WHERE ("doe_project_managers"."project_manager" = 'new project manager') LIMIT 1[0m
+  [4;36;1mDoeProjectManager Create (0.0ms)[0m   [0;1mINSERT INTO "doe_project_managers" ("updated_at", "project_manager", "created_at") VALUES('2010-02-17 21:49:46', 'new project manager', '2010-02-17 21:49:46')[0m
+Redirected to http://test.host/doe_project_managers/1027431152
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/doe_project_managers?doe_project_manager%5Bproject_manager%5D=new+project+manager]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "doe_project_managers" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "doe_project_managers" [0m
+  [4;35;1mDoeProjectManager Load (0.0ms)[0m   [0mSELECT * FROM "doe_project_managers" WHERE ("doe_project_managers"."id" = 975247844) [0m
+
+
+Processing DoeProjectManagersController#destroy (for 0.0.0.0 at 2010-02-17 13:49:46) [DELETE]
+  Parameters: {"id"=>"975247844"}
+  [4;36;1mDoeProjectManager Load (0.0ms)[0m   [0;1mSELECT * FROM "doe_project_managers" WHERE ("doe_project_managers"."id" = 975247844) [0m
+  [4;35;1mDoeProjectManager Destroy (0.0ms)[0m   [0mDELETE FROM "doe_project_managers" WHERE "id" = 975247844[0m
+Redirected to http://test.host/doe_project_managers
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/doe_project_managers/975247844]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "doe_project_managers" [0m
+  [4;35;1mDoeProjectManager Load (16.0ms)[0m   [0mSELECT * FROM "doe_project_managers" WHERE ("doe_project_managers"."id" = 975247844) [0m
+
+
+Processing DoeProjectManagersController#edit (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+  Parameters: {"id"=>"975247844"}
+  [4;36;1mDoeProjectManager Load (0.0ms)[0m   [0;1mSELECT * FROM "doe_project_managers" WHERE ("doe_project_managers"."id" = 975247844) [0m
+Rendering template within layouts/application
+Rendering doe_project_managers/edit
+Rendered doe_project_managers/_form (0.0ms)
+Completed in 0ms (View: 0, DB: 16) | 200 OK [http://test.host/doe_project_managers/975247844/edit]
+
+
+Processing DoeProjectManagersController#index (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+  [4;35;1mDoeProjectManager Load (0.0ms)[0m   [0mSELECT * FROM "doe_project_managers" [0m
+Rendering template within layouts/application
+Rendering doe_project_managers/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/doe_project_managers]
+
+
+Processing DoeProjectManagersController#new (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+Rendering template within layouts/application
+Rendering doe_project_managers/new
+Rendered doe_project_managers/_form (0.0ms)
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://test.host/doe_project_managers/new]
+  [4;36;1mDoeProjectManager Load (16.0ms)[0m   [0;1mSELECT * FROM "doe_project_managers" WHERE ("doe_project_managers"."id" = 975247844) [0m
+
+
+Processing DoeProjectManagersController#show (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+  Parameters: {"id"=>"975247844"}
+  [4;35;1mDoeProjectManager Load (0.0ms)[0m   [0mSELECT * FROM "doe_project_managers" WHERE ("doe_project_managers"."id" = 975247844) [0m
+Rendering template within layouts/application
+Rendering doe_project_managers/show
+Completed in 0ms (View: 0, DB: 16) | 200 OK [http://test.host/doe_project_managers/975247844]
+  [4;36;1mDoeProjectManager Load (0.0ms)[0m   [0;1mSELECT * FROM "doe_project_managers" WHERE ("doe_project_managers"."id" = 975247844) [0m
+
+
+Processing DoeProjectManagersController#update (for 0.0.0.0 at 2010-02-17 13:49:46) [PUT]
+  Parameters: {"id"=>"975247844", "doe_project_manager"=>{"project_manager"=>"updated manager"}}
+  [4;35;1mDoeProjectManager Load (0.0ms)[0m   [0mSELECT * FROM "doe_project_managers" WHERE ("doe_project_managers"."id" = 975247844) [0m
+  [4;36;1mDoeProjectManager Load (0.0ms)[0m   [0;1mSELECT "doe_project_managers".id FROM "doe_project_managers" WHERE ("doe_project_managers"."project_manager" = 'updated manager' AND "doe_project_managers".id <> 975247844) LIMIT 1[0m
+  [4;35;1mDoeProjectManager Update (0.0ms)[0m   [0mUPDATE "doe_project_managers" SET "project_manager" = 'updated manager', "updated_at" = '2010-02-17 21:49:46' WHERE "id" = 975247844[0m
+Redirected to http://test.host/doe_project_managers/975247844
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/doe_project_managers/975247844?doe_project_manager%5Bproject_manager%5D=updated+manager]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "drivers" [0m
+
+
+Processing DriversController#create (for 0.0.0.0 at 2010-02-17 13:49:46) [POST]
+  Parameters: {"driver"=>{"driver"=>"new driver"}}
+  [4;35;1mDriver Load (0.0ms)[0m   [0mSELECT "drivers".id FROM "drivers" WHERE ("drivers"."driver" = 'new driver') LIMIT 1[0m
+  [4;36;1mDriver Create (0.0ms)[0m   [0;1mINSERT INTO "drivers" ("updated_at", "driver", "created_at") VALUES('2010-02-17 21:49:46', 'new driver', '2010-02-17 21:49:46')[0m
+Redirected to http://test.host/drivers/980190963
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drivers?driver%5Bdriver%5D=new+driver]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "drivers" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "drivers" [0m
+  [4;35;1mDriver Load (0.0ms)[0m   [0mSELECT * FROM "drivers" WHERE ("drivers"."id" = 980190962) [0m
+
+
+Processing DriversController#destroy (for 0.0.0.0 at 2010-02-17 13:49:46) [DELETE]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mDriver Load (0.0ms)[0m   [0;1mSELECT * FROM "drivers" WHERE ("drivers"."id" = 980190962) [0m
+  [4;35;1mDriver Destroy (0.0ms)[0m   [0mDELETE FROM "drivers" WHERE "id" = 980190962[0m
+Redirected to http://test.host/drivers
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drivers/980190962]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "drivers" [0m
+  [4;35;1mDriver Load (16.0ms)[0m   [0mSELECT * FROM "drivers" WHERE ("drivers"."id" = 980190962) [0m
+
+
+Processing DriversController#edit (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mDriver Load (0.0ms)[0m   [0;1mSELECT * FROM "drivers" WHERE ("drivers"."id" = 980190962) [0m
+Rendering template within layouts/application
+Rendering drivers/edit
+Rendered drivers/_form (0.0ms)
+Completed in 0ms (View: 0, DB: 16) | 200 OK [http://test.host/drivers/980190962/edit]
+
+
+Processing DriversController#index (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+  [4;35;1mDriver Load (0.0ms)[0m   [0mSELECT * FROM "drivers" [0m
+Rendering template within layouts/application
+Rendering drivers/index
+Completed in 15ms (View: 15, DB: 0) | 200 OK [http://test.host/drivers]
+
+
+Processing DriversController#new (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+Rendering template within layouts/application
+Rendering drivers/new
+Rendered drivers/_form (0.0ms)
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/drivers/new]
+  [4;36;1mDriver Load (0.0ms)[0m   [0;1mSELECT * FROM "drivers" WHERE ("drivers"."id" = 980190962) [0m
+
+
+Processing DriversController#show (for 0.0.0.0 at 2010-02-17 13:49:46) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mDriver Load (0.0ms)[0m   [0mSELECT * FROM "drivers" WHERE ("drivers"."id" = 980190962) [0m
+Rendering template within layouts/application
+Rendering drivers/show
+Completed in 15ms (View: 15, DB: 0) | 200 OK [http://test.host/drivers/980190962]
+  [4;36;1mDriver Load (0.0ms)[0m   [0;1mSELECT * FROM "drivers" WHERE ("drivers"."id" = 980190962) [0m
+
+
+Processing DriversController#update (for 0.0.0.0 at 2010-02-17 13:49:46) [PUT]
+  Parameters: {"id"=>"980190962", "driver"=>{"driver"=>"updated driver"}}
+  [4;35;1mDriver Load (0.0ms)[0m   [0mSELECT * FROM "drivers" WHERE ("drivers"."id" = 980190962) [0m
+  [4;36;1mDriver Load (0.0ms)[0m   [0;1mSELECT "drivers".id FROM "drivers" WHERE ("drivers"."driver" = 'updated driver' AND "drivers".id <> 980190962) LIMIT 1[0m
+  [4;35;1mDriver Update (16.0ms)[0m   [0mUPDATE "drivers" SET "driver" = 'updated driver', "updated_at" = '2010-02-17 21:49:46' WHERE "id" = 980190962[0m
+Redirected to http://test.host/drivers/980190962
+Completed in 16ms (DB: 16) | 302 Found [http://test.host/drivers/980190962?driver%5Bdriver%5D=updated+driver]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "milestones" [0m
+
+
+Processing MilestonesController#create (for 0.0.0.0 at 2010-02-17 13:49:46) [POST]
+  Parameters: {"milestone"=>{"date_category_id"=>5, "rulemaking_id"=>4, "phase_id"=>2, "activity_id"=>13, "milestone"=>"2011-02-04"}}
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT "milestones".id FROM "milestones" WHERE ("milestones"."date_category_id" = 5 AND "milestones".activity_id = 13 AND "milestones".phase_id = 2 AND "milestones".rulemaking_id = 4) LIMIT 1[0m
+  [4;36;1mMilestone Create (0.0ms)[0m   [0;1mINSERT INTO "milestones" ("date_category_id", "rulemaking_id", "updated_at", "phase_id", "activity_id", "milestone", "created_at") VALUES(5, 4, '2010-02-17 21:49:46', 2, 13, '2011-02-04 00:00:00', '2010-02-17 21:49:46')[0m
+Redirected to http://test.host/milestones/980190963
+Completed in 47ms (DB: 0) | 302 Found [http://test.host/milestones?milestone%5Bactivity_id%5D=13&milestone%5Bdate_category_id%5D=5&milestone%5Bmilestone%5D=2011-02-04&milestone%5Bphase_id%5D=2&milestone%5Brulemaking_id%5D=4]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "milestones" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "milestones" [0m
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT * FROM "milestones" WHERE ("milestones"."id" = 980190962) [0m
+
+
+Processing MilestonesController#destroy (for 0.0.0.0 at 2010-02-17 13:49:46) [DELETE]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mMilestone Load (0.0ms)[0m   [0;1mSELECT * FROM "milestones" WHERE ("milestones"."id" = 980190962) [0m
+  [4;35;1mMilestone Destroy (0.0ms)[0m   [0mDELETE FROM "milestones" WHERE "id" = 980190962[0m
+Redirected to http://test.host/milestones
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/milestones/980190962]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "milestones" [0m
+  [4;35;1mMilestone Load (16.0ms)[0m   [0mSELECT * FROM "milestones" WHERE ("milestones"."id" = 980190962) [0m
+
+
+Processing MilestonesController#edit (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mMilestone Load (0.0ms)[0m   [0;1mSELECT * FROM "milestones" WHERE ("milestones"."id" = 980190962) [0m
+Rendering template within layouts/application
+Rendering milestones/edit
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT * FROM "rulemakings" [0m
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT * FROM "phases" [0m
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT * FROM "activities" [0m
+  [4;36;1mDateCategory Load (0.0ms)[0m   [0;1mSELECT * FROM "date_categories" [0m
+Rendered milestones/_form (172.0ms)
+Completed in 172ms (View: 172, DB: 16) | 200 OK [http://test.host/milestones/980190962/edit]
+
+
+Processing MilestonesController#index (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT * FROM "milestones" [0m
+Rendering template within layouts/application
+Rendering milestones/index
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://test.host/milestones]
+
+
+Processing MilestonesController#new (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+Rendering template within layouts/application
+Rendering milestones/new
+  [4;36;1mRulemaking Load (0.0ms)[0m   [0;1mSELECT * FROM "rulemakings" [0m
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT * FROM "phases" [0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT * FROM "activities" [0m
+  [4;35;1mDateCategory Load (0.0ms)[0m   [0mSELECT * FROM "date_categories" [0m
+Rendered milestones/_form (31.0ms)
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://test.host/milestones/new]
+  [4;36;1mMilestone Load (0.0ms)[0m   [0;1mSELECT * FROM "milestones" WHERE ("milestones"."id" = 980190962) [0m
+
+
+Processing MilestonesController#show (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT * FROM "milestones" WHERE ("milestones"."id" = 980190962) [0m
+Rendering template within layouts/application
+Rendering milestones/show
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://test.host/milestones/980190962]
+  [4;36;1mMilestone Load (0.0ms)[0m   [0;1mSELECT * FROM "milestones" WHERE ("milestones"."id" = 980190962) [0m
+
+
+Processing MilestonesController#update (for 0.0.0.0 at 2010-02-17 13:49:47) [PUT]
+  Parameters: {"id"=>"980190962", "milestone"=>{"date_category_id"=>5, "rulemaking_id"=>15, "phase_id"=>2, "activity_id"=>13, "milestone"=>"2011-02-04"}}
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT * FROM "milestones" WHERE ("milestones"."id" = 980190962) [0m
+  [4;36;1mMilestone Load (0.0ms)[0m   [0;1mSELECT "milestones".id FROM "milestones" WHERE ("milestones"."date_category_id" = 5 AND "milestones".activity_id = 13 AND "milestones".phase_id = 2 AND "milestones".rulemaking_id = 15 AND "milestones".id <> 980190962) LIMIT 1[0m
+  [4;35;1mMilestone Update (0.0ms)[0m   [0mUPDATE "milestones" SET "activity_id" = 13, "phase_id" = 2, "rulemaking_id" = 15, "milestone" = '2011-02-04 00:00:00', "updated_at" = '2010-02-17 21:49:47', "date_category_id" = 5 WHERE "id" = 980190962[0m
+Redirected to http://test.host/milestones/980190962
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/milestones/980190962?milestone%5Bactivity_id%5D=13&milestone%5Bdate_category_id%5D=5&milestone%5Bmilestone%5D=2011-02-04&milestone%5Bphase_id%5D=2&milestone%5Brulemaking_id%5D=15]
+  [4;36;1mSQL (16.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "phases" [0m
+
+
+Processing PhasesController#create (for 0.0.0.0 at 2010-02-17 13:49:47) [POST]
+  Parameters: {"phase"=>{"sort"=>6, "phase"=>"6. fake phase"}}
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT "phases".id FROM "phases" WHERE ("phases"."phase" = '6. fake phase') LIMIT 1[0m
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT "phases".id FROM "phases" WHERE ("phases"."sort" = 6) LIMIT 1[0m
+  [4;35;1mPhase Create (0.0ms)[0m   [0mINSERT INTO "phases" ("updated_at", "sort", "phase", "created_at") VALUES('2010-02-17 21:49:47', 6, '6. fake phase', '2010-02-17 21:49:47')[0m
+Redirected to http://test.host/phases/841617492
+Completed in 15ms (DB: 16) | 302 Found [http://test.host/phases?phase%5Bphase%5D=6.+fake+phase&phase%5Bsort%5D=6]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "phases" [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "phases" [0m
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT * FROM "phases" WHERE ("phases"."id" = 494300699) [0m
+
+
+Processing PhasesController#destroy (for 0.0.0.0 at 2010-02-17 13:49:47) [DELETE]
+  Parameters: {"id"=>"494300699"}
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT * FROM "phases" WHERE ("phases"."id" = 494300699) [0m
+  [4;36;1mPhase Destroy (0.0ms)[0m   [0;1mDELETE FROM "phases" WHERE "id" = 494300699[0m
+Redirected to http://test.host/phases
+Completed in 15ms (DB: 0) | 302 Found [http://test.host/phases/494300699]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "phases" [0m
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT * FROM "phases" WHERE ("phases"."id" = 494300699) [0m
+
+
+Processing PhasesController#edit (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+  Parameters: {"id"=>"494300699"}
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT * FROM "phases" WHERE ("phases"."id" = 494300699) [0m
+Rendering template within layouts/application
+Rendering phases/edit
+Rendered phases/_form (0.0ms)
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/phases/494300699/edit]
+
+
+Processing PhasesController#index (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT * FROM "phases" [0m
+Rendering template within layouts/application
+Rendering phases/index
+Completed in 15ms (View: 15, DB: 0) | 200 OK [http://test.host/phases]
+
+
+Processing PhasesController#new (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+Rendering template within layouts/application
+Rendering phases/new
+Rendered phases/_form (16.0ms)
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/phases/new]
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT * FROM "phases" WHERE ("phases"."id" = 494300699) [0m
+
+
+Processing PhasesController#show (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+  Parameters: {"id"=>"494300699"}
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT * FROM "phases" WHERE ("phases"."id" = 494300699) [0m
+Rendering template within layouts/application
+Rendering phases/show
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/phases/494300699]
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT * FROM "phases" WHERE ("phases"."id" = 494300699) [0m
+
+
+Processing PhasesController#update (for 0.0.0.0 at 2010-02-17 13:49:47) [PUT]
+  Parameters: {"id"=>"494300699", "phase"=>{"sort"=>2, "phase"=>"updated phase title"}}
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT * FROM "phases" WHERE ("phases"."id" = 494300699) [0m
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT "phases".id FROM "phases" WHERE ("phases"."phase" = 'updated phase title' AND "phases".id <> 494300699) LIMIT 1[0m
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT "phases".id FROM "phases" WHERE ("phases"."sort" = 2 AND "phases".id <> 494300699) LIMIT 1[0m
+  [4;35;1mPhase Update (15.0ms)[0m   [0mUPDATE "phases" SET "phase" = 'updated phase title', "updated_at" = '2010-02-17 21:49:47' WHERE "id" = 494300699[0m
+Redirected to http://test.host/phases/494300699
+Completed in 15ms (DB: 15) | 302 Found [http://test.host/phases/494300699?phase%5Bphase%5D=updated+phase+title&phase%5Bsort%5D=2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rule_types" [0m
+
+
+Processing RuleTypesController#create (for 0.0.0.0 at 2010-02-17 13:49:47) [POST]
+  Parameters: {"rule_type"=>{"rule_type"=>"Standard1", "rule_type_abbreviation"=>"STD1"}}
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type" = 'Standard1') LIMIT 1[0m
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type_abbreviation" = 'STD1') LIMIT 1[0m
+  [4;35;1mRuleType Create (0.0ms)[0m   [0mINSERT INTO "rule_types" ("updated_at", "rule_type", "rule_type_abbreviation", "created_at") VALUES('2010-02-17 21:49:47', 'Standard1', 'STD1', '2010-02-17 21:49:47')[0m
+Redirected to http://test.host/rule_types/513878998
+Completed in 15ms (DB: 0) | 302 Found [http://test.host/rule_types?rule_type%5Brule_type%5D=Standard1&rule_type%5Brule_type_abbreviation%5D=STD1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rule_types" [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rule_types" [0m
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT * FROM "rule_types" WHERE ("rule_types"."id" = 284678023) [0m
+
+
+Processing RuleTypesController#destroy (for 0.0.0.0 at 2010-02-17 13:49:47) [DELETE]
+  Parameters: {"id"=>"284678023"}
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT * FROM "rule_types" WHERE ("rule_types"."id" = 284678023) [0m
+  [4;36;1mRuleType Destroy (0.0ms)[0m   [0;1mDELETE FROM "rule_types" WHERE "id" = 284678023[0m
+Redirected to http://test.host/rule_types
+Completed in 16ms (DB: 0) | 302 Found [http://test.host/rule_types/284678023]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rule_types" [0m
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT * FROM "rule_types" WHERE ("rule_types"."id" = 284678023) [0m
+
+
+Processing RuleTypesController#edit (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+  Parameters: {"id"=>"284678023"}
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT * FROM "rule_types" WHERE ("rule_types"."id" = 284678023) [0m
+Rendering template within layouts/application
+Rendering rule_types/edit
+Rendered rule_types/_form (16.0ms)
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/rule_types/284678023/edit]
+
+
+Processing RuleTypesController#index (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT * FROM "rule_types" [0m
+Rendering template within layouts/application
+Rendering rule_types/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/rule_types]
+
+
+Processing RuleTypesController#new (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+Rendering template within layouts/application
+Rendering rule_types/new
+Rendered rule_types/_form (15.0ms)
+Completed in 15ms (View: 15, DB: 0) | 200 OK [http://test.host/rule_types/new]
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT * FROM "rule_types" WHERE ("rule_types"."id" = 284678023) [0m
+
+
+Processing RuleTypesController#show (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+  Parameters: {"id"=>"284678023"}
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT * FROM "rule_types" WHERE ("rule_types"."id" = 284678023) [0m
+Rendering template within layouts/application
+Rendering rule_types/show
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/rule_types/284678023]
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT * FROM "rule_types" WHERE ("rule_types"."id" = 284678023) [0m
+
+
+Processing RuleTypesController#update (for 0.0.0.0 at 2010-02-17 13:49:47) [PUT]
+  Parameters: {"id"=>"284678023", "rule_type"=>{"rule_type"=>"updated rule type", "rule_type_abbreviation"=>"abbrevi"}}
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT * FROM "rule_types" WHERE ("rule_types"."id" = 284678023) [0m
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type" = 'updated rule type' AND "rule_types".id <> 284678023) LIMIT 1[0m
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT "rule_types".id FROM "rule_types" WHERE ("rule_types"."rule_type_abbreviation" = 'abbrevi' AND "rule_types".id <> 284678023) LIMIT 1[0m
+  [4;35;1mRuleType Update (15.0ms)[0m   [0mUPDATE "rule_types" SET "rule_type" = 'updated rule type', "rule_type_abbreviation" = 'abbrevi', "updated_at" = '2010-02-17 21:49:47' WHERE "id" = 284678023[0m
+Redirected to http://test.host/rule_types/284678023
+Completed in 15ms (DB: 15) | 302 Found [http://test.host/rule_types/284678023?rule_type%5Brule_type%5D=updated+rule+type&rule_type%5Brule_type_abbreviation%5D=abbrevi]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rulemakings" [0m
+
+
+Processing RulemakingsController#create (for 0.0.0.0 at 2010-02-17 13:49:47) [POST]
+  Parameters: {"rulemaking"=>{"phase_id"=>2, "activity_id"=>4, "doe_project_manager_id"=>4, "rule_type_id"=>2, "short_name"=>"short name", "legislative_deadline"=>"2022-09-02", "rule"=>"mWO rulemaking"}}
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" = 'short name') LIMIT 1[0m
+  [4;36;1mRulemaking Create (16.0ms)[0m   [0;1mINSERT INTO "rulemakings" ("updated_at", "phase_id", "activity_id", "notes", "doe_project_manager_id", "rule_type_id", "short_name", "rule", "legislative_deadline", "created_at") VALUES('2010-02-17 21:49:47', 2, 4, NULL, 4, 2, 'short name', 'mWO rulemaking', '2022-09-02 00:00:00', '2010-02-17 21:49:47')[0m
+Redirected to http://test.host/rulemakings/489710792
+Completed in 16ms (DB: 16) | 302 Found [http://test.host/rulemakings?rulemaking%5Bactivity_id%5D=4&rulemaking%5Bdoe_project_manager_id%5D=4&rulemaking%5Blegislative_deadline%5D=2022-09-02&rulemaking%5Bphase_id%5D=2&rulemaking%5Brule%5D=mWO+rulemaking&rulemaking%5Brule_type_id%5D=2&rulemaking%5Bshort_name%5D=short+name]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rulemakings" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rulemakings" [0m
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT * FROM "rulemakings" WHERE ("rulemakings"."id" = 343589580) [0m
+
+
+Processing RulemakingsController#destroy (for 0.0.0.0 at 2010-02-17 13:49:47) [DELETE]
+  Parameters: {"id"=>"343589580"}
+  [4;36;1mRulemaking Load (0.0ms)[0m   [0;1mSELECT * FROM "rulemakings" WHERE ("rulemakings"."id" = 343589580) [0m
+  [4;35;1mRulemaking Destroy (16.0ms)[0m   [0mDELETE FROM "rulemakings" WHERE "id" = 343589580[0m
+Redirected to http://test.host/rulemakings
+Completed in 16ms (DB: 16) | 302 Found [http://test.host/rulemakings/343589580]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rulemakings" [0m
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT * FROM "rulemakings" WHERE ("rulemakings"."id" = 343589580) [0m
+
+
+Processing RulemakingsController#edit (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+  Parameters: {"id"=>"343589580"}
+  [4;36;1mRulemaking Load (0.0ms)[0m   [0;1mSELECT * FROM "rulemakings" WHERE ("rulemakings"."id" = 343589580) [0m
+Rendering template within layouts/application
+Rendering rulemakings/edit
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT * FROM "rule_types" [0m
+  [4;36;1mDoeProjectManager Load (0.0ms)[0m   [0;1mSELECT * FROM "doe_project_managers" [0m
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT * FROM "phases" [0m
+  [4;36;1mActivity Load (0.0ms)[0m   [0;1mSELECT * FROM "activities" [0m
+Rendered rulemakings/_form (31.0ms)
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://test.host/rulemakings/343589580/edit]
+
+
+Processing RulemakingsController#index (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT * FROM "rulemakings" [0m
+Rendering template within layouts/application
+Rendering rulemakings/index
+Completed in 15ms (View: 15, DB: 0) | 200 OK [http://test.host/rulemakings]
+
+
+Processing RulemakingsController#new (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+Rendering template within layouts/application
+Rendering rulemakings/new
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT * FROM "rule_types" [0m
+  [4;35;1mDoeProjectManager Load (0.0ms)[0m   [0mSELECT * FROM "doe_project_managers" [0m
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT * FROM "phases" [0m
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT * FROM "activities" [0m
+Rendered rulemakings/_form (16.0ms)
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/rulemakings/new]
+  [4;36;1mRulemaking Load (0.0ms)[0m   [0;1mSELECT * FROM "rulemakings" WHERE ("rulemakings"."id" = 343589580) [0m
+
+
+Processing RulemakingsController#show (for 0.0.0.0 at 2010-02-17 13:49:47) [GET]
+  Parameters: {"id"=>"343589580"}
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT * FROM "rulemakings" WHERE ("rulemakings"."id" = 343589580) [0m
+Rendering template within layouts/application
+Rendering rulemakings/show
+  [4;36;1mMilestone Load (0.0ms)[0m   [0;1mSELECT * FROM "milestones" WHERE ("milestones".rulemaking_id = 343589580) [0m
+Completed in 438ms (View: 438, DB: 0) | 200 OK [http://test.host/rulemakings/343589580]
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT * FROM "rulemakings" WHERE ("rulemakings"."id" = 343589580) [0m
+
+
+Processing RulemakingsController#update (for 0.0.0.0 at 2010-02-17 13:49:48) [PUT]
+  Parameters: {"rulemaking"=>{"phase_id"=>2, "activity_id"=>4, "doe_project_manager_id"=>4, "rule_type_id"=>3, "short_name"=>"shorter name", "legislative_deadline"=>"2022-09-02", "rule"=>"mWO rulemaking updated"}, "id"=>"343589580"}
+  [4;36;1mRulemaking Load (0.0ms)[0m   [0;1mSELECT * FROM "rulemakings" WHERE ("rulemakings"."id" = 343589580) [0m
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT "rulemakings".id FROM "rulemakings" WHERE ("rulemakings"."short_name" = 'shorter name' AND "rulemakings".id <> 343589580) LIMIT 1[0m
+  [4;36;1mRulemaking Update (0.0ms)[0m   [0;1mUPDATE "rulemakings" SET "activity_id" = 4, "legislative_deadline" = '2022-09-02 00:00:00', "phase_id" = 2, "rule_type_id" = 3, "short_name" = 'shorter name', "rule" = 'mWO rulemaking updated', "doe_project_manager_id" = 4, "updated_at" = '2010-02-17 21:49:48' WHERE "id" = 343589580[0m
+Redirected to http://test.host/rulemakings/343589580
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rulemakings/343589580?rulemaking%5Bactivity_id%5D=4&rulemaking%5Bdoe_project_manager_id%5D=4&rulemaking%5Blegislative_deadline%5D=2022-09-02&rulemaking%5Bphase_id%5D=2&rulemaking%5Brule%5D=mWO+rulemaking+updated&rulemaking%5Brule_type_id%5D=3&rulemaking%5Bshort_name%5D=shorter+name]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE "users" SET "remember_token" = '469aabadfa77b11da3a1e20260e90783447f28ed', "remember_token_expires_at" = '2010-03-03 21:49:48', "updated_at" = '2010-02-17 21:49:48' WHERE "id" = 192593060[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2010-02-17 13:49:48) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = 'invalid_auth_token') LIMIT 1[0m
+Completed in 15ms (View: 15, DB: 0) | 200 OK [http://test.host/login]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'invalid_auth_token') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE "users" SET "remember_token" = '469aabadfa77b11da3a1e20260e90783447f28ed', "remember_token_expires_at" = '2010-03-03 21:49:48', "updated_at" = '2010-02-17 21:49:48' WHERE "id" = 192593060[0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE "users" SET "remember_token_expires_at" = '2010-02-17 21:44:48' WHERE "id" = 192593060[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2010-02-17 13:49:48) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '469aabadfa77b11da3a1e20260e90783447f28ed') LIMIT 1[0m
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/login]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '469aabadfa77b11da3a1e20260e90783447f28ed') LIMIT 1[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2010-02-17 13:49:48) [POST]
+  Parameters: {"login"=>"quentin", "password"=>"bad password"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'quentin') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/session?login=quentin&password=bad+password]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2010-02-17 13:49:48) [POST]
+  Parameters: {"login"=>"quentin", "password"=>"test"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/session?login=quentin&password=test]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+  [4;35;1mUser Update (15.0ms)[0m   [0mUPDATE "users" SET "remember_token" = '469aabadfa77b11da3a1e20260e90783447f28ed', "remember_token_expires_at" = '2010-03-03 21:49:48', "updated_at" = '2010-02-17 21:49:48' WHERE "id" = 192593060[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2010-02-17 13:49:48) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '469aabadfa77b11da3a1e20260e90783447f28ed') LIMIT 1[0m
+Completed in 0ms (View: 0, DB: 15) | 200 OK [http://test.host/login]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2010-02-17 13:49:48) [GET]
+  [4;36;1mUser Load (16.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 192593060) LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 16ms (DB: 16) | 302 Found [http://test.host/logout]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2010-02-17 13:49:48) [POST]
+  Parameters: {"login"=>"quentin", "password"=>"test", "remember_me"=>"0"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."login" = 'quentin') LIMIT 1[0m
+Redirected to http://test.host/
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=0]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2010-02-17 13:49:48) [POST]
+  Parameters: {"login"=>"quentin", "password"=>"test", "remember_me"=>"1"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'quentin') LIMIT 1[0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE "users" SET "remember_token" = '469aabadfa77b11da3a1e20260e90783447f28ed', "remember_token_expires_at" = '2010-03-03 21:49:48', "updated_at" = '2010-02-17 21:49:48' WHERE "id" = 192593060[0m
+Redirected to http://test.host/
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/session?login=quentin&password=test&remember_me=1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-02-17 13:49:48) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "login"=>"quire", "password"=>"quire", "email"=>"quire@example.com"}}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'quire') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'quire@example.com') LIMIT 1[0m
+  [4;35;1mUser Create (16.0ms)[0m   [0mINSERT INTO "users" ("salt", "updated_at", "crypted_password", "last", "remember_token_expires_at", "first", "remember_token", "organization", "login", "email", "created_at") VALUES('b5fc58365930fc5661a0d3c15c7bd222d8ef4cba', '2010-02-17 21:49:48', 'bfbc951cc4f84ed1191a169a2c2bb261f737a280', NULL, NULL, NULL, NULL, NULL, 'quire', 'quire@example.com', '2010-02-17 21:49:48')[0m
+Redirected to http://test.host/
+Completed in 141ms (DB: 16) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-02-17 13:49:48) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "login"=>"quire", "password"=>"quire", "email"=>nil}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'quire') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 31ms (View: 15, DB: 0) | 200 OK [http://test.host/users?user%5Bemail%5D=&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-02-17 13:49:48) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "login"=>nil, "password"=>"quire", "email"=>"quire@example.com"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" IS NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'quire@example.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 110ms (View: 94, DB: 0) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-02-17 13:49:48) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>nil, "login"=>"quire", "password"=>"quire", "email"=>"quire@example.com"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'quire') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'quire@example.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 15ms (View: 0, DB: 0) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-02-17 13:49:48) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "login"=>"quire", "password"=>nil, "email"=>"quire@example.com"}}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE (LOWER("users"."login") = 'quire') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE (LOWER("users"."email") = 'quire@example.com') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
