@@ -1,4 +1,4 @@
-log/*.log
+/log/development.log
 tmp/*
 tmp/pids/*.pid
 tmp/sessions/*
