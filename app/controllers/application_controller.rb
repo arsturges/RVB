@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
   layout 'application'
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  # uncomment the next line to enable authentication.
-  before_filter :login_required
+  # uncomment the next line to enable authentication. See also sessions_controller.
+  # before_filter :login_required
 
   # this may screw everything up. It may need to be in individual controllers.
   # May need to add an :except=>users or session or something.
