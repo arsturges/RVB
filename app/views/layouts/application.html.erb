@@ -23,8 +23,13 @@
     <%else%>
       <strong>You are not currently logged in.</strong>
       <%= link_to 'Log in', login_path %>
-  <%end%>
-<p style="color: green"><%= flash[:notice] %></p>
+  <% end %>
+<% if flash[:notice] %>
+      <p style="color: green"><%= flash[:notice] %></p>
+  <% end %>
+<% if flash[:warning] %>
+  <p style="color: red"><%= flash[:warning] %></p>
+<%  end %>
 
 <p>Controller name: <%= controller.controller_name %></p>
 <p>Controller action: <%= controller.action_name %></p>

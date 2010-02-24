@@ -9,18 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100127193959) do
+ActiveRecord::Schema.define(:version => 20100224201634) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity"
     t.string   "activity_abbreviation"
     t.integer  "sort"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "date_categories", :force => true do |t|
-    t.string   "date_category"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -86,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20100127193959) do
     t.datetime "updated_at"
     t.string   "remember_token"
     t.datetime "remember_token_expires_at"
+    t.boolean  "admin"
   end
 
 end

@@ -1,7 +1,9 @@
 class ActivitiesController < ApplicationController
   # GET /activities
   # GET /activities.xml
-  
+#  load_and_authorize_resource
+
+  before_filter :admin_filter, :except => [:index, :show]
   
   def index
     @activities = Activity.all
