@@ -24207,3 +24207,70 @@ Rendering rescues/layout (not_found)
   [4;35;1mSQL (187.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100120023036')[0m
   [4;36;1mSQL (157.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100120030717')[0m
   [4;35;1mSQL (172.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100127193959')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (188.0ms)[0m   [0;1mCREATE TABLE "activities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "activity" varchar(255), "activity_abbreviation" varchar(255), "sort" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (343.0ms)[0m   [0;1mCREATE TABLE "doe_project_managers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_manager" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (406.0ms)[0m   [0;1mCREATE TABLE "drivers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "driver" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (344.0ms)[0m   [0;1mCREATE TABLE "milestones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rulemaking_id" integer, "phase_id" integer, "activity_id" integer, "date_category_id" integer, "milestone" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (328.0ms)[0m   [0;1mCREATE TABLE "phases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phase" varchar(255), "sort" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (235.0ms)[0m   [0;1mCREATE TABLE "rule_types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rule_type" varchar(255), "rule_type_abbreviation" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (375.0ms)[0m   [0;1mCREATE TABLE "rulemakings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "rule" varchar(255), "rule_type_id" integer, "notes" text, "doe_project_manager_id" integer, "legislative_deadline" datetime, "phase_id" integer, "activity_id" integer, "short_name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (329.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first" varchar(255), "last" varchar(255), "organization" varchar(255), "login" varchar(255), "email" varchar(255), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(255), "remember_token_expires_at" datetime, "admin" boolean) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (406.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (328.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (16.0ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (312.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100224201634')[0m
+  [4;35;1mSQL (594.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100116004003')[0m
+  [4;36;1mSQL (312.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100116005406')[0m
+  [4;35;1mSQL (219.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100116010033')[0m
+  [4;36;1mSQL (234.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100116010547')[0m
+  [4;35;1mSQL (453.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100116011036')[0m
+  [4;36;1mSQL (312.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100116012313')[0m
+  [4;35;1mSQL (203.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100120023036')[0m
+  [4;36;1mSQL (344.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100120030717')[0m
+  [4;35;1mSQL (391.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100127193959')[0m

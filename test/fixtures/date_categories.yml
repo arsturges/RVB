@@ -1,7 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-planned_start:
-  date_category: MyString
-
-planned_finish:
-  date_category: MyString

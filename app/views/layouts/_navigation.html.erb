@@ -1,0 +1,13 @@
+<div id="navigation">
+  <ul class="primary">
+    <%= tab('Activities', activities_path, :title => 'Activities') %>
+    <%= tab('Date Categories', date_categories_path, :title => 'Date categories') %>
+    <%= tab('DPE Project Managers', doe_project_managers_path, :title => 'DOE project managers')%>
+    <%= tab('Drivers', drivers_path, :title => 'Drivers')  %>
+    <%= tab('Milestones', milestones_path, :title => 'Milestones') %>
+    <%= tab('Phases', phases_path, :title => 'phases') %>
+    <%= tab('Rulke Tpyes', rule_types_path, :title => 'Rule Types') %>
+    <%= tab('Rulemakings', rulemakings_path, :title => 'Rulemakings') { request.path == '/' || params[:controller] == 'rulemakings'} %>
+  </ul>
+      
+</div>

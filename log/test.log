@@ -35290,3 +35290,715 @@ Rendering template within layouts/application
 Rendering users/new
 Completed in 16ms (View: 16, DB: 0) | 200 OK [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire]
   [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "activities" [0m
+
+
+Processing ActivitiesController#create (for 0.0.0.0 at 2010-02-25 15:29:11) [POST]
+  Parameters: {"activity"=>{"activity"=>"a new activity", "sort"=>2, "activity_abbreviation"=>"new activ. abbr."}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 15) | 302 Found [http://test.host/activities?activity%5Bactivity%5D=a+new+activity&activity%5Bactivity_abbreviation%5D=new+activ.+abbr.&activity%5Bsort%5D=2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "activities" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "activities" [0m
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities"."id" = 563629960) [0m
+
+
+Processing ActivitiesController#destroy (for 0.0.0.0 at 2010-02-25 15:29:12) [DELETE]
+  Parameters: {"id"=>"563629960"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 15ms (DB: 0) | 302 Found [http://test.host/activities/563629960]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "activities" [0m
+  [4;35;1mActivity Load (16.0ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities"."id" = 563629960) [0m
+
+
+Processing ActivitiesController#edit (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+  Parameters: {"id"=>"563629960"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 16) | 302 Found [http://test.host/activities/563629960/edit]
+
+
+Processing ActivitiesController#index (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/activities]
+
+
+Processing ActivitiesController#new (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/activities/new]
+  [4;36;1mActivity Load (16.0ms)[0m   [0;1mSELECT * FROM "activities" WHERE ("activities"."id" = 563629960) [0m
+
+
+Processing ActivitiesController#show (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+  Parameters: {"id"=>"563629960"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 16) | 302 Found [http://test.host/activities/563629960]
+  [4;35;1mActivity Load (0.0ms)[0m   [0mSELECT * FROM "activities" WHERE ("activities"."id" = 563629960) [0m
+
+
+Processing ActivitiesController#update (for 0.0.0.0 at 2010-02-25 15:29:12) [PUT]
+  Parameters: {"activity"=>{"activity"=>"updated activity", "sort"=>2, "activity_abbreviation"=>"updated abbrev."}, "id"=>"563629960"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/activities/563629960?activity%5Bactivity%5D=updated+activity&activity%5Bactivity_abbreviation%5D=updated+abbrev.&activity%5Bsort%5D=2]
+
+
+Processing DateCategoriesController#index (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/date_categories]
+
+
+Processing DateCategoriesController#new (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/date_categories/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "doe_project_managers" [0m
+
+
+Processing DoeProjectManagersController#create (for 0.0.0.0 at 2010-02-25 15:29:12) [POST]
+  Parameters: {"doe_project_manager"=>{"project_manager"=>"new project manager"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/doe_project_managers?doe_project_manager%5Bproject_manager%5D=new+project+manager]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "doe_project_managers" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "doe_project_managers" [0m
+  [4;35;1mDoeProjectManager Load (0.0ms)[0m   [0mSELECT * FROM "doe_project_managers" WHERE ("doe_project_managers"."id" = 975247844) [0m
+
+
+Processing DoeProjectManagersController#destroy (for 0.0.0.0 at 2010-02-25 15:29:12) [DELETE]
+  Parameters: {"id"=>"975247844"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/doe_project_managers/975247844]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "doe_project_managers" [0m
+  [4;35;1mDoeProjectManager Load (0.0ms)[0m   [0mSELECT * FROM "doe_project_managers" WHERE ("doe_project_managers"."id" = 975247844) [0m
+
+
+Processing DoeProjectManagersController#edit (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+  Parameters: {"id"=>"975247844"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/doe_project_managers/975247844/edit]
+
+
+Processing DoeProjectManagersController#index (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/doe_project_managers]
+
+
+Processing DoeProjectManagersController#new (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 16ms (DB: 0) | 302 Found [http://test.host/doe_project_managers/new]
+  [4;36;1mDoeProjectManager Load (0.0ms)[0m   [0;1mSELECT * FROM "doe_project_managers" WHERE ("doe_project_managers"."id" = 975247844) [0m
+
+
+Processing DoeProjectManagersController#show (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+  Parameters: {"id"=>"975247844"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 15ms (DB: 0) | 302 Found [http://test.host/doe_project_managers/975247844]
+  [4;35;1mDoeProjectManager Load (0.0ms)[0m   [0mSELECT * FROM "doe_project_managers" WHERE ("doe_project_managers"."id" = 975247844) [0m
+
+
+Processing DoeProjectManagersController#update (for 0.0.0.0 at 2010-02-25 15:29:12) [PUT]
+  Parameters: {"id"=>"975247844", "doe_project_manager"=>{"project_manager"=>"updated manager"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/doe_project_managers/975247844?doe_project_manager%5Bproject_manager%5D=updated+manager]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "drivers" [0m
+
+
+Processing DriversController#create (for 0.0.0.0 at 2010-02-25 15:29:12) [POST]
+  Parameters: {"driver"=>{"driver"=>"new driver"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drivers?driver%5Bdriver%5D=new+driver]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "drivers" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "drivers" [0m
+  [4;35;1mDriver Load (0.0ms)[0m   [0mSELECT * FROM "drivers" WHERE ("drivers"."id" = 980190962) [0m
+
+
+Processing DriversController#destroy (for 0.0.0.0 at 2010-02-25 15:29:12) [DELETE]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drivers/980190962]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "drivers" [0m
+  [4;35;1mDriver Load (0.0ms)[0m   [0mSELECT * FROM "drivers" WHERE ("drivers"."id" = 980190962) [0m
+
+
+Processing DriversController#edit (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drivers/980190962/edit]
+
+
+Processing DriversController#index (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 16ms (DB: 0) | 302 Found [http://test.host/drivers]
+
+
+Processing DriversController#new (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drivers/new]
+  [4;36;1mDriver Load (0.0ms)[0m   [0;1mSELECT * FROM "drivers" WHERE ("drivers"."id" = 980190962) [0m
+
+
+Processing DriversController#show (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drivers/980190962]
+  [4;35;1mDriver Load (0.0ms)[0m   [0mSELECT * FROM "drivers" WHERE ("drivers"."id" = 980190962) [0m
+
+
+Processing DriversController#update (for 0.0.0.0 at 2010-02-25 15:29:12) [PUT]
+  Parameters: {"id"=>"980190962", "driver"=>{"driver"=>"updated driver"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/drivers/980190962?driver%5Bdriver%5D=updated+driver]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "milestones" [0m
+
+
+Processing MilestonesController#create (for 0.0.0.0 at 2010-02-25 15:29:12) [POST]
+  Parameters: {"milestone"=>{"date_category_id"=>5, "rulemaking_id"=>4, "phase_id"=>2, "activity_id"=>13, "milestone"=>"2011-02-04"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/milestones?milestone%5Bactivity_id%5D=13&milestone%5Bdate_category_id%5D=5&milestone%5Bmilestone%5D=2011-02-04&milestone%5Bphase_id%5D=2&milestone%5Brulemaking_id%5D=4]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "milestones" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "milestones" [0m
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT * FROM "milestones" WHERE ("milestones"."id" = 980190962) [0m
+
+
+Processing MilestonesController#destroy (for 0.0.0.0 at 2010-02-25 15:29:12) [DELETE]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 16ms (DB: 0) | 302 Found [http://test.host/milestones/980190962]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "milestones" [0m
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT * FROM "milestones" WHERE ("milestones"."id" = 980190962) [0m
+
+
+Processing MilestonesController#edit (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 15ms (DB: 0) | 302 Found [http://test.host/milestones/980190962/edit]
+
+
+Processing MilestonesController#index (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 16ms (DB: 0) | 302 Found [http://test.host/milestones]
+
+
+Processing MilestonesController#new (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/milestones/new]
+  [4;36;1mMilestone Load (0.0ms)[0m   [0;1mSELECT * FROM "milestones" WHERE ("milestones"."id" = 980190962) [0m
+
+
+Processing MilestonesController#show (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+  Parameters: {"id"=>"980190962"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/milestones/980190962]
+  [4;35;1mMilestone Load (0.0ms)[0m   [0mSELECT * FROM "milestones" WHERE ("milestones"."id" = 980190962) [0m
+
+
+Processing MilestonesController#update (for 0.0.0.0 at 2010-02-25 15:29:12) [PUT]
+  Parameters: {"id"=>"980190962", "milestone"=>{"date_category_id"=>5, "rulemaking_id"=>15, "phase_id"=>2, "activity_id"=>13, "milestone"=>"2011-02-04"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/milestones/980190962?milestone%5Bactivity_id%5D=13&milestone%5Bdate_category_id%5D=5&milestone%5Bmilestone%5D=2011-02-04&milestone%5Bphase_id%5D=2&milestone%5Brulemaking_id%5D=15]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "phases" [0m
+
+
+Processing PhasesController#create (for 0.0.0.0 at 2010-02-25 15:29:12) [POST]
+  Parameters: {"phase"=>{"sort"=>6, "phase"=>"6. fake phase"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/phases?phase%5Bphase%5D=6.+fake+phase&phase%5Bsort%5D=6]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "phases" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "phases" [0m
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT * FROM "phases" WHERE ("phases"."id" = 494300699) [0m
+
+
+Processing PhasesController#destroy (for 0.0.0.0 at 2010-02-25 15:29:12) [DELETE]
+  Parameters: {"id"=>"494300699"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/phases/494300699]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "phases" [0m
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT * FROM "phases" WHERE ("phases"."id" = 494300699) [0m
+
+
+Processing PhasesController#edit (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+  Parameters: {"id"=>"494300699"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/phases/494300699/edit]
+
+
+Processing PhasesController#index (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/phases]
+
+
+Processing PhasesController#new (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/phases/new]
+  [4;36;1mPhase Load (0.0ms)[0m   [0;1mSELECT * FROM "phases" WHERE ("phases"."id" = 494300699) [0m
+
+
+Processing PhasesController#show (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+  Parameters: {"id"=>"494300699"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/phases/494300699]
+  [4;35;1mPhase Load (0.0ms)[0m   [0mSELECT * FROM "phases" WHERE ("phases"."id" = 494300699) [0m
+
+
+Processing PhasesController#update (for 0.0.0.0 at 2010-02-25 15:29:12) [PUT]
+  Parameters: {"id"=>"494300699", "phase"=>{"sort"=>2, "phase"=>"updated phase title"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/phases/494300699?phase%5Bphase%5D=updated+phase+title&phase%5Bsort%5D=2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rule_types" [0m
+
+
+Processing RuleTypesController#create (for 0.0.0.0 at 2010-02-25 15:29:12) [POST]
+  Parameters: {"rule_type"=>{"rule_type"=>"Standard1", "rule_type_abbreviation"=>"STD1"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rule_types?rule_type%5Brule_type%5D=Standard1&rule_type%5Brule_type_abbreviation%5D=STD1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rule_types" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rule_types" [0m
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT * FROM "rule_types" WHERE ("rule_types"."id" = 284678023) [0m
+
+
+Processing RuleTypesController#destroy (for 0.0.0.0 at 2010-02-25 15:29:12) [DELETE]
+  Parameters: {"id"=>"284678023"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rule_types/284678023]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rule_types" [0m
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT * FROM "rule_types" WHERE ("rule_types"."id" = 284678023) [0m
+
+
+Processing RuleTypesController#edit (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+  Parameters: {"id"=>"284678023"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rule_types/284678023/edit]
+
+
+Processing RuleTypesController#index (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rule_types]
+
+
+Processing RuleTypesController#new (for 0.0.0.0 at 2010-02-25 15:29:12) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rule_types/new]
+  [4;36;1mRuleType Load (0.0ms)[0m   [0;1mSELECT * FROM "rule_types" WHERE ("rule_types"."id" = 284678023) [0m
+
+
+Processing RuleTypesController#show (for 0.0.0.0 at 2010-02-25 15:29:13) [GET]
+  Parameters: {"id"=>"284678023"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rule_types/284678023]
+  [4;35;1mRuleType Load (0.0ms)[0m   [0mSELECT * FROM "rule_types" WHERE ("rule_types"."id" = 284678023) [0m
+
+
+Processing RuleTypesController#update (for 0.0.0.0 at 2010-02-25 15:29:13) [PUT]
+  Parameters: {"id"=>"284678023", "rule_type"=>{"rule_type"=>"updated rule type", "rule_type_abbreviation"=>"abbrevi"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rule_types/284678023?rule_type%5Brule_type%5D=updated+rule+type&rule_type%5Brule_type_abbreviation%5D=abbrevi]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rulemakings" [0m
+
+
+Processing RulemakingsController#create (for 0.0.0.0 at 2010-02-25 15:29:13) [POST]
+  Parameters: {"rulemaking"=>{"phase_id"=>2, "activity_id"=>4, "doe_project_manager_id"=>4, "rule_type_id"=>2, "short_name"=>"short name", "legislative_deadline"=>"2022-09-02", "rule"=>"mWO rulemaking"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rulemakings?rulemaking%5Bactivity_id%5D=4&rulemaking%5Bdoe_project_manager_id%5D=4&rulemaking%5Blegislative_deadline%5D=2022-09-02&rulemaking%5Bphase_id%5D=2&rulemaking%5Brule%5D=mWO+rulemaking&rulemaking%5Brule_type_id%5D=2&rulemaking%5Bshort_name%5D=short+name]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "rulemakings" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rulemakings" [0m
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT * FROM "rulemakings" WHERE ("rulemakings"."id" = 343589580) [0m
+
+
+Processing RulemakingsController#destroy (for 0.0.0.0 at 2010-02-25 15:29:13) [DELETE]
+  Parameters: {"id"=>"343589580"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rulemakings/343589580]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "rulemakings" [0m
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT * FROM "rulemakings" WHERE ("rulemakings"."id" = 343589580) [0m
+
+
+Processing RulemakingsController#edit (for 0.0.0.0 at 2010-02-25 15:29:13) [GET]
+  Parameters: {"id"=>"343589580"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rulemakings/343589580/edit]
+
+
+Processing RulemakingsController#index (for 0.0.0.0 at 2010-02-25 15:29:13) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rulemakings]
+
+
+Processing RulemakingsController#new (for 0.0.0.0 at 2010-02-25 15:29:13) [GET]
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rulemakings/new]
+  [4;36;1mRulemaking Load (0.0ms)[0m   [0;1mSELECT * FROM "rulemakings" WHERE ("rulemakings"."id" = 343589580) [0m
+
+
+Processing RulemakingsController#show (for 0.0.0.0 at 2010-02-25 15:29:13) [GET]
+  Parameters: {"id"=>"343589580"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rulemakings/343589580]
+  [4;35;1mRulemaking Load (0.0ms)[0m   [0mSELECT * FROM "rulemakings" WHERE ("rulemakings"."id" = 343589580) [0m
+
+
+Processing RulemakingsController#update (for 0.0.0.0 at 2010-02-25 15:29:13) [PUT]
+  Parameters: {"rulemaking"=>{"phase_id"=>2, "activity_id"=>4, "doe_project_manager_id"=>4, "rule_type_id"=>3, "short_name"=>"shorter name", "legislative_deadline"=>"2022-09-02", "rule"=>"mWO rulemaking updated"}, "id"=>"343589580"}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/rulemakings/343589580?rulemaking%5Bactivity_id%5D=4&rulemaking%5Bdoe_project_manager_id%5D=4&rulemaking%5Blegislative_deadline%5D=2022-09-02&rulemaking%5Bphase_id%5D=2&rulemaking%5Brule%5D=mWO+rulemaking+updated&rulemaking%5Brule_type_id%5D=3&rulemaking%5Bshort_name%5D=shorter+name]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE "users" SET "remember_token" = '141129501dd2275968fd579829213a1ea195380f', "remember_token_expires_at" = '2010-03-11 23:29:13', "updated_at" = '2010-02-25 23:29:13' WHERE "id" = 192593060[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2010-02-25 15:29:13) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = 'invalid_auth_token') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE "users" SET "remember_token" = '141129501dd2275968fd579829213a1ea195380f', "remember_token_expires_at" = '2010-03-11 23:29:13', "updated_at" = '2010-02-25 23:29:13' WHERE "id" = 192593060[0m
+  [4;35;1mUser Update (0.0ms)[0m   [0mUPDATE "users" SET "remember_token_expires_at" = '2010-02-25 23:24:13' WHERE "id" = 192593060[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2010-02-25 15:29:13) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '141129501dd2275968fd579829213a1ea195380f') LIMIT 1[0m
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2010-02-25 15:29:13) [POST]
+  Parameters: {"login"=>"quentin", "password"=>"bad password"}
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2010-02-25 15:29:13) [POST]
+  Parameters: {"login"=>"quentin", "password"=>"test"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE "users" SET "remember_token" = '141129501dd2275968fd579829213a1ea195380f', "remember_token_expires_at" = '2010-03-11 23:29:13', "updated_at" = '2010-02-25 23:29:13' WHERE "id" = 192593060[0m
+
+
+Processing SessionsController#new (for 0.0.0.0 at 2010-02-25 15:29:13) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '141129501dd2275968fd579829213a1ea195380f') LIMIT 1[0m
+Redirected to http://test.host/
+Filter chain halted as [:admin_filter] rendered_or_redirected.
+Completed in 15ms (DB: 0) | 302 Found [http://test.host/login]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 192593060) [0m
+
+
+Processing SessionsController#destroy (for 0.0.0.0 at 2010-02-25 15:29:13) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 192593060) LIMIT 1[0m
+Redirected to http://test.host/
+Filter chain halted as [:admin_filter] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/logout]
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2010-02-25 15:29:13) [POST]
+  Parameters: {"login"=>"quentin", "password"=>"test", "remember_me"=>"0"}
+
+
+Processing SessionsController#create (for 0.0.0.0 at 2010-02-25 15:29:13) [POST]
+  Parameters: {"login"=>"quentin", "password"=>"test", "remember_me"=>"1"}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-02-25 15:29:13) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "login"=>"quire", "password"=>"quire", "email"=>"quire@example.com"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 15ms (DB: 0) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-02-25 15:29:13) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "login"=>"quire", "password"=>"quire", "email"=>nil}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/users?user%5Bemail%5D=&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-02-25 15:29:13) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "login"=>nil, "password"=>"quire", "email"=>"quire@example.com"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-02-25 15:29:13) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>nil, "login"=>"quire", "password"=>"quire", "email"=>"quire@example.com"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=quire&user%5Bpassword_confirmation%5D=]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-02-25 15:29:13) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"quire", "login"=>"quire", "password"=>nil, "email"=>"quire@example.com"}}
+Redirected to http://test.host/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0ms (DB: 0) | 302 Found [http://test.host/users?user%5Bemail%5D=quire%40example.com&user%5Blogin%5D=quire&user%5Bpassword%5D=&user%5Bpassword_confirmation%5D=quire]
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (15.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
