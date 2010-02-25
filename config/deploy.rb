@@ -1,13 +1,31 @@
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
+set :application, "dalm"
+set :repository,  "git://github.com/arsturges/RVB.git"
 
-set :scm, :subversion
+set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+role :web, "ead5.lbl.gov"                          # Your HTTP server, Apache/etc
+role :app, "ead5.lbl.gov"                          # This may be the same as your `Web` server
+role :db,  "ead5.lbl.gov", :primary => true # This is where Rails migrations will run
+set :deploy_to,     "/data/www/html/#{application}"
+set :use_sudo, false
+set :deploy_via, :remote_cache
+ssh_options[:forward_agent] = true
+
+namespace :deploy do
+
+  task :restart do
+    run "cd #{current_path}/tmp && touch restart.txt"
+  end
+
+  task :after_symlink do
+    run <<-CMD
+      ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml &&
+      ln -nfs #{shared_path}/db/development.sqlite3  #{release_path}/db/development.sqlite3  &&
+      ln -nfs #{shared_path}/db/production.sqlite3  #{release_path}/db/production.sqlite3
+    CMD
+  end
+end
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need

@@ -20,16 +20,17 @@
     <td><%=h rulemaking.rule_type_id %></td>
     <td><%=h rulemaking.notes %></td>
     <td><%=h rulemaking.doe_project_manager_id %></td>
-    <td><%=h rulemaking.legislative_deadline.to_date %></td>
+    <td><%=h rulemaking.legislative_deadline %></td>
     <td><%=h rulemaking.phase_id %></td>
     <td><%=h rulemaking.activity_id %></td>
     <td><%=h rulemaking.short_name %></td>
+    <% if admin? %>
     <td><%= link_to 'Edit', edit_rulemaking_path(rulemaking) %></td>
     <td><%= link_to 'Destroy', rulemaking, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New rulemaking', new_rulemaking_path %>
+<%= link_to 'New rulemaking', new_rulemaking_path if admin? %>

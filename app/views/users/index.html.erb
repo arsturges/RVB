@@ -6,8 +6,6 @@
     <th>first</th>
     <th>last</th>
     <th>Admin?</th>
-    <th>crypted_password</th>
-    <th>salt</th>
   </tr>
 
 <% @users.each do |user| %>
@@ -16,8 +14,6 @@
     <td><%=h user.first %></td>
     <td><%=h user.last %></td>
     <td><%=h user.admin %></td>
-    <td><%=h user.crypted_password %></td>
-    <td><%=h user.salt %></td>
   </tr>
 <% end %>
 </table>

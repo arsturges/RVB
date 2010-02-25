@@ -22,14 +22,16 @@ class ApplicationController < ActionController::Base
 #    redirect_to root_url
 #  end
 
+  #for views
   def admin?
     current_user.admin?
   end
   helper_method :admin?
 
+  #for controller actions
   def admin_filter
     unless admin?
-      flash[:warning] = "Access denied for non-admins"
+      flash[:warning] = "You must be an admin to access that page."
       redirect_to root_path
       return false
     end

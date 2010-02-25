@@ -12,7 +12,6 @@
     <td><%=h activity.activity %></td>
     <td><%=h activity.activity_abbreviation %></td>
     <td><%=h activity.sort %></td>
-    <td><%= link_to 'Show', activity %></td>
 
   <% if admin?  %>
       <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
@@ -26,5 +25,3 @@
 <% if admin? %>
   <%= link_to 'New activity', new_activity_path %>
 <% end %>
-
-<%= debug(current_user) %>

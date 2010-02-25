@@ -333,5 +333,5 @@
   </tr>
 </table>
 
-<%= link_to 'Edit', edit_rulemaking_path(@rulemaking) %> |
+<%= link_to 'Edit', edit_rulemaking_path(@rulemaking) if admin? %> |
 <%= link_to 'Back', rulemakings_path %>
