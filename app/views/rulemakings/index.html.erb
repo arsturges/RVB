@@ -15,18 +15,18 @@
 
 <% @rulemakings.each do |rulemaking| %>
   <tr>
-    <td><%=h rulemaking.id %></td>
-    <td><%= link_to rulemaking.rule, rulemaking %></td>
-    <td><%=h rulemaking.rule_type.rule_type_abbreviation %></td>
-    <td><%=h rulemaking.notes %></td>
-    <td><%=h rulemaking.doe_project_manager_id %></td>
-    <td><%=h rulemaking.legislative_deadline %></td>
-    <td><%=h rulemaking.phase_id %></td>
-    <td><%=h rulemaking.activity_id %></td>
-    <td><%=h rulemaking.short_name %></td>
+    <td class="attribute string"><%=h rulemaking.id %></td>
+    <td class="attribute string"><%= link_to rulemaking.rule, rulemaking %></td>
+    <td class="attribute string"><%=h rulemaking.rule_type.rule_type_abbreviation %></td>
+    <td class="attribute string"><%=h rulemaking.notes %></td>
+    <td class="attribute string"><%=h rulemaking.doe_project_manager.try(:project_manager) %></td>
+    <td class="attribute string"><%=h rulemaking.legislative_deadline.to_date.to_formatted_s(:long) if rulemaking.legislative_deadline %></td>
+    <td class="attribute string"><%=h rulemaking.phase_id %></td>
+    <td class="attribute string"><%=h rulemaking.activity_id %></td>
+    <td class="attribute string"><%=h rulemaking.short_name %></td>
     <% if admin? %>
-    <td><%= link_to 'Edit', edit_rulemaking_path(rulemaking) %></td>
-    <td><%= link_to 'Destroy', rulemaking, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="button edit"><%= link_to 'Edit', edit_rulemaking_path(rulemaking) %></td>
+    <td class="button delete" ><%= link_to 'Destroy', rulemaking, :confirm => 'Are you sure?', :method => :delete %></td>
     <% end %>
   </tr>
 <% end %>
@@ -35,4 +35,3 @@
 <br />
 <%= link_to 'New rulemaking', new_rulemaking_path if admin? %>
 
-<%= debug(@rulemakings) %>
