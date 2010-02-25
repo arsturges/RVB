@@ -1,6 +1,8 @@
 class PhasesController < ApplicationController
   # GET /phases
   # GET /phases.xml
+  before_filter :admin_filter, :except => [:index, :show]
+
   def index
     @phases = Phase.all
 

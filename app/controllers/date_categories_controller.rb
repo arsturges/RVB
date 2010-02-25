@@ -1,6 +1,8 @@
 class DateCategoriesController < ApplicationController
   # GET /date_categories
   # GET /date_categories.xml
+
+  before_filter :admin_filter, :except => [:index, :show]
   def index
     @date_categories = DateCategory.all
 

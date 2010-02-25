@@ -1,6 +1,8 @@
 class DriversController < ApplicationController
   # GET /drivers
   # GET /drivers.xml
+ 
+    before_filter :admin_filter, :except => [:index, :show]
   def index
     @drivers = Driver.all
 

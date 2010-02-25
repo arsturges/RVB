@@ -1,6 +1,8 @@
 class MilestonesController < ApplicationController
   # GET /milestones
   # GET /milestones.xml
+  before_filter :admin_filter, :except => [:index, :show]
+
   def index
     @milestones = Milestone.all
 

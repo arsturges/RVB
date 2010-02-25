@@ -1,6 +1,8 @@
 class DoeProjectManagersController < ApplicationController
   # GET /doe_project_managers
   # GET /doe_project_managers.xml
+  before_filter :admin_filter, :except => [:index, :show]
+
   def index
     @doe_project_managers = DoeProjectManager.all
 

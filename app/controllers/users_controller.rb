@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   # render new.rhtml
+  before_filter :admin_filter, :except => [:index, :show]
+
   def new
   end
 

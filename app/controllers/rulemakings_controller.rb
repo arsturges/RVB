@@ -1,6 +1,8 @@
 class RulemakingsController < ApplicationController
   # GET /rulemakings
   # GET /rulemakings.xml
+   before_filter :admin_filter, :except => [:index, :show]
+
   def index
     @rulemakings = Rulemaking.all
 

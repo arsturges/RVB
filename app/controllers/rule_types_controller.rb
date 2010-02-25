@@ -1,6 +1,8 @@
 class RuleTypesController < ApplicationController
   # GET /rule_types
   # GET /rule_types.xml
+  before_filter :admin_filter, :except => [:index, :show]
+
   def index
     @rule_types = RuleType.all
 
