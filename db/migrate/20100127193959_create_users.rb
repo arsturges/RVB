@@ -12,6 +12,7 @@ class CreateUsers < ActiveRecord::Migration
       t.column :updated_at,                :datetime
       t.column :remember_token,            :string
       t.column :remember_token_expires_at, :datetime
+      t.column :admin,                     :boolean, :default => 0 #this deault also appears in the user model. Redundant?
       
       
     end
