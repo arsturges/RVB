@@ -8,13 +8,14 @@
 <% @doe_project_managers.each do |doe_project_manager| %>
   <tr>
     <td><%=h doe_project_manager.project_manager %></td>
-    <td><%= link_to 'Show', doe_project_manager %></td>
+    <% if admin? %>
     <td><%= link_to 'Edit', edit_doe_project_manager_path(doe_project_manager) %></td>
     <td><%= link_to 'Destroy', doe_project_manager, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New doe_project_manager', new_doe_project_manager_path %>
+<%= link_to 'New doe_project_manager', new_doe_project_manager_path if admin?%>

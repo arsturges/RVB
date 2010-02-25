@@ -8,13 +8,14 @@
 <% @drivers.each do |driver| %>
   <tr>
     <td><%=h driver.driver %></td>
-    <td><%= link_to 'Show', driver %></td>
+    <% if admin? %>
     <td><%= link_to 'Edit', edit_driver_path(driver) %></td>
     <td><%= link_to 'Destroy', driver, :confirm => 'Are you sure?', :method => :delete %></td>
+    <%  end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New driver', new_driver_path %>
+<%= link_to 'New driver', new_driver_path if admin? %>

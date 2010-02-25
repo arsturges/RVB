@@ -8,13 +8,14 @@
 <% @date_categories.each do |date_category| %>
   <tr>
     <td><%=h date_category.date_category %></td>
-    <td><%= link_to 'Show', date_category %></td>
+    <% if admin? %>
     <td><%= link_to 'Edit', edit_date_category_path(date_category) %></td>
     <td><%= link_to 'Destroy', date_category, :confirm => 'Are you sure?', :method => :delete %></td>
+    <%  end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New date_category', new_date_category_path %>
+<%= link_to 'New date_category', new_date_category_path if admin? %>

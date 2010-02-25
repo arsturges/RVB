@@ -10,13 +10,14 @@
   <tr>
     <td><%=h phase.phase %></td>
     <td><%=h phase.sort %></td>
-    <td><%= link_to 'Show', phase %></td>
+    <% if admin? %>
     <td><%= link_to 'Edit', edit_phase_path(phase) %></td>
     <td><%= link_to 'Destroy', phase, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New phase', new_phase_path %>
+<%= link_to 'New phase', new_phase_path if admin? %>

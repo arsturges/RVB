@@ -10,13 +10,14 @@
   <tr>
     <td><%=h rule_type.rule_type %></td>
     <td><%=h rule_type.rule_type_abbreviation %></td>
-    <td><%= link_to 'Show', rule_type %></td>
+    <% if admin? %>
     <td><%= link_to 'Edit', edit_rule_type_path(rule_type) %></td>
     <td><%= link_to 'Destroy', rule_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New rule_type', new_rule_type_path %>
+<%= link_to 'New rule_type', new_rule_type_path if admin? %>
