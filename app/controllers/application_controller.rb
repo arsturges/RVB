@@ -17,14 +17,10 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 
-#  rescue_from CanCan::AccessDenied do |exception|
-#    flash[:error] = "Access denied."
-#    redirect_to root_url
-#  end
 
   #for views
   def admin?
-    current_user.admin?
+    @current_user.admin?
   end
   helper_method :admin?
 
@@ -36,6 +32,4 @@ class ApplicationController < ActionController::Base
       return false
     end
   end
-
-
 end

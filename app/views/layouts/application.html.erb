@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Groups: <%= controller.action_name %></title>
+  <title>DALM: <%= controller.action_name %></title>
   <%= javascript_include_tag 'jquery', 'jquery.tablednd_0_5', 'jquery.form', 'jquery.dragsort-0.3', 'jquery.autocomplete', 'cycle', 'admin', 'rails', 'application', :cache => true %>
-  <%= stylesheet_link_tag 'reset', 'cockpit', 'admin' %>
+  <%= stylesheet_link_tag 'reset', 'cockpit', 'admin' %> 
 </head>
 <body>
     <div id="identity">
-      <h1>DALM (DOE)</h1>
+      <h1>DOE Appliance Legislation</h1>
       <% if logged_in? %>
-      <strong><%=h current_user.login %></strong>
-      <%= link_to 'Log out', logout_path %>
-    <%else%>
-      <%= link_to 'Log in', login_path %>
+
+        <h3>You are logged in as <%=h current_user.login %>.
+        <%= link_to 'Log out', logout_path %></h3>
+      <% else %>
+        <h3><%= link_to 'Log in', login_path %></h3>
   <% end %>
     </div>
     

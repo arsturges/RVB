@@ -58,7 +58,7 @@ body {
   width: 1000px; }
 
 #identity {
-  background: url(/images/cockpit/admin/t.png) center bottom no-repeat transparent;
+  /*background: url(/images/cockpit/admin/t.png) center bottom no-repeat transparent; */
   margin: 0 auto;
   overflow: hidden;
   padding: 2px 95px;
@@ -67,12 +67,20 @@ body {
   #identity h1 {
     display: block;
     font-size: 2em;
-		color:pink;
+    color:orange;
     margin: 0;
     padding: 0;
     float: left;
     margin: 9px 0;
-    overflow: hidden;
+    width: 122px; }
+  #identity h3 {
+    display: block;
+    font-size: 1.5em;
+    color:orange;
+    margin: 0;
+    padding: 0;
+    float: left;
+    margin: 9px 0;
     width: 122px; }
   #identity h2 {
     color: #FFF;

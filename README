@@ -1,16 +1,13 @@
 == TODO
 Next steps w/ josh:
 
-    * Find out rulemaking.phase.phase_id doesn't work (but sometimes does)
     * Get testing happening
-    * Look at schema
-    * CSS (prototype?)
+    * CSS
     * Step back and look at design. Greenfield this? Rails 3?
     * Get NDA signed
     * list of all final rules by rulemaking, date
     * SQL input box?
     * calendar widget for rulemakings/show/
-    * fix /gitignore files to stop tracking logs
 
 
 

@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class ActivitiesControllerTest < ActionController::TestCase
+
+
+
   test "should get index" do
     get :index
     assert_response :success
@@ -20,8 +23,11 @@ class ActivitiesControllerTest < ActionController::TestCase
     assert_redirected_to activity_path(assigns(:activity))
   end
 
+
+
   test "should show activity" do
-    get :show, :id => activities(:omb_review).to_param
+    activity = Factory(:activity)
+    get :show, :id => activity.id
     assert_response :success
   end
 

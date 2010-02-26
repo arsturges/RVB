@@ -1,4 +1,8 @@
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
+Factory.define :activity do |a|
+    a.activity 'First activity'
+    a.activity_abbreviation 'first abbrev'
+    a.sort '1'
+  end
 
-puts "Hello World"
+
+  # => "joe.doe@example.com"
