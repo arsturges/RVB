@@ -7,7 +7,7 @@
 </head>
 <body>
     <div id="identity">
-      <h1>DOE Appliance Legislation</h1>
+      <h1><%= link_to 'DOE Appliance Legislation', root_path %></h1>
       <% if logged_in? %>
 
         <h3>You are logged in as <%=h current_user.login %>.

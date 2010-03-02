@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ActivityTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
+
   test "shouldn't save with blank fields" do
     a = Activity.new
     a.activity=""

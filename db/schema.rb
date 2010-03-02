@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(:version => 20100224201634) do
     t.datetime "updated_at"
   end
 
+  create_table "date_categories", :force => true do |t|
+    t.string "date_category"
+  end
+
   create_table "doe_project_managers", :force => true do |t|
     t.string   "project_manager"
     t.datetime "created_at"

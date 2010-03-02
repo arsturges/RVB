@@ -3,6 +3,3 @@ Factory.define :activity do |a|
     a.activity_abbreviation 'first abbrev'
     a.sort '1'
   end
-
-
-  # => "joe.doe@example.com"
