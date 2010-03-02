@@ -20,7 +20,8 @@ Rails::Initializer.run do |config|
   config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   #config.gem "restful_authentication"
-  #config.gem "factory_girl", :source => "http://gemcutter.org"
+  config.gem "factory_girl"
+  config.gem "searchlogic"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

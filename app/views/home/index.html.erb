@@ -1,14 +1,43 @@
+ <% form_for @search do |f| %>
+    Rulemaking: <%= f.select :rulemaking_id,  Rulemaking.all.collect {|r| [r.short_name, r.id]}, :include_blank => true %>
+    Phase: <%= f.select :phase_id, Phase.all.collect {|p| [p.phase, p.id]}, :include_blank => true %>
+    Activity: <%= f.select :activity_id, Activity.all.collect {|a| [a.activity, a.id]}, :include_blank => true %> <br />
+    Date Category: <%= f.select :date_category_id, DateCategory.all.collect {|d| [d.date_category, d.id]}, :include_blank => true %>
+    Milestone between: <%= f.text_field :milestone_gt, :size => 9 %>
+    and: <%= f.text_field :milestone_lt, :size => 9 %>
+    <%= f.submit "Search" %>
+<% end %>
 
-<p>Primary inputs:</p>
-<p><%= link_to "Activities", activities_path %></p>
-<p><%= link_to "Date Categories", date_categories_path %></p>
-<p><%= link_to "DOE Project Managers", doe_project_managers_path %></p>
-<p><%= link_to "Drivers", drivers_path %></p>
-<p><%= link_to "Milestones", milestones_path %></p>
-<p><%= link_to "Phases", phases_path %></p>
-<p><%= link_to "Rule Types", rule_types_path %></p>
-<p><%= link_to "Rulemakings", rulemakings_path %></p>
+<script type="text/javascript">
+      Calendar.setup({
+        inputField     :    "search_milestone_gt",
+        ifFormat       :    "%Y-%m-%d"
+    });
+    Calendar.setup({
+        inputField     :    "search_milestone_lt",
+        ifFormat       :    "%Y-%m-%d"
+    });
+</script>
 
-<p>View all upcoming final rule activities</p>
-<p>View all upcoming Federal Register publication milestones</p>
 
+
+<table class="listing"> <!-- Find all upcoming Federal Register publication milestones -->
+  <tr>
+      <th><%=sort_link("Rulemaking", "rulemakings.short_name") %></th>
+      <th><%=sort_link("Phase", "Phases.phase") %></th>
+      <th><%=sort_link("Activities", "activities.activity") %></th>
+      <th><%=sort_link("Date Category", "date_categories.date_category") %></th>
+      <th><%=sort_link("Milestone", "Milestones.milestone") %></th>
+      <th>Time from Today</th>
+  </tr>
+    <% @federal_registers.each do |milestone| %>
+  <tr class="listing <%= cycle('odd', 'even') %>" >
+    <td class="attribute"><%=h milestone.rulemaking.short_name %></td>
+    <td><%= h milestone.phase.phase %> </td>
+    <td><%= h milestone.activity.activity %> </td>
+    <td><%= h milestone.date_category.date_category %> </td>
+    <td><%= h milestone.milestone.to_date %></td>
+    <td><%= distance_of_time_in_words(Time.now, milestone.milestone)  %> </td>
+  </tr>
+<% end %>
+</table>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100224201634) do
+ActiveRecord::Schema.define(:version => 20100302220430) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20100224201634) do
     t.integer  "phase_id"
     t.integer  "activity_id"
     t.integer  "date_category_id"
-    t.datetime "milestone"
+    t.date     "milestone"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

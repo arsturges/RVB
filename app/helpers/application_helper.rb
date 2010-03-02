@@ -20,4 +20,13 @@ module ApplicationHelper
     e = extra ? "spinner_#{extra}" : 'spinner'
     image_tag('spinner.gif', :id => e, :style => 'display:none', :class => 'spinner')
   end
+
+  def sort_link(header, column)
+        if params[:order].to_s.include?(column)
+          order = params[:order].split(' ')[1]
+           order = (order == 'asc') ? 'desc' : 'asc'
+      end
+      order ||= 'asc'
+    link_to(header, params.dup.merge!({:order => "#{column} #{order}"}))
+  end
 end
