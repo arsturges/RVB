@@ -17,7 +17,7 @@
     <td><%=h milestone.phase.phase%></td>
     <td><%=h milestone.activity.activity %></td>
     <td><%=h milestone.date_category.date_category %></td>
-    <td><%=h milestone.milestone.to_date %></td>
+    <td><%=h milestone.milestone %></td>
     <% if admin? %>
     <td><%= link_to 'Show', milestone %></td>
     <td><%= link_to 'Edit', edit_milestone_path(milestone) %></td>

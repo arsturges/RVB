@@ -36,7 +36,7 @@
     <td><%= h milestone.phase.phase %> </td>
     <td><%= h milestone.activity.activity %> </td>
     <td><%= h milestone.date_category.date_category %> </td>
-    <td><%= h milestone.milestone.to_date %></td>
+    <td><%= h milestone.milestone %></td>
     <td><%= distance_of_time_in_words(Time.now, milestone.milestone)  %> </td>
   </tr>
 <% end %>

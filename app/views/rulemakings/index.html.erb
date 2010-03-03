@@ -20,7 +20,7 @@
     <td class="attribute string"><%=h rulemaking.rule_type.rule_type_abbreviation %></td>
     <td class="attribute string"><%=h rulemaking.notes %></td>
     <td class="attribute string"><%=h rulemaking.doe_project_manager.try(:project_manager) %></td>
-    <td class="attribute string"><%=h rulemaking.legislative_deadline.to_date.to_formatted_s(:long) if rulemaking.legislative_deadline %></td>
+    <td class="attribute string"><%=h rulemaking.legislative_deadline.to_formatted_s(:long) if rulemaking.legislative_deadline %></td>
     <td class="attribute string"><%=h rulemaking.phase_id %></td>
     <td class="attribute string"><%=h rulemaking.activity_id %></td>
     <td class="attribute string"><%=h rulemaking.short_name %></td>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100302220430) do
+ActiveRecord::Schema.define(:version => 20100303202455) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20100302220430) do
     t.integer  "rule_type_id"
     t.text     "notes"
     t.integer  "doe_project_manager_id"
-    t.datetime "legislative_deadline"
+    t.date     "legislative_deadline"
     t.integer  "phase_id"
     t.integer  "activity_id"
     t.string   "short_name"
