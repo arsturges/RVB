@@ -2,32 +2,22 @@ require 'test_helper'
 
 class ActivityTest < ActiveSupport::TestCase
 
-  test "shouldn't save with blank fields" do
-    a = Activity.new
-    a.activity=""
-    assert !a.save
-    a.activity_abbreviation=""
-    assert !a.save
-    a.activity="new activity"
-    assert !a.save
-    a.activity_abbreviation="abb"
-    a.sort=2
+  test "shouldn't allow same activity and sort" do
+    # but it does. Try it and see for yourself.
+
+    a = Factory.build(:activity)
     assert a.save
 
-    b=Activity.new
-    b.activity="new activity"
-    b.activity_abbreviation="abbrev"
-    b.sort=2
+    b = Factory.build(:activity)
+    assert !b.save
 
-    assert !b.save
-    b.activity="another activity"
-    assert !b.save
-    b.sort=3
-    assert b.save
+  end
 
-    b.sort="four"
-    assert !b.save
-    b.sort=4
-    assert b.save
+  test "should't allow nil activity name or sort" do
+    c = Factory.build(:activity, :activity=>nil)
+    assert !c.save
+
+    d = Factory.build(:activity, :sort =>nil)
+    assert !d.save
   end
 end

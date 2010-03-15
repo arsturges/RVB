@@ -30,7 +30,7 @@
       <th><%=sort_link("Milestone", "Milestones.milestone") %></th>
       <th>Time from Today</th>
   </tr>
-    <% @federal_registers.each do |milestone| %>
+    <% @milestone_data.each do |milestone| %>
   <tr class="listing <%= cycle('odd', 'even') %>" >
     <td class="attribute"><%=h milestone.rulemaking.short_name %></td>
     <td><%= h milestone.phase.phase %> </td>

@@ -1,0 +1,25 @@
+<h1>Listing products</h1>
+
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Rulemaking</th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%=h product.product %></td>
+    <td><%=h product.rulemaking.try(:short_name) %></td>
+
+  <% if admin?  %>
+      <td><%= link_to 'Edit', edit_product_path(product) %></td>
+      <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if admin? %>
+  <%= link_to 'New product', new_product_path %>
+<% end %>

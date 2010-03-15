@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class HomeControllerTest < ActionController::TestCase
+class ProductsControllerTest < ActionController::TestCase
   def setup
     login
   end

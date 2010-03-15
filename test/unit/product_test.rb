@@ -1,10 +1,6 @@
 require 'test_helper'
 
-class HomeControllerTest < ActionController::TestCase
-  def setup
-    login
-  end
-
+class ProductTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   test "the truth" do
     assert true

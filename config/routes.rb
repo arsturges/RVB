@@ -5,6 +5,8 @@ ActionController::Routing::Routes.draw do |map|
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   
+  map.resources :products
+
   map.resources :users # added by restful_authentication
 
   map.resource :session#, :controller => 'sessions' # added by restful_authentication. Note that "resource" is singular. Huh.
@@ -13,7 +15,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :date_categories
 
-  map.resources :rulemakings
+  map.resources :rulemakings, :member => { :assign_products => :get, :save_products => :post }
 
   map.resources :activities
 
@@ -24,6 +26,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :rule_types
 
   map.resources :phases
+
 
 
 

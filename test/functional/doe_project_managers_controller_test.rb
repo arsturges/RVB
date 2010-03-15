@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class DoeProjectManagersControllerTest < ActionController::TestCase
+  def setup
+    login
+  end
+
   test "should get index" do
     get :index
     assert_response :success

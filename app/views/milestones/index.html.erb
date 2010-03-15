@@ -13,7 +13,7 @@
 <% @milestones.each do |milestone| %>
   <tr>
     <td><%=h milestone.id %></td>
-    <td><%=h milestone.rulemaking.short_name %></td>
+    <td><%=h milestone.rulemaking.try(:short_name) %></td>
     <td><%=h milestone.phase.phase%></td>
     <td><%=h milestone.activity.activity %></td>
     <td><%=h milestone.date_category.date_category %></td>

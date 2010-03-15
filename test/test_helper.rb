@@ -35,5 +35,10 @@ class ActiveSupport::TestCase
   # -- they do not yet inherit this setting
   fixtures :all
 
+  def login(user = :andy)
+   @user = users(user)
+   @request.session[:user_id] = @user.id
+  end
+
   # Add more helper methods to be used by all tests here...
 end

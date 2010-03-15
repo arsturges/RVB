@@ -11,6 +11,7 @@ class Rulemaking < ActiveRecord::Base
 
   #no foreign keys in table "rulemaking"
   has_many :milestones
+  has_many :products
 
  default_scope :order => "short_name"
 end

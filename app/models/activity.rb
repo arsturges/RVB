@@ -6,8 +6,4 @@ class Activity < ActiveRecord::Base
 
   has_many :rulemakings
   has_many :milestones
-
-  def self.fed_reg_pub
-    find_by_activity ("Federal Register Review and Publication")
-  end
 end

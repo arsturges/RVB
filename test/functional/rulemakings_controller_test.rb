@@ -1,6 +1,10 @@
-require 'test_helper'
+require File.dirname(__FILE__) + '/../test_helper'
 
 class RulemakingsControllerTest < ActionController::TestCase
+  def setup
+    login
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -41,5 +45,26 @@ class RulemakingsControllerTest < ActionController::TestCase
     end
 
     assert_redirected_to rulemakings_path
+  end
+
+  test "should get assigned products page" do
+    get :assign_products, :id => rulemakings(:aham1).id
+    assert_response :success
+  end
+
+  test "should assign products to rulemaking" do
+    product = products(:two)
+    assert_nil(product.rulemaking)
+    post :save_products, :id => rulemakings(:aham1).id, :products => [product.id]
+    assert_redirected_to :action => :show
+    assert_equal Product.find(product.id).rulemaking, rulemakings(:aham1)
+  end
+
+  test "should remove product assignment from rulemaking" do
+    product = products(:one)
+    assert_equal product.rulemaking, rulemakings(:aham1)
+    post :save_products, :id => rulemakings(:aham1).id, :products => [product.id]
+    assert_redirected_to :action => :show
+     assert_nil(Product.find(product.id).rulemaking)
   end
 end

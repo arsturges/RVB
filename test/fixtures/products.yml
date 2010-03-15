@@ -1,7 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  driver: EISA 2007
+  product: MyString
+  rulemaking: aham1
 
 two:
-  driver: 6 year review
+  product: MyString
+  rulemaking_id:

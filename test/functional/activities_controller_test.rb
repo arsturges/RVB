@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class ActivitiesControllerTest < ActionController::TestCase
-
+def setup
+    login
+  end
 
 
   test "should get index" do
@@ -32,18 +34,21 @@ class ActivitiesControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit, :id => activities(:omb_review).to_param
+    activity = Factory(:activity)
+    get :edit, :id => activity.id
     assert_response :success
   end
 
   test "should update activity" do
-    put :update, :id => activities(:omb_review).to_param, :activity => {:activity=>"updated activity", :activity_abbreviation=>"updated abbrev.", :sort=>2 }
+    activity = Factory(:activity)
+    put :update, :id => activity.id, :activity => {:activity=>activity.activity, :activity_abbreviation=>activity.activity_abbreviation, :sort=>activity.sort }
     assert_redirected_to activity_path(assigns(:activity))
   end
 
   test "should destroy activity" do
+    activity = Factory(:activity)
     assert_difference('Activity.count', -1) do
-      delete :destroy, :id => activities(:omb_review).to_param
+      delete :destroy, :id => activity.id
     end
 
     assert_redirected_to activities_path

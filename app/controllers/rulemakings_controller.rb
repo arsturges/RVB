@@ -87,6 +87,18 @@ class RulemakingsController < ApplicationController
     end
   end
 
+  def assign_products
+    @rulemaking = Rulemaking.find(params[:id])
+    @products = @rulemaking.products
+  end
 
+  def save_products
+    @rulemaking = Rulemaking.find(params[:id])
+     current_product_ids = @rulemaking.products.collect {|product| product.id.to_s}
+     products_to_remove = current_product_ids - params[:products]
+     Product.update_all("rulemaking_id = null", :id => products_to_remove)
+     Product.update_all("rulemaking_id = #{@rulemaking.id}", :id => params[:products])
+     redirect_to :action => :show
 
+  end
 end

@@ -3,6 +3,7 @@ quentin:
   last: Smith
   organization: McGrwar Hill
   login: quentin
+  admin: false
   email: quentin@example.com
   crypted_password: 00742970dc9e6319f8019fd54864d3ea740f04b1 # test
   salt: 7e3041ebc2fc05a40c60028e2c4901a81035d3cd
@@ -26,6 +27,7 @@ andy:
   organization: LBNL
   login: asturges
   email: arsturges@lbl.gob
+  admin: true
   crypted_password: 00742970dc9e6319f8019fd54864d3ea740f04b1 # test
   salt: 7e3041ebc2fc05a40c60028e2c4901a81035d3cd
   created_at: <%= 1.days.ago.to_s :db %>
