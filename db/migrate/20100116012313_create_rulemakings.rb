@@ -5,7 +5,7 @@ class CreateRulemakings < ActiveRecord::Migration
       t.integer :rule_type_id
       t.text :notes
       t.integer :doe_project_manager_id
-      t.datetime :legislative_deadline
+      t.date :legislative_deadline
       t.integer :phase_id
       t.integer :activity_id
       t.string :short_name

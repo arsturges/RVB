@@ -37,7 +37,7 @@
     <td><%= h milestone.activity.activity %> </td>
     <td><%= h milestone.date_category.date_category %> </td>
     <td><%= h milestone.milestone %></td>
-    <td><%= distance_of_time_in_words(Time.now, milestone.milestone)  %> </td>
+    <td><%= distance_of_time_in_words(Time.now, milestone.milestone)  + (milestone.milestone >=  Date.today ? " from now" : " ago")   %> </td>
   </tr>
 <% end %>
 </table>

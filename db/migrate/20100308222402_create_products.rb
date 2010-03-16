@@ -3,6 +3,7 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.string :product
       t.integer :rulemaking_id
+      t.integer :sector_id
 
       t.timestamps
     end
