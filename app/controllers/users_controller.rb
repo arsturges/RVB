@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # render new.rhtml
-  before_filter :admin_filter, :except => [:index, :show]
+  before_filter :admin_filter, :except => []
 
   def new
   end
@@ -23,9 +23,9 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @user.save
     if @user.errors.empty?
-      self.current_user = @user
+      #self.current_user = @user
       redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up!"
+      flash[:notice] = "New user has been created."
     else
       render :action => 'new'
     end

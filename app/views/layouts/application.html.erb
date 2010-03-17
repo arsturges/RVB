@@ -2,12 +2,9 @@
 <html>
 <head>
   <title>DALM: <%= controller.action_name %></title>
-  <%= javascript_include_tag 'jquery', 'jquery.tablednd_0_5', 'jquery.form', 'jquery.dragsort-0.3', 'jquery.autocomplete', 'cycle', 'admin', 'rails', 'application', :cache => true %>
+  <%= javascript_include_tag 'jquery','jquery-ui','jrails',  'jquery.tablednd_0_5', 'jquery.form', 'jquery.dragsort-0.3', 'jquery.autocomplete', 'cycle', 'admin',  'application', :cache => true %>
   <%= stylesheet_link_tag 'reset', 'cockpit', 'admin' %>
-  <%= stylesheet_link_tag "/javascripts/jscalendar-1.0/calendar-win2k-cold-1.css" %>
-  <%= javascript_include_tag "jscalendar-1.0/calendar.js" %>
-  <%= javascript_include_tag "jscalendar-1.0/lang/calendar-en.js" %>
-  <%= javascript_include_tag "jscalendar-1.0/calendar-setup.js" %>
+  <%= stylesheet_link_tag "ui-lightness/jquery-ui-1.7.2.custom" %>
 
 </head>
 <body>

@@ -13,5 +13,10 @@ class Rulemaking < ActiveRecord::Base
   has_many :milestones
   has_many :products
 
- default_scope :order => "short_name"
+  named_scope :descend_by_doe_project_manager, :order => "doe_project_managers.project_manager desc"
+  named_scope :ascend_by_doe_project_manager, :order => "doe_project_managers.project_manager"
+
+
+
+# default_scope :order => "short_name"
 end

@@ -1,9 +1,9 @@
 <h1>Listing rulemakings</h1>
 
-<table>
+<table class="listing">
   <tr>
     <th><%=order(@search, :by => :id) %></th>
-    <th><%=order(@search, :by => :rulemaking) %></th>
+    <th><%=order(@search, :by => :rule, :as => "Rulemaking") %></th>
     <th><%=order(@search, :by => :rule_type) %></th>
     <th><%=order(@search, :by => :notes) %></th>
     <th><%=order(@search, :by => :doe_project_manager) %></th>
@@ -15,8 +15,8 @@
 
 <% @rulemakings.each do |rulemaking| %>
   <tr>
-    <td class="attribute string"><%=h rulemaking.id %></td>
-    <td class="attribute string"><%= link_to rulemaking.rule, rulemaking %></td>
+    <td class="listing"><%=h rulemaking.id %></td>
+    <td class="listing"><%= link_to rulemaking.rule, rulemaking %></td>
     <td class="attribute string"><%=h rulemaking.rule_type.rule_type_abbreviation %></td>
     <td class="attribute string"><%=h rulemaking.notes %></td>
     <td class="attribute string"><%=h rulemaking.doe_project_manager.try(:project_manager) %></td>

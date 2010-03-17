@@ -2,9 +2,11 @@
 
 <table>
   <tr>
-    <th>user</th>
-    <th>first</th>
-    <th>last</th>
+    <th>Login</th>
+    <th>First</th>
+    <th>Last</th>
+    <th>Organization</th>
+    <th>Email</th>
     <th>Admin?</th>
   </tr>
 
@@ -13,7 +15,11 @@
     <td><%=h user.login %></td>
     <td><%=h user.first %></td>
     <td><%=h user.last %></td>
+    <td><%=h user.organization %> </td>
+    <td><%=h user.email %> </td>
     <td><%=h user.admin %></td>
   </tr>
 <% end %>
 </table>
+
+<%= link_to "Add new user", :new_user %>

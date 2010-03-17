@@ -4,14 +4,15 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
-  
+
+
   map.resources :products
 
   map.resources :users # added by restful_authentication
 
   map.resource :session#, :controller => 'sessions' # added by restful_authentication. Note that "resource" is singular. Huh.
   
-  map.resources :milestones
+  map.resources :milestones, :collection => { :set_milestone_date => :post }
 
   map.resources :date_categories
 

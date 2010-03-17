@@ -8,20 +8,9 @@
     <%= f.submit "Search" %>
 <% end %>
 
-<script type="text/javascript">
-      Calendar.setup({
-        inputField     :    "search_milestone_gt",
-        ifFormat       :    "%Y-%m-%d"
-    });
-    Calendar.setup({
-        inputField     :    "search_milestone_lt",
-        ifFormat       :    "%Y-%m-%d"
-    });
-</script>
 
 
-
-<table class="listing"> <!-- Find all upcoming Federal Register publication milestones -->
+<table class="listing">
   <tr>
       <th><%=order(@search, :by => :short_name, :as => "Rulemaking") %></th>
       <th><%=order(@search, :by => :phase) %></th>
@@ -33,7 +22,7 @@
     <% @milestone_data.each do |milestone| %>
   <tr class="listing <%= cycle('odd', 'even') %>" >
     <td class="attribute"><%=h milestone.rulemaking.short_name %></td>
-    <td><%= h milestone.phase.phase %> </td>
+    <td class ="listing"><%= h milestone.phase.phase %> </td>
     <td><%= h milestone.activity.activity %> </td>
     <td><%= h milestone.date_category.date_category %> </td>
     <td><%= h milestone.milestone %></td>

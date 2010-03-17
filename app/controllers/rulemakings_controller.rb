@@ -1,20 +1,14 @@
 class RulemakingsController < ApplicationController
-  # GET /rulemakings
-  # GET /rulemakings.xml
+
    before_filter :admin_filter, :except => [:index, :show]
 
   def index
-    @rulemakings = Rulemaking.all
     @search = Rulemaking.search(params[:search])
+    @rulemakings =  @search.all(:include => [:rule_type, :doe_project_manager, :phase, :activity], :order=>params[:order])
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @rulemakings }
-    end
   end
 
-  # GET /rulemakings/1
-  # GET /rulemakings/1.xml
+
   def show
     @rulemaking = Rulemaking.find(params[:id])
     @milestones = @rulemaking.milestones

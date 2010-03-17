@@ -1,5 +1,5 @@
 body {
-  background: url(/images/cockpit/admin/bg.jpg) top center repeat-x #333;
+  background: top center repeat-x #333;
   background-attachment: fixed;
   color: #333;
   font-family: Helvetica, Lucida Grande, Arial;
@@ -8,7 +8,7 @@ body {
   line-height: 1.6em; }
 
 #wrapper {
-  background: url(/images/cockpit/admin/m.png) center top repeat-y transparent;
+  background: center top repeat-y transparent;
   margin: 0 auto;
   overflow: hidden;
   width: 1070px; }
@@ -162,16 +162,16 @@ a {
       .section ul.secondary li a {
         -moz-border-radius: 10px;
         -webkit-border-radius: 10px;
-        background: url(/images/cockpit/admin/secondary_bg.jpg) repeat-x 0 0;
+        background:  repeat-x 0 0;
         padding: 4px 8px 3px;
         color: white; }
         .section ul.secondary li a:hover {
-          background: url(/images/cockpit/admin/secondary_bg.jpg) repeat-x 0 -20px; }
+          background:  repeat-x 0 -20px; }
         .section ul.secondary li a.current {
           background: #222; }
 
 .header, .parent_header, .child_header {
-  background: #999898 url(/images/cockpit/admin/section_bg.jpg) repeat-x;
+  background: #999898 repeat-x;
   padding: 10px 10px 0;
   border-bottom-color: #999898;
   border-bottom-style: solid;
