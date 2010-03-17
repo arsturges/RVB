@@ -5,6 +5,7 @@ class RulemakingsController < ApplicationController
 
   def index
     @rulemakings = Rulemaking.all
+    @search = Rulemaking.search(params[:search])
 
     respond_to do |format|
       format.html # index.html.erb

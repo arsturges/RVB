@@ -23,11 +23,11 @@
 
 <table class="listing"> <!-- Find all upcoming Federal Register publication milestones -->
   <tr>
-      <th><%=sort_link("Rulemaking", "rulemakings.short_name") %></th>
-      <th><%=sort_link("Phase", "Phases.phase") %></th>
-      <th><%=sort_link("Activities", "activities.activity") %></th>
-      <th><%=sort_link("Date Category", "date_categories.date_category") %></th>
-      <th><%=sort_link("Milestone", "Milestones.milestone") %></th>
+      <th><%=order(@search, :by => :short_name, :as => "Rulemaking") %></th>
+      <th><%=order(@search, :by => :phase) %></th>
+      <th><%=order(@search, :by => :activity) %></th>
+      <th><%=order(@search, :by => :date_category) %></th>
+      <th><%=order(@search, :by => :milestone) %></th>
       <th>Time from Today</th>
   </tr>
     <% @milestone_data.each do |milestone| %>
@@ -37,7 +37,7 @@
     <td><%= h milestone.activity.activity %> </td>
     <td><%= h milestone.date_category.date_category %> </td>
     <td><%= h milestone.milestone %></td>
-    <td><%= distance_of_time_in_words(Time.now, milestone.milestone)  + (milestone.milestone >=  Date.today ? " from now" : " ago")   %> </td>
+    <td><%= distance_of_time_in_words(Time.now, milestone.milestone)  + (milestone.milestone >  Date.today ? " from now" : " ago")   %> </td>
   </tr>
 <% end %>
 </table>

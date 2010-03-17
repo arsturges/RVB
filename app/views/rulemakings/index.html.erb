@@ -2,15 +2,15 @@
 
 <table>
   <tr>
-    <th>ID</th>
-    <th>Rule</th>
-    <th>Rule type</th>
-    <th>Notes</th>
-    <th>DOE project manager</th>
-    <th>Legislative Deadline</th>
-    <th>Phase</th>
-    <th>Activity</th>
-    <th>Short name</th>
+    <th><%=order(@search, :by => :id) %></th>
+    <th><%=order(@search, :by => :rulemaking) %></th>
+    <th><%=order(@search, :by => :rule_type) %></th>
+    <th><%=order(@search, :by => :notes) %></th>
+    <th><%=order(@search, :by => :doe_project_manager) %></th>
+    <th><%=order(@search, :by => :legislative_deadline) %></th>
+    <th><%=order(@search, :by => :phase) %></th>
+    <th><%=order(@search, :by => :activity) %></th>
+    <th><%=order(@search, :by => :short_name) %></th>
   </tr>
 
 <% @rulemakings.each do |rulemaking| %>
