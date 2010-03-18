@@ -5,6 +5,8 @@ class DriversControllerTest < ActionController::TestCase
     login
   end
 
+  d = Factory(:driver)
+
   test "should get index" do
     get :index
     assert_response :success
@@ -25,23 +27,23 @@ class DriversControllerTest < ActionController::TestCase
   end
 
   test "should show driver" do
-    get :show, :id => drivers(:one).to_param
+    get :show, :id => d.id
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => drivers(:one).to_param
+    get :edit, :id => d.id
     assert_response :success
   end
 
   test "should update driver" do
-    put :update, :id => drivers(:one).to_param, :driver => {:driver=>"updated driver" }
+    put :update, :id => d.id, :driver => {:driver=>"updated driver" }
     assert_redirected_to driver_path(assigns(:driver))
   end
 
   test "should destroy driver" do
     assert_difference('Driver.count', -1) do
-      delete :destroy, :id => drivers(:one).to_param
+      delete :destroy, :id => d.id
     end
 
     assert_redirected_to drivers_path

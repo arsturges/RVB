@@ -1,26 +1,63 @@
+  Factory.sequence :name do |n|
+    "John Doe #{n}"
+  end
+
+  Factory.sequence :string do |n|
+    "random string  #{n}"
+  end
+
+  Factory.sequence :integer do |n|
+    "#{n}"
+  end
+
 Factory.define :activity do |a|
-    a.activity 'First activity'
-    a.sort '235'
+    a.activity { Factory.next(:string)}
+    a.sort { Factory.next(:integer)}
   end
 
 Factory.define :date_category do |d|
-  d.date_category 'Planned Start'
+  d.date_category { Factory.next(:string) }
 end
 
 Factory.define :doe_project_manager do |d|
-  d.project_manager 'John Doe'
+  d.project_manager { Factory.next(:name) }
+
 end
 
 Factory.define :driver do |d|
-  d.driver 'EISA 2007'
+  d.driver { Factory.next(:string)}
 end
 
 Factory.define :phase do |p|
-  p.phase 'NOPR'
-  p.sort '246'
+  p.phase {Factory.next(:string)}
+  p.sort { Factory.next(:integer)}
 end
 
-Factory.define :rule_type do |r|
-  r.rule_type 'Standard'
-  r.rule_type_abbreviation 'std'
+  Factory.define :product do |p|
+    p.product { Factory.next(:string)}
+    p.association :rulemaking
+    p.association :sector
+  end
+
+Factory.define :milestone do |m|
+  m.association :rulemaking
+  m.association :phase
+  m.association :activity
+  m.association :date_category
+  m.milestone Date.today
+end
+
+Factory.define :rule_type do |rt|
+  rt.rule_type { Factory.next(:string)}
+  rt.rule_type_abbreviation {Factory.next(:string)}
+end
+
+Factory.define :rulemaking do |r|
+  r.rule {Factory.next(:string)}
+  r.association :rule_type
+  r.association :doe_project_manager
+  r.legislative_deadline Date.today
+  r.association :phase
+  r.association :activity
+  r.short_name {Factory.next(:string)}
 end

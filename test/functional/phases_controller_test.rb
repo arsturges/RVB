@@ -5,6 +5,8 @@ class PhasesControllerTest < ActionController::TestCase
     login
   end
 
+  p=Factory(:phase)
+
   test "should get index" do
     get :index
     assert_response :success
@@ -25,23 +27,23 @@ class PhasesControllerTest < ActionController::TestCase
   end
 
   test "should show phase" do
-    get :show, :id => phases(:framework).to_param
+    get :show, :id => p.id
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => phases(:framework).to_param
+    get :edit, :id => p.id
     assert_response :success
   end
 
   test "should update phase" do
-    put :update, :id => phases(:framework).to_param, :phase => {:phase=>"updated phase title", :sort=>2}
+    put :update, :id => p.id, :phase => {:phase=>"updated phase title", :sort=>2}
     assert_redirected_to phase_path(assigns(:phase))
   end
 
   test "should destroy phase" do
     assert_difference('Phase.count', -1) do
-      delete :destroy, :id => phases(:framework).to_param
+      delete :destroy, :id => p.id
     end
 
     assert_redirected_to phases_path
