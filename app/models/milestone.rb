@@ -8,6 +8,13 @@ class Milestone < ActiveRecord::Base
   belongs_to :activity
   belongs_to :date_category
 
-  named_scope :descend_by_short_name, :order => "rulemakings.short_name desc"
   named_scope :ascend_by_short_name, :order => "rulemakings.short_name"
+  named_scope :descend_by_short_name, :order => "rulemakings.short_name desc"
+  named_scope :ascend_by_phase, :order => "phases.phase"
+  named_scope :descend_by_phase, :order => "phases.phase desc"
+  named_scope :ascend_by_activity, :order => "activities.activity"
+  named_scope :descend_by_activity, :order => "activities.activity desc"
+  named_scope :ascend_by_date_category, :order => "date_categories.date_category"
+  named_scope :descend_by_date_category, :order => "date_categories.date_category desc"
+  
 end

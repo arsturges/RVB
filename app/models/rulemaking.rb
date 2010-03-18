@@ -13,8 +13,17 @@ class Rulemaking < ActiveRecord::Base
   has_many :milestones
   has_many :products
 
-  named_scope :descend_by_doe_project_manager, :order => "doe_project_managers.project_manager desc"
+  named_scope :ascend_by_rule_type, :order => "rule_types.rule_type"
+  named_scope :descend_by_rule_type, :order => "rule_types.rule_type desc"
+
+  named_scope :ascend_by_activity, :order => "activities.activity"
+  named_scope :descend_by_activity, :order => "activities.activity desc"
   named_scope :ascend_by_doe_project_manager, :order => "doe_project_managers.project_manager"
+  named_scope :descend_by_doe_project_manager, :order => "doe_project_managers.project_manager desc"
+  named_scope :ascend_by_phase, :order => "phases.phase"
+  named_scope :descend_by_phase, :order => "phases.phase desc"
+  named_scope :ascend_by_activity, :order => "activities.activity"
+  named_scope :descend_by_activity, :order => "activities.activity desc"
 
 
 

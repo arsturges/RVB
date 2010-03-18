@@ -21,8 +21,8 @@
     <td class="attribute string"><%=h rulemaking.notes %></td>
     <td class="attribute string"><%=h rulemaking.doe_project_manager.try(:project_manager) %></td>
     <td class="attribute string"><%=h rulemaking.legislative_deadline.to_formatted_s(:long) if rulemaking.legislative_deadline %></td>
-    <td class="attribute string"><%=h rulemaking.phase_id %></td>
-    <td class="attribute string"><%=h rulemaking.activity_id %></td>
+    <td class="attribute string"><%=h rulemaking.phase.phase unless rulemaking.phase_id == 0%></td>
+    <td class="attribute string"><%=h rulemaking.activity.activity unless rulemaking.activity_id ==0 %></td>
     <td class="attribute string"><%=h rulemaking.short_name %></td>
     <% if admin? %>
     <td class="button edit"><%= link_to 'Edit', edit_rulemaking_path(rulemaking) %></td>
