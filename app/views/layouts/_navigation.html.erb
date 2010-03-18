@@ -2,6 +2,8 @@
   <ul class="primary">
 
     <%= tab('Home', root_path, :title => 'Home') %>
+    <%= tab('Products', products_path, :title => 'products') %>
+    <%= tab('Rulemakings', rulemakings_path, :title => 'Rulemakings') { request.path == '/' || params[:controller] == 'rulemakings'} %>
     <%= tab('Activities', activities_path, :title => 'Activities') %>
     <%= tab('Date Categories', date_categories_path, :title => 'Date categories') %>
     <%= tab('DOE Project Managers', doe_project_managers_path, :title => 'DOE project managers')%>
@@ -9,7 +11,6 @@
     <%= tab('Milestones', milestones_path, :title => 'Milestones') %>
     <%= tab('Phases', phases_path, :title => 'phases') %>
     <%= tab('Rule Types', rule_types_path, :title => 'Rule Types') %>
-    <%= tab('Rulemakings', rulemakings_path, :title => 'Rulemakings') { request.path == '/' || params[:controller] == 'rulemakings'} %>
   </ul>
       
 </div>

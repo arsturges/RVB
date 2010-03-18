@@ -3,7 +3,7 @@ require 'test_helper'
 class RuleTypeTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   test "should abide by validations" do
-    r=RuleType.new(:rule_type=>"", :rule_type_abbreviation=>"")
+    r=Factory.build(:rule_type, :rule_type=>"", :rule_type_abbreviation=>"")
     assert !r.save
     r.rule_type="new rule type"
     assert !r.save

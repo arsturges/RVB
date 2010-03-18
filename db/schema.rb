@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100308222402) do
+ActiveRecord::Schema.define(:version => 20100318231031) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity"
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(:version => 20100308222402) do
 
   create_table "products", :force => true do |t|
     t.string   "product"
-    t.integer  "rulemaking_id"
     t.integer  "sector_id"
+    t.integer  "rulemaking_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -82,6 +82,12 @@ ActiveRecord::Schema.define(:version => 20100308222402) do
     t.datetime "updated_at"
   end
 
+  create_table "sectors", :force => true do |t|
+    t.string   "sector"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "first"
     t.string   "last"
@@ -94,7 +100,7 @@ ActiveRecord::Schema.define(:version => 20100308222402) do
     t.datetime "updated_at"
     t.string   "remember_token"
     t.datetime "remember_token_expires_at"
-    t.boolean  "admin",                                   :default => false
+    t.boolean  "admin",                                   :default => false, :null => false
   end
 
 end

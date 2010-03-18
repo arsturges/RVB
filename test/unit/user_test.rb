@@ -4,7 +4,6 @@ class UserTest < ActiveSupport::TestCase
 #class UserTest < Test::Unit::TestCase # this line was changed to the above
 #to match a test file that actually worked.
 
-  #fixtures :users
 
   def test_should_create_user
     assert_difference 'User.count' do

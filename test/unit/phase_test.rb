@@ -2,10 +2,10 @@ require 'test_helper'
 
 class PhaseTest < ActiveSupport::TestCase
   test "should abide by validations" do
-    p = Factory.build(:phase)
+    p = Factory.build(:phase, :phase=>"phase1")
     assert p.save
 
-    q = Factory.build(:phase)
+    q = Factory.build(:phase, :phase=>"phase1")
     assert !q.save
   end
 

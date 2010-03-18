@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :sectors
+
   
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
   map.signup '/signup', :controller => 'users', :action => 'new'

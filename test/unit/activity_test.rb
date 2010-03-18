@@ -2,22 +2,24 @@ require 'test_helper'
 
 class ActivityTest < ActiveSupport::TestCase
 
+  sort = Factory.next(:integer).to_i
+
   test "shouldn't allow same activity and sort" do
     # but it does. Try it and see for yourself.
 
-    a = Factory.build(:activity)
+    a = Activity.new( :activity=> "some activity", :sort => sort  )
     assert a.save
 
-    b = Factory.build(:activity)
+    b = Activity.new( :activity=> "some activity", :sort => sort  )
     assert !b.save
 
   end
 
   test "should't allow nil activity name or sort" do
-    c = Factory.build(:activity, :activity=>nil)
+    c = Activity.new(:activity => "another act", :activity=>nil)
     assert !c.save
 
-    d = Factory.build(:activity, :sort =>nil)
+    d = Activity.new(:activity => nil, :sort =>sort)
     assert !d.save
   end
 end

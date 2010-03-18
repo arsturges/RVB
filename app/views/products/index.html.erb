@@ -1,14 +1,16 @@
 <h1>Listing products</h1>
 
-<table>
+<table class="listing">
   <tr>
     <th>Product</th>
+    <th>Sector</th>
     <th>Rulemaking</th>
   </tr>
 
 <% @products.each do |product| %>
   <tr>
     <td><%=h product.product %></td>
+    <td><%=h product.sector.sector %></td>
     <td><%=h product.rulemaking.try(:short_name) %></td>
 
   <% if admin?  %>

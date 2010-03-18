@@ -3,9 +3,9 @@ require 'test_helper'
 class MilestoneTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   test "shouldn't allow blanks" do
-    a=Milestone.new(:rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>3, :milestone=>"2024-01-04")
-    b=Milestone.new(:rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>4, :milestone=>"2014-03-04")
-    c=Milestone.new(:rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>5, :milestone=>"2034-07-14")
+    a=Factory.build(:milestone, :rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>3, :milestone=>"2024-01-04")
+    b=Factory.build(:milestone, :rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>4, :milestone=>"2024-01-04")
+    c=Factory.build(:milestone, :rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>5, :milestone=>"2024-01-04")
     
     assert a.save
     assert b.save
@@ -38,11 +38,11 @@ class MilestoneTest < ActiveSupport::TestCase
     a.milestone="1999"
     assert !a.save
 
-    #a.milestone="01-01-2002"
-    #assert !a.save # This fails; I guess it CAN accept multiple date formats.
+    a.milestone="01-01-2002"
+    assert a.save
 
-    c.milestone="a text string"
-    assert !c.save
+    a.milestone="a text string"
+    assert !a.save
 
   end
 end

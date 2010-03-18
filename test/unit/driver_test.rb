@@ -3,10 +3,10 @@ require 'test_helper'
 class DriverTest < ActiveSupport::TestCase
 
   test "should abide by validations" do
-    d = Factory.build(:driver)
+    d = Factory.build(:driver, :driver => "EISA 2005")
     assert d.save
 
-    e = Factory.build(:driver)
+    e = Factory.build(:driver, :driver => "EISA 2005")
     assert !e.save
   end
 
