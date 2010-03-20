@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :sectors
+  
 
   
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
@@ -9,6 +9,8 @@ ActionController::Routing::Routes.draw do |map|
 
 
   map.resources :products
+
+  map.resources :sectors
 
   map.resources :users # added by restful_authentication
 
@@ -36,7 +38,7 @@ ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
-  #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
+     map.connect 'home/search', :controller => 'home', :action => 'search'
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:

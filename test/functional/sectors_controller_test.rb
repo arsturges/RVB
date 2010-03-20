@@ -12,32 +12,34 @@ class SectorsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  s = Factory(:sector)
+
   test "should create sector" do
-    assert_difference('Sector.count') do
-      post :create, :sector => { }
-    end
+    assert_difference('SeSect') do
+      post :create, :sector => { :sector=>"a sector." }
+  end
 
     assert_redirected_to sector_path(assigns(:sector))
   end
 
   test "should show sector" do
-    get :show, :id => sectors(:one).to_param
+    get :show, :id => s.id
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => sectors(:one).to_param
+    get :edit, :id => s.id
     assert_response :success
   end
 
   test "should update sector" do
-    put :update, :id => sectors(:one).to_param, :sector => { }
+    put :update, :id => s.id, :sector => {:sector => 'new sector name'}
     assert_redirected_to sector_path(assigns(:sector))
   end
 
   test "should destroy sector" do
     assert_difference('Sector.count', -1) do
-      delete :destroy, :id => sectors(:one).to_param
+      delete :destroy, :id => s.id
     end
 
     assert_redirected_to sectors_path

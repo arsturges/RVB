@@ -61,3 +61,7 @@ Factory.define :rulemaking do |r|
   r.association :activity
   r.short_name {Factory.next(:string)}
 end
+
+Factory.define :sector do |s|
+  s.sector { Factory.next(:string)}
+end

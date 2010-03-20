@@ -8,13 +8,17 @@ class Milestone < ActiveRecord::Base
   belongs_to :activity
   belongs_to :date_category
 
-  named_scope :ascend_by_short_name, :order => "rulemakings.short_name"
-  named_scope :descend_by_short_name, :order => "rulemakings.short_name desc"
-  named_scope :ascend_by_phase, :order => "phases.phase"
-  named_scope :descend_by_phase, :order => "phases.phase desc"
-  named_scope :ascend_by_activity, :order => "activities.activity"
-  named_scope :descend_by_activity, :order => "activities.activity desc"
-  named_scope :ascend_by_date_category, :order => "date_categories.date_category"
-  named_scope :descend_by_date_category, :order => "date_categories.date_category desc"
+  named_scope :ascend_by_short_name, :order => "rulemakings.short_name", :include => :rulemaking
+  named_scope :descend_by_short_name, :order => "rulemakings.short_name desc", :include => :rulemaking
+  named_scope :ascend_by_phase, :order => "phases.phase", :include => :phase
+  named_scope :descend_by_phase, :order => "phases.phase desc", :include => :phase
+  named_scope :ascend_by_activity, :order => "activities.activity", :include => {:rulemaking => :activity}
+  named_scope :descend_by_activity, :order => "activities.activity desc", :include =>  {:rulemaking => :activity}
+  named_scope :ascend_by_date_category, :order => "date_categories.date_category", :include => :date_category
+  named_scope :descend_by_date_category, :order => "date_categories.date_category desc", :include => :date_category
+  named_scope :ascend_by_milestone_phase, :order => "milestones.phase_id"
+  named_scope :descend_by_milestone_phase, :order => "milestones.phase_id desc"
+  named_scope :ascend_by_milestone_activity, :order => "activities.activity", :include => :activity
+  named_scope :descend_by_milestone_activity, :order => "activities.activity desc", :include => :activity
   
 end

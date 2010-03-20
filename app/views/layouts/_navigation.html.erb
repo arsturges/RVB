@@ -2,8 +2,8 @@
   <ul class="primary">
 
     <%= tab('Home', root_path, :title => 'Home') %>
-    <%= tab('Products', products_path, :title => 'products') %>
-    <%= tab('Rulemakings', rulemakings_path, :title => 'Rulemakings') { request.path == '/' || params[:controller] == 'rulemakings'} %>
+    <%= tab('Search', '/home/search', :title => 'Rulemakings') { params[:controller] == 'home' && params[:action] == 'search'} %>
+    <%= tab('Rulemakings', rulemakings_path, :title => 'Rulemakings') { params[:controller] == 'rulemakings'} %>
     <%= tab('Activities', activities_path, :title => 'Activities') %>
     <%= tab('Date Categories', date_categories_path, :title => 'Date categories') %>
     <%= tab('DOE Project Managers', doe_project_managers_path, :title => 'DOE project managers')%>

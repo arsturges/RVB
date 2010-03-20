@@ -503,7 +503,7 @@ div.tag_field .caption {
     background-image: url(/images/cockpit/icons/handle.gif);
     background-repeat: no-repeat;
     background-position: center center;
-    cursor: -moz-grab;
+
     width: 18px; }
 
 p.empty {

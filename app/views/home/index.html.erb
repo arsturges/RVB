@@ -1,32 +1,33 @@
- <% form_for @search do |f| %>
-    Rulemaking: <%= f.select :rulemaking_id,  Rulemaking.all.collect {|r| [r.short_name, r.id]}, :include_blank => true %>
-    Phase: <%= f.select :phase_id, Phase.all.collect {|p| [p.phase, p.id]}, :include_blank => true %>
-    Activity: <%= f.select :activity_id, Activity.all.collect {|a| [a.activity, a.id]}, :include_blank => true %> <br />
-    Date Category: <%= f.select :date_category_id, DateCategory.all.collect {|d| [d.date_category, d.id]}, :include_blank => true %>
-    Milestone between: <%= f.text_field :milestone_gt, :size => 9 %>
-    and: <%= f.text_field :milestone_lt, :size => 9 %>
-    <%= f.submit "Search" %>
-<% end %>
 
 
-
-<table class="listing">
+    <h2>Current Activities</h2>
+    <table class="listing">
   <tr>
       <th><%=order(@search, :by => :short_name, :as => "Rulemaking") %></th>
-      <th><%=order(@search, :by => :phase) %></th>
-      <th><%=order(@search, :by => :activity) %></th>
-      <th><%=order(@search, :by => :date_category) %></th>
-      <th><%=order(@search, :by => :milestone) %></th>
-      <th>Time from Today</th>
+      <th>Project Manager</th>
+      <th><%=order(@search, :by => :phase, :as=>"Actual Phase <br> (as of 2/19/2010)") %></th>
+      <th><%=order(@search, :by => :activity, :as=>"Actual Activity <br> (as of 2/19/2010)") %></th>
+      <th><%=order(@search, :by => 'milestone_phase', :as=>"Scheduled Phase") %></th>
+      <th><%=order(@search, :by => 'milestone_activity', :as=>"Scheduled Activity") %></th>
+      <th>Legislative Deadline</th>
+      <th><%=order(@search, :by => :milestone, :as => "Projected Finish") %></th>
+      <th>Schedule Lag</th>
+
   </tr>
-    <% @milestone_data.each do |milestone| %>
+  <% @current.each do |milestone| %>
   <tr class="listing <%= cycle('odd', 'even') %>" >
     <td class="attribute"><%=h milestone.rulemaking.short_name %></td>
-    <td class ="listing"><%= h milestone.phase.phase %> </td>
+    <td class ="listing"><%= h milestone.rulemaking.doe_project_manager.try(:project_manager) %> </td>
+    <td class ="listing"><%= h milestone.rulemaking.phase.phase %> </td>
+    <td class ="listing"><%= h milestone.rulemaking.activity.try(:activity)  %> </td>
+    <td class ="listing"><%= h milestone.phase.try(:phase) %> </td>
     <td><%= h milestone.activity.activity %> </td>
-    <td><%= h milestone.date_category.date_category %> </td>
+    <td class ="listing"><%= h milestone.rulemaking.legislative_deadline %> </td>
     <td><%= h milestone.milestone %></td>
-    <td><%= distance_of_time_in_words(Time.now, milestone.milestone)  + (milestone.milestone >  Date.today ? " from now" : " ago")   %> </td>
+    <% planned_start = @planned_starts.detect{|i|i.rulemaking_id == milestone.rulemaking_id and i.phase_id == milestone.phase_id and i.activity_id == milestone.activity_id and i.date_category_id == 2}  %>
+    <td><%= planned_start && milestone.rulemaking.legislative_deadline && (milestone.rulemaking.legislative_deadline - milestone.milestone) != 0 ? number_to_percentage(100*(milestone.milestone - planned_start.milestone).to_d/(milestone.rulemaking.legislative_deadline - milestone.milestone).to_d) : "--" %> </td>
   </tr>
-<% end %>
-</table>
+  <%  end %>
+    </table>
+
+
