@@ -1,0 +1,30 @@
+ <% form_for @search do |f| %>
+    Rulemaking: <%= f.select :rulemaking_id,  Rulemaking.all.collect {|r| [r.short_name, r.id]}, :include_blank => true %>
+    Phase: <%= f.select :phase_id, Phase.all.collect {|p| [p.phase, p.id]}, :include_blank => true %>
+    Activity: <%= f.select :activity_id, Activity.all.collect {|a| [a.activity, a.id]}, :include_blank => true %> <br />
+    Date Category: <%= f.select :date_category_id, DateCategory.all.collect {|d| [d.date_category, d.id]}, :include_blank => true %>
+    Milestone between: <%= f.text_field :milestone_gt, :size => 9 %>
+    and: <%= f.text_field :milestone_lt, :size => 9 %>
+    <%= f.submit "Search" %>
+<% end %>
+
+<table class="listing">
+  <tr>
+      <th><%=order(@search, :by => :short_name, :as => "Rulemaking") %></th>
+      <th><%=order(@search, :by => :phase) %></th>
+      <th><%=order(@search, :by => :activity) %></th>
+      <th><%=order(@search, :by => :date_category) %></th>
+      <th><%=order(@search, :by => :milestone) %></th>
+      <th>Time from Today</th>
+  </tr>
+    <% @milestone_data.each do |milestone| %>
+  <tr class="listing <%= cycle('odd', 'even') %>" >
+    <td class="attribute"><%=h milestone.rulemaking.short_name %></td>
+    <td class ="listing"><%= h milestone.phase.phase %> </td>
+    <td><%= h milestone.activity.activity %> </td>
+    <td><%= h milestone.date_category.date_category %> </td>
+    <td><%= h milestone.milestone %></td>
+    <td><%= distance_of_time_in_words(Time.now, milestone.milestone)  + (milestone.milestone >  Date.today ? " from now" : " ago")   %> </td>
+  </tr>
+<% end %>
+</table>
