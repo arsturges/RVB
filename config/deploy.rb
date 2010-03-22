@@ -18,12 +18,9 @@ namespace :deploy do
     run "cd #{current_path}/tmp && touch restart.txt"
   end
 
-  after "deploy:update_code ", "deploy:my_symlinks"
-  task :my_symlinks do
+  task :after_update_code do
     run <<-CMD
-      ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml &&
-      ln -nfs #{shared_path}/db/development.sqlite3  #{release_path}/db/development.sqlite3  &&
-      ln -nfs #{shared_path}/db/production.sqlite3  #{release_path}/db/production.sqlite3
+      ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml
     CMD
   end
 end
