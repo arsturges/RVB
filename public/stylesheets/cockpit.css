@@ -88,8 +88,7 @@ body {
     font-size: 1em;
     margin: 0;
     padding: 0;
-    background: url(/images/cockpit/admin/logos/powered-by-sop.png) left top no-repeat transparent;
-    float: right;
+        float: right;
     height: 33px;
     width: 174px; }
     #identity h2 a {

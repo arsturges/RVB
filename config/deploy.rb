@@ -1,6 +1,6 @@
 set :application, "dalm"
 set :repository,  "git://github.com/arsturges/RVB.git"
-set :keep_releases, 5
+set :keep_releases, 7
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
@@ -29,6 +29,10 @@ namespace :deploy do
 end
 
 after "deploy", "deploy:cleanup"
+# can I delete the lines above? (25 adn 26?)  ln -nfs #{shared_path}/db/development.sqlite3  #{release_path}/db/development.sqlite3  &&
+      # ln -nfs #{shared_path}/db/production.sqlite3  #{release_path}/db/production.sqlite3
+
+
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need

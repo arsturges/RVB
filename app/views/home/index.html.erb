@@ -21,20 +21,17 @@
     <td class ="listing"><%= h milestone.rulemaking.phase.phase %> </td>
     <td class ="listing"><%= h milestone.rulemaking.activity.try(:activity)  %> </td>
     <td class ="listing"><%= h milestone.phase.try(:phase) %> </td>
-    <td><%= h milestone.activity.activity %> </td>
+    <td class ="listing"><%= h milestone.activity.activity %> </td>
     <td class ="listing"><%= h milestone.rulemaking.legislative_deadline %> </td>
-    <td><%= h milestone.milestone %></td>
-    <% planned_start = @planned_starts.detect{|i|i.rulemaking_id == milestone.rulemaking_id and i.phase_id == milestone.phase_id and i.activity_id == milestone.activity_id and i.date_category_id == 2}  %>
+    <td class ="lsiting"><%= h milestone.milestone %></td>
+    <% planned_finish = @planned_finishes.detect{|i|i.rulemaking_id == milestone.rulemaking_id and i.phase_id == milestone.phase_id and i.activity_id == milestone.activity_id and i.date_category_id == 2}  %>
+     <!--% planned_finish = Milestone.find(:all, :conditions => {:rulemaking_id => milestone.rulemaking_id, :phase_id => milestone.phase_id, :activity_id => milestone.activity_id, :date_category_id => 2 }) %-->
+    
     <td>
-        <% if  planned_start && milestone.rulemaking.legislative_deadline && milestone.rulemaking.legislative_deadline != milestone.milestone %>
-          <%=  number_to_percentage(100 * (milestone.milestone.to_time  -  planned_start.milestone.to_time).to_f / (milestone.rulemaking.legislative_deadline.to_time  -  milestone.milestone.to_time).to_f) %>
-        <% else %>
-          --
-        <% end  %>
+      <% if planned_finish && milestone.rulemaking.legislative_deadline %>
+          <%= schedule_lag(milestone.milestone, planned_finish.milestone, milestone.rulemaking.legislative_deadline) %>
+      <% end %>
     </td>
   </tr>
   <%  end %>
     </table>
-
-
-(Projected Finsih(Activity) - Planned Finish (Activity)) / (Rulemaking Finish (Rule)  - Projected Finish (Activity))
