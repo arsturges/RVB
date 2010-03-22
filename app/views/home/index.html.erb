@@ -25,9 +25,16 @@
     <td class ="listing"><%= h milestone.rulemaking.legislative_deadline %> </td>
     <td><%= h milestone.milestone %></td>
     <% planned_start = @planned_starts.detect{|i|i.rulemaking_id == milestone.rulemaking_id and i.phase_id == milestone.phase_id and i.activity_id == milestone.activity_id and i.date_category_id == 2}  %>
-    <td><%= planned_start && milestone.rulemaking.legislative_deadline && (milestone.rulemaking.legislative_deadline - milestone.milestone) != 0 ? number_to_percentage(100*(milestone.milestone - planned_start.milestone).to_d/(milestone.rulemaking.legislative_deadline - milestone.milestone).to_d) : "--" %> </td>
+    <td>
+        <% if  planned_start && milestone.rulemaking.legislative_deadline && (milestone.rulemaking.legislative_deadline - milestone.milestone) != 0 %>
+          <%=  number_to_percentage(100 * (milestone.milestone  -  planned_start.milestone).to_d / (milestone.rulemaking.legislative_deadline  -  milestone.milestone).to_d) %>
+        <% else %>
+          --
+        <% end  %>
+    </td>
   </tr>
   <%  end %>
     </table>
 
 
+(Projected Finsih(Activity) - Planned Finish (Activity)) / (Rulemaking Finish (Rule)  - Projected Finish (Activity))
