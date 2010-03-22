@@ -1,6 +1,6 @@
 set :application, "dalm"
 set :repository,  "git://github.com/arsturges/RVB.git"
-
+set :keep_releases, 5
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
@@ -18,7 +18,8 @@ namespace :deploy do
     run "cd #{current_path}/tmp && touch restart.txt"
   end
 
-  task :after_symlink do
+  after "deploy:update_code ", "deploy:my_symlinks"
+  task :my_symlinks do
     run <<-CMD
       ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml &&
       ln -nfs #{shared_path}/db/development.sqlite3  #{release_path}/db/development.sqlite3  &&
@@ -26,6 +27,8 @@ namespace :deploy do
     CMD
   end
 end
+
+after "deploy", "deploy:cleanup"
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
