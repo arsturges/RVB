@@ -1,0 +1,22 @@
+<h1>Listing revisions</h1>
+
+<table>
+  <tr>
+    <th>Revision number</th>
+    <th>Revision date</th>
+  </tr>
+
+<% @revisions.each do |revision| %>
+  <tr>
+    <td><%=h revision.revision_number %></td>
+    <td><%=h revision.revision_date %></td>
+    <td><%= link_to 'Show', revision %></td>
+    <td><%= link_to 'Edit', edit_revision_path(revision) %></td>
+    <td><%= link_to 'Destroy', revision, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New revision', new_revision_path %>

@@ -1,0 +1,13 @@
+<p>
+  <b>Revision Number:</b>
+  <%=h @revision.revision_number %>
+</p>
+
+<p>
+  <b>Revision date:</b>
+  <%=h @revision.revision_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_revision_path(@revision) %> |
+<%= link_to 'Back', revisions_path %>

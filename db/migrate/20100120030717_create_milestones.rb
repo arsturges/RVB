@@ -6,6 +6,7 @@ class CreateMilestones < ActiveRecord::Migration
       t.integer :activity_id
       t.integer :date_category_id
       t.date :milestone
+      t.integer :revision_number
 
       t.timestamps
     end

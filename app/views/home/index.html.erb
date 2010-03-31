@@ -1,5 +1,3 @@
-
-
     <h2>Current Activities</h2>
     <table class="listing">
   <tr>
@@ -25,8 +23,7 @@
     <td class ="listing"><%= h milestone.rulemaking.legislative_deadline %> </td>
     <td class ="lsiting"><%= h milestone.milestone %></td>
     <% planned_finish = @planned_finishes.detect{|i|i.rulemaking_id == milestone.rulemaking_id and i.phase_id == milestone.phase_id and i.activity_id == milestone.activity_id and i.date_category_id == 2}  %>
-     <!--% planned_finish = Milestone.find(:all, :conditions => {:rulemaking_id => milestone.rulemaking_id, :phase_id => milestone.phase_id, :activity_id => milestone.activity_id, :date_category_id => 2 }) %-->
-    
+     
     <td>
       <% if planned_finish && milestone.rulemaking.legislative_deadline %>
           <%= schedule_lag(milestone.milestone, planned_finish.milestone, milestone.rulemaking.legislative_deadline) %>

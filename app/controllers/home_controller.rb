@@ -15,7 +15,7 @@ class HomeController < ApplicationController
 
   def search
     @search = Milestone.search(params[:search])
-    @milestone_data = params[:search] ? @search.all(:include => [:rulemaking, :phase, :activity, :date_category]) : []
+    @milestone_data = params[:search] ? @search.all(:include => [:rulemaking, :phase, :activity, :date_category]) : [] #why don't I have to include :revision here?
 
 
 
