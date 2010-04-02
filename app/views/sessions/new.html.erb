@@ -1,3 +1,5 @@
+
+<div style ="text-align: center; border: 2px dashed #AAAAAA; padding: 0.5 em;">
 <% form_tag session_path do -%>
 <p><label for="login">Login</label><br/>
 <%= text_field_tag 'login' %></p>
@@ -15,3 +17,4 @@
     <% if flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>
     <% end %>
+</div>

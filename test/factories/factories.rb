@@ -45,11 +45,17 @@ Factory.define :milestone do |m|
   m.association :activity
   m.association :date_category
   m.milestone Date.today
+  m.association :revision_number, :factory => :revision
 end
+
+  Factory.define :revision do |r|
+    r.revision_number { Factory.next(:integer)}
+    r.revision_date Date.today
+  end
 
 Factory.define :rule_type do |rt|
   rt.rule_type { Factory.next(:string)}
-  rt.rule_type_abbreviation {Factory.next(:string)}
+  rt.rule_type_abbreviation { Factory.next(:string) }
 end
 
 Factory.define :rulemaking do |r|

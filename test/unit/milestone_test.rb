@@ -3,9 +3,9 @@ require 'test_helper'
 class MilestoneTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   test "shouldn't allow blanks" do
-    a=Factory.build(:milestone, :rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>3, :milestone=>"2024-01-04")
-    b=Factory.build(:milestone, :rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>4, :milestone=>"2024-01-04")
-    c=Factory.build(:milestone, :rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>5, :milestone=>"2024-01-04")
+    a=Factory.build(:milestone, :rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>3, :milestone=>Date.today, :revision_number => 1)
+    b=Factory.build(:milestone, :rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>4, :milestone=>Date.today, :revision_number => 2)
+    c=Factory.build(:milestone, :rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>5, :milestone=>Date.today, :revision_number => 2)
     
     assert a.save
     assert b.save

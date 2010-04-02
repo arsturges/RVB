@@ -1,7 +1,7 @@
 class Milestone < ActiveRecord::Base
-  validates_presence_of :rulemaking_id, :phase_id, :activity_id, :date_category_id, :milestone, :revision
-  validates_numericality_of :rulemaking_id, :phase_id, :activity_id, :date_category_id, :revision
-  validates_uniqueness_of :revision, :scope => [:rulemaking_id, :phase_id, :activity_id, :date_category_id], :message => "This date field already exists. Edit the existing date instead of creating a duplicate."
+  validates_presence_of :rulemaking_id, :phase_id, :activity_id, :date_category_id, :milestone, :revision_number
+  validates_numericality_of :rulemaking_id, :phase_id, :activity_id, :date_category_id, :revision_number
+  validates_uniqueness_of :revision_number, :scope => [:rulemaking_id, :phase_id, :activity_id, :date_category_id], :message => "This date field already exists. Edit the existing date instead of creating a duplicate."
 
   belongs_to :rulemaking
   belongs_to :phase

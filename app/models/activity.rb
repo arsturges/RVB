@@ -6,4 +6,5 @@ class Activity < ActiveRecord::Base
 
   has_many :rulemakings
   has_many :milestones
+  
 end
