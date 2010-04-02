@@ -30,5 +30,5 @@ class Rulemaking < ActiveRecord::Base
 
 
 
-# default_scope :order => "short_name"
+ default_scope :order => "short_name"
 end

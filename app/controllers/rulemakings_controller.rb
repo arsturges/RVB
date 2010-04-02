@@ -11,7 +11,8 @@ class RulemakingsController < ApplicationController
 
   def show
     @rulemaking = Rulemaking.find(params[:id])
-    @milestones = @rulemaking.milestones
+    @revision_number = params[:revision_number] || Revision.maximum(:revision_number)
+    @milestones = @rulemaking.milestones.find(:all, :conditions=> {:revision_number => @revision_number})
 
     respond_to do |format|
       format.html # show.html.erb

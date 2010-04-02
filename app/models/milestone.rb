@@ -7,7 +7,7 @@ class Milestone < ActiveRecord::Base
   belongs_to :phase
   belongs_to :activity
   belongs_to :date_category
-  belongs_to :revision
+  belongs_to :revision, :class_name => 'Revision', :foreign_key => 'revision_number'
 
   named_scope :ascend_by_short_name, :order => "rulemakings.short_name", :include => :rulemaking
   named_scope :descend_by_short_name, :order => "rulemakings.short_name desc", :include => :rulemaking

@@ -1,3 +1,10 @@
+<% form_tag(rulemaking_path(@rulemaking), {:method => :get}) do  %>
+<p>
+  <b>Revision Date:</b>
+  <%= select_tag :revision_number, options_for_select(Revision.all.collect {|r| [r.revision_date, r.revision_number]}, @revision_number) %>
+  <%= submit_tag "Go" %>
+</p>
+<% end  %>
 <p>
   <b>Rule:</b>
   <%=h @rulemaking.rule %>

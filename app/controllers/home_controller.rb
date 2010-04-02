@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def index
     @search = Milestone.search(params[:search])
     @started = Milestone.find(:all, :conditions => ["date_category_id = 5 AND milestone < ?  ", Date.today])
-    @underway = @search.all( :conditions => ["date_category_id = 6 AND milestone > ?  AND milestone < ?", Date.today, 2.months.from_now ])
+    @underway = @search.all( :conditions => ["date_category_id = 6 AND milestone > ?  AND milestone < ? AND revision_number = ?", Date.today, 2.months.from_now, Revision.maximum(:revision_number) ])
 
     @current = []
     @underway.each do |um|

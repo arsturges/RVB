@@ -45,7 +45,7 @@ Factory.define :milestone do |m|
   m.association :activity
   m.association :date_category
   m.milestone Date.today
-  m.association :revision_number, :factory => :revision
+  m.association :revision#_number, :factory => :revision
 end
 
   Factory.define :revision do |r|
