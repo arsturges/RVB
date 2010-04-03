@@ -57,8 +57,7 @@ class RulemakingsControllerTest < ActionController::TestCase
   p = Factory(:product)
 
   test "should assign products to rulemaking" do
-    # I don't know how to do this: product = Product.new, :product => {:product "new product", :sector_id => 2}
-    assert_nil(p.rulemaking)
+    #assert_nil(p.rulemaking)
     post :save_products, :id => r.id, :products => [p.id]
     assert_redirected_to :action => :show
     assert_equal Product.find(p.id).rulemaking, r

@@ -19,7 +19,7 @@ def setup
 
   test "should create activity" do
     assert_difference('Activity.count') do
-      post :create, :activity => {:activity=>"a new activity", :activity_abbreviation=>"new activ. abbr.", :sort=>2 }
+      post :create, :activity => { :activity => "a new activity", :activity_abbreviation=>"new activ. abbr.", :sort=>2222 }
     end
     assert_redirected_to activity_path(assigns(:activity))
   end

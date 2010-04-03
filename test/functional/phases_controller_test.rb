@@ -20,7 +20,7 @@ class PhasesControllerTest < ActionController::TestCase
 
   test "should create phase" do
     assert_difference('Phase.count') do
-      post :create, :phase => {:phase=>"6. fake phase", :sort=>6}
+      post :create, :phase => {:phase=>"6. fake phase", :sort=>Factory.next(:integer) }
     end
 
     assert_redirected_to phase_path(assigns(:phase))

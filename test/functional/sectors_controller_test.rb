@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class SectorsControllerTest < ActionController::TestCase
+
+  def setup
+    login
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -12,10 +17,10 @@ class SectorsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  s = Factory(:sector)
+  s = Sector.create(:sector => {:sector => "a new sector again"})
 
   test "should create sector" do
-    assert_difference('SeSect') do
+    assert_difference('Sector.count') do
       post :create, :sector => { :sector=>"a sector." }
   end
 

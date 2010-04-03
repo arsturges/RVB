@@ -95,6 +95,5 @@ class RulemakingsController < ApplicationController
      Product.update_all("rulemaking_id = null", :id => products_to_remove)
      Product.update_all("rulemaking_id = #{@rulemaking.id}", :id => params[:products])
      redirect_to :action => :show
-
   end
 end
