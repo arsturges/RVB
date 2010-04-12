@@ -1,7 +1,0 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
-
-TODO:
-When user selects date from rulemaking, hide fields except for milestone.
-Fix import scripts so that they import all rows, instead of just complete rows.
-Make Rulemaking#Show milestone table dynamically generated.

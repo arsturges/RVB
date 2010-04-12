@@ -12,7 +12,7 @@
 
 <p>
   <b>Rule type:</b>
-  <%=h @rulemaking.rule_type_id %>
+  <%=h @rulemaking.rule_type.rule_type %>
 </p>
 
 <p>
@@ -22,7 +22,7 @@
 
 <p>
   <b>Doe project manager:</b>
-  <%=h @rulemaking.doe_project_manager_id%>
+  <%=h @rulemaking.doe_project_manager.try(:project_manager) %>
 </p>
 
 <p>
@@ -32,12 +32,12 @@
 
 <p>
   <b>Phase:</b>
-  <%=h @rulemaking.phase_id %>
+  <%=h @rulemaking.phase.try(:phase) %>
 </p>
 
 <p>
   <b>Activity:</b>
-  <%=h @rulemaking.activity_id %>
+  <%=h @rulemaking.activity.try(:activity) %>
 </p>
 
 <p>

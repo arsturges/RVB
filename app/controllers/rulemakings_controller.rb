@@ -5,9 +5,7 @@ class RulemakingsController < ApplicationController
   def index
     @search = Rulemaking.search(params[:search])
     @rulemakings =  @search.all(:include => [:rule_type, :doe_project_manager, :phase, :activity], :order=>params[:order])
-
   end
-
 
   def show
     @rulemaking = Rulemaking.find(params[:id])
@@ -19,7 +17,6 @@ class RulemakingsController < ApplicationController
       format.xml  { render :xml => @rulemaking }
     end
   end
-
 
   # GET /rulemakings/new
   # GET /rulemakings/new.xml
