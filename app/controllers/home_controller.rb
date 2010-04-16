@@ -18,7 +18,5 @@ class HomeController < ApplicationController
     @milestone_data = params[:search] ? @search.all(:include => [:rulemaking, :phase, :activity, :date_category]) : [] #why don't I have to include :revision here?
 
 
-
   end
-
 end

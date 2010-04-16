@@ -8,6 +8,7 @@
     <th>Activity</th>
     <th>Date category</th>
     <th>Milestone</th>
+    <th>Revision Number</th>
   </tr>
 
 <% @milestones.each do |milestone| %>
@@ -18,6 +19,7 @@
     <td><%=h milestone.activity.activity %></td>
     <td><%=h milestone.date_category.date_category %></td>
     <td><%=h milestone.milestone %></td>
+    <td><%=h milestone.revision_number %></td>
     <% if admin? %>
     <td><%= link_to 'Show', milestone %></td>
     <td><%= link_to 'Edit', edit_milestone_path(milestone) %></td>
