@@ -1,0 +1,94 @@
+/* 
+This stylesheet appends and overrides styles set by the BlueprintCSS. The Blueprint files should not be modified.
+*/
+
+/* this div can be used for debugging.
+div {
+    outline-color :red;
+    outline-style: solid;
+    outline-width: 1px;
+}
+*/
+body {
+    background: #b0b0b0; /*this interferes with showgrid; leave out for now */
+}
+
+div.container {
+    background-color: #e6e6e6;
+}
+/*=========  table properties  =========== */
+
+.datatable {
+    border: 1px solid #cccccc;
+}
+
+.datatable caption {
+    background:#f9f9f9;
+    font-size: 180%;
+    color: #1c94c4;
+    text-align: center;
+    padding: 0.4em 0 0.3em 0;
+    border: 1px solid #cccccc;
+
+}
+.datatable th {
+    text-transform: uppercase;
+    border: 1px solid #cccccc;
+    text-align: center;
+    background-color: #f6a828;
+    padding: 0.2em;
+}
+tr.even td {background:none;} /* this is to cancel out Blueprint's style. */
+.datatable tr.even {background: #e6e6e6;}
+.datatable tr.odd {background: white;}
+
+.datatable tr:hover {
+    color: #c77405;
+    background-color: #fdf5ce;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #1c94c4;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+
+/*====== Navigation/header styles  ==========*/
+#navigation {
+    font-size: 1.75em;
+}
+
+#navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 1em;
+}
+
+#navigation li {
+    display: inline;
+}
+
+#navigation a:link, #navigation a:visited {
+    padding: 0.4em 1em 0.4em 1em;
+    color: #1c94c4;
+    background-color: #f6f6f6;
+    text-decoration: none;
+    border: 1px solid #cccccc;
+}
+
+#navigation a:hover {
+    color: #c77405;
+    background-color: #fdf5ce;
+    border-color: #fbcb09;
+}
+a.button {
+    padding: 0.4em 1em 0.4em 1em;
+    color: #1c94c4;
+    background-color: #f6f6f6;
+    text-decoration: none;
+    border: 1px solid #cccccc;
+    font-size: 1.2em;
+}

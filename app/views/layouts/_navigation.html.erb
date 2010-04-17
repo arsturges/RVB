@@ -1,9 +1,17 @@
-<div id="navigation">
-  <ul class="primary">
+<div class="span-16">
+  <h2>DOE Appliance Standards Legislation</h2>
+</div>
 
-    <%= tab('Home', root_path, :title => 'Home') %>
-    <%= tab('Search', '/home/search', :title => 'Rulemakings') { params[:controller] == 'home' && params[:action] == 'search'} %>
-    <%= tab('Rulemakings', rulemakings_path, :title => 'Rulemakings') { params[:controller] == 'rulemakings'} %>
+<div class="span-8 last">
+  <p>You are logged in as <%=h current_user.login %>. <%= link_to 'Log out', logout_path %>.</p>
+</div>
+
+<div class="span-24 last">
+  <div id="navigation">
+  <ul>
+    <li><%= link_to "Home", root_path %>  </li>
+    <li><%= link_to  'Search', '/home/search' %>  </li>
+    <li><%= link_to  'Rulemakings', rulemakings_path %>  </li>
   </ul>
-      
+  </div>
 </div>

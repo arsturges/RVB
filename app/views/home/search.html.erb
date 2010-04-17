@@ -9,7 +9,7 @@
     <%= f.submit "Search" %>
 <% end %>
 
-<table class="listing">
+<table class="datatable">
   <tr>
       <th><%=order(@search, :by => :short_name, :as => "Rulemaking") %></th>
       <th><%=order(@search, :by => :phase) %></th>
@@ -19,9 +19,9 @@
       <th>Time from Today</th>
   </tr>
     <% @milestone_data.each do |milestone| %>
-  <tr class="listing <%= cycle('odd', 'even') %>" >
-    <td class="attribute"><%=h milestone.rulemaking.short_name %></td>
-    <td class ="listing"><%= h milestone.phase.phase %> </td>
+  <tr class="<%= cycle('odd', 'even') %>" >
+    <td><%=h milestone.rulemaking.short_name %></td>
+    <td><%= h milestone.phase.phase %> </td>
     <td><%= h milestone.activity.activity %> </td>
     <td><%= h milestone.date_category.date_category %> </td>
     <td><%= h milestone.milestone %></td>

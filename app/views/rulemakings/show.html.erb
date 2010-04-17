@@ -45,15 +45,15 @@
   <%=h @rulemaking.short_name %>
 </p>
 
-<table border="1" cellpadding="4">
+<table class="datatable">
   <tr>
-    <th>Activity</th>
-    <th style="background-color:green">Planned Start</th>
-    <th style="background-color:green">Planned Finish</th>
-    <th style="background-color:yellow">Actual Start</th>
-    <th style="background-color:yellow">Actual Finish</th>
-    <th style="background-color:red">Projected Start</th>
-    <th style="background-color:red">Projected Finish</th>
+    <th style="background-color:white; ">Activity</th>
+    <th style="background-color:green; color: white;">Planned Start</th>
+    <th style="background-color:green; color: white;">Planned Finish</th>
+    <th style="background-color:yellow; color: black;">Actual Start</th>
+    <th style="background-color:yellow; color: black;">Actual Finish</th>
+    <th style="background-color:red; color: black;">Projected Start</th>
+    <th style="background-color:red; color: black;">Projected Finish</th>
   </tr>
 
   <tr>
@@ -340,6 +340,6 @@
   </tr>
 </table>
 
-<%= link_to 'Edit', edit_rulemaking_path(@rulemaking) if admin? %> |
-<%= link_to 'Back', rulemakings_path %>
-<%= link_to 'assign products to this rulemaking', assign_products_rulemaking_path(@rulemaking) if admin? %>
+<%= link_to 'Edit', edit_rulemaking_path(@rulemaking), :class => "button" if admin? %> |
+<%= link_to 'Back', rulemakings_path, :class => "button" %>
+<%= link_to 'assign products to this rulemaking', assign_products_rulemaking_path(@rulemaking), :class => "button" if admin? %>

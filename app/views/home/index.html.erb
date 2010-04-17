@@ -1,5 +1,5 @@
-    <h2>Current Activities</h2>
-    <table class="listing">
+    <table class="datatable">
+      <caption>Current Activities</caption>
   <tr>
       <th><%=order(@search, :by => :short_name, :as => "Rulemaking") %></th>
       <th>Project Manager</th>
@@ -13,15 +13,15 @@
 
   </tr>
   <% @current.each do |milestone| %>
-  <tr class="listing <%= cycle('odd', 'even') %>" >
-    <td class="attribute"><%=h milestone.rulemaking.short_name %></td>
-    <td class ="listing"><%= h milestone.rulemaking.doe_project_manager.try(:project_manager) %> </td>
-    <td class ="listing"><%= h milestone.rulemaking.phase.try(:phase) %> </td>
-    <td class ="listing"><%= h milestone.rulemaking.activity.try(:activity)  %> </td>
-    <td class ="listing"><%= h milestone.phase.phase %> </td>
-    <td class ="listing"><%= h milestone.activity.activity %> </td>
-    <td class ="listing"><%= h milestone.rulemaking.try(:legislative_deadline) %> </td>
-    <td class ="lsiting"><%= h milestone.milestone %></td>
+  <tr class="<%= cycle('odd', 'even') %>">
+    <td><%= link_to(milestone.rulemaking.short_name, rulemaking_path(milestone.rulemaking_id)) %></td>
+    <td><%= h milestone.rulemaking.doe_project_manager.try(:project_manager) %> </td>
+    <td><%= h milestone.rulemaking.phase.try(:phase) %> </td>
+    <td><%= h milestone.rulemaking.activity.try(:activity)  %> </td>
+    <td><%= h milestone.phase.phase %> </td>
+    <td><%= h milestone.activity.activity %> </td>
+    <td><%= h milestone.rulemaking.try(:legislative_deadline) %> </td>
+    <td><%= h milestone.milestone %></td>
     <% planned_finish = @planned_finishes.detect{|i|i.rulemaking_id == milestone.rulemaking_id and i.phase_id == milestone.phase_id and i.activity_id == milestone.activity_id and i.date_category_id == 2}  %>
      
     <td>

@@ -1,11 +1,8 @@
-<h1>Listing rulemakings</h1>
-
-<table class="listing">
+<table class="datatable">
+  <caption>Listing rulemakings</caption>
   <tr>
-    <th><%=order(@search, :by => :id) %></th>
     <th><%=order(@search, :by => :rule, :as => "Rulemaking") %></th>
     <th><%=order(@search, :by => :rule_type) %></th>
-    <th><%=order(@search, :by => :notes) %></th>
     <th><%=order(@search, :by => :doe_project_manager) %></th>
     <th><%=order(@search, :by => :legislative_deadline) %></th>
     <th><%=order(@search, :by => :phase) %></th>
@@ -14,24 +11,21 @@
   </tr>
 
 <% @rulemakings.each do |rulemaking| %>
-  <tr>
-    <td class="listing"><%=h rulemaking.id %></td>
-    <td class="listing"><%= link_to rulemaking.rule, rulemaking %></td>
-    <td class="attribute string"><%=h rulemaking.rule_type.rule_type_abbreviation %></td>
-    <td class="attribute string"><%=h rulemaking.notes %></td>
-    <td class="attribute string"><%=h rulemaking.doe_project_manager.try(:project_manager) %></td>
-    <td class="attribute string"><%=h rulemaking.legislative_deadline.to_formatted_s(:long) if rulemaking.legislative_deadline %></td>
-    <td class="attribute string"><%=h rulemaking.phase.phase unless rulemaking.phase_id == 0%></td>
-    <td class="attribute string"><%=h rulemaking.activity.activity unless rulemaking.activity_id ==0 %></td>
-    <td class="attribute string"><%=h rulemaking.short_name %></td>
+  <tr class="<%= cycle('odd', 'even') %>">
+    <td><%= link_to rulemaking.rule, rulemaking %></td>
+    <td><%=h rulemaking.rule_type.rule_type_abbreviation %></td>
+    <td><%=h rulemaking.doe_project_manager.try(:project_manager) %></td>
+    <td><%=h rulemaking.legislative_deadline if rulemaking.legislative_deadline %></td>
+    <td><%=h rulemaking.phase.phase unless rulemaking.phase_id == 0%></td>
+    <td><%=h rulemaking.activity.activity unless rulemaking.activity_id ==0 %></td>
+    <td><%=h rulemaking.short_name %></td>
     <% if admin? %>
-    <td class="button edit"><%= link_to 'Edit', edit_rulemaking_path(rulemaking) %></td>
-    <td class="button delete" ><%= link_to 'Destroy', rulemaking, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Edit', edit_rulemaking_path(rulemaking) %></td>
+    <td><%= link_to 'Destroy', rulemaking, :confirm => 'Are you sure?', :method => :delete %></td>
     <% end %>
   </tr>
 <% end %>
 </table>
-
 <br />
-<%= link_to 'New rulemaking', new_rulemaking_path if admin? %>
+<%= link_to 'New rulemaking', new_rulemaking_path, :class => "button" if admin?  %>
 
