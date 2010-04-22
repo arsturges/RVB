@@ -20,7 +20,7 @@
   </tr>
     <% @milestone_data.each do |milestone| %>
   <tr class="<%= cycle('odd', 'even') %>" >
-    <td><%=h milestone.rulemaking.short_name %></td>
+    <td><%= link_to(milestone.rulemaking.short_name, rulemaking_path(milestone.rulemaking_id)) %></td>
     <td><%= h milestone.phase.phase %> </td>
     <td><%= h milestone.activity.activity %> </td>
     <td><%= h milestone.date_category.date_category %> </td>
