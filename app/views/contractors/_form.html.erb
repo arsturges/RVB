@@ -1,0 +1,15 @@
+<% form_for(@contractor) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :contractor %><br />
+    <%= f.text_field :contractor %>
+  </p>
+    <p>
+    <%= f.label :abbreviation %><br />
+    <%= f.text_field :abbreviation %>
+  </p>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>

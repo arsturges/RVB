@@ -33,6 +33,14 @@
     <%= f.label :short_name %><br />
     <%= f.text_field :short_name %>
   </p>
+
+  <% for contractor in Contractor.find(:all) %>
+    <div>
+      <%= check_box_tag "rulemaking[contractor_ids][]", contractor.id, @rulemaking.contractors.include?(contractor) %>
+      <%= contractor.contractor %>
+  </div>
+  <% end  %>
+  
   <p>
     <%= f.submit 'Save' %>
   </p>

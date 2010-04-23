@@ -12,6 +12,7 @@ class Rulemaking < ActiveRecord::Base
   #no foreign keys in table "rulemaking"
   has_many :milestones
   has_many :products
+  has_and_belongs_to_many :contractors
 
   named_scope :ascend_by_rule_type, :order => "rule_types.rule_type"
   named_scope :descend_by_rule_type, :order => "rule_types.rule_type desc"
@@ -27,8 +28,6 @@ class Rulemaking < ActiveRecord::Base
 
   named_scope :ascend_by_activity, :order => "activities.activity"
   named_scope :descend_by_activity, :order => "activities.activity desc"
-
-
 
  default_scope :order => "short_name"
 end

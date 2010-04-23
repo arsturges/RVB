@@ -11,6 +11,7 @@ class RulemakingsController < ApplicationController
     @rulemaking = Rulemaking.find(params[:id])
     @revision_number = params[:revision_number] || Revision.maximum(:revision_number)
     @milestones = @rulemaking.milestones.find(:all, :conditions=> {:revision_number => @revision_number})
+    @contractors = @rulemaking.contractors
 
     respond_to do |format|
       format.html # show.html.erb
@@ -54,6 +55,7 @@ class RulemakingsController < ApplicationController
   # PUT /rulemakings/1
   # PUT /rulemakings/1.xml
   def update
+    params[:rulemaking][:contractor_ids] ||= []
     @rulemaking = Rulemaking.find(params[:id])
 
     respond_to do |format|
@@ -92,5 +94,10 @@ class RulemakingsController < ApplicationController
      Product.update_all("rulemaking_id = null", :id => products_to_remove)
      Product.update_all("rulemaking_id = #{@rulemaking.id}", :id => params[:products])
      redirect_to :action => :show
+  end
+
+  def assign_contractors
+    @rulemaking = Rulemaking.find(params[:id])
+    @contractors = @rulemaking.contractors
   end
 end

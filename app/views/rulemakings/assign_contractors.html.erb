@@ -1,0 +1,12 @@
+<h1><%= @rulemaking.short_name %></h1>
+
+<p>Select contractors to be associated with this rulemaking: </p>
+<% form_tag save_products_rulemaking_path(@rulemaking) do  %>
+  <ul>
+    <% (@products + Product.find(:all, :conditions => {:rulemaking_id => nil})).each do |product|  %>
+  <li><%= check_box_tag 'products[]', product.id, product.rulemaking == @rulemaking %> <%=product.product + " --  " + product.sector.sector %></li>
+<%  end %>
+
+</ul>
+<%= submit_tag %>
+<%  end %>

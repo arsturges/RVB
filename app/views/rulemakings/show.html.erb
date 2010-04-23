@@ -21,6 +21,14 @@
 </p>
 
 <p>
+  <b>Contractors:</b>
+  <% @contractors.each do |c| %>
+    <%= c.abbreviation + ", " %>
+  <%  end %>
+</p>
+
+
+<p>
   <b>Doe project manager:</b>
   <%=h @rulemaking.doe_project_manager.try(:project_manager) %>
 </p>
@@ -352,3 +360,4 @@
 <%= link_to 'Edit', edit_rulemaking_path(@rulemaking), :class => "button" if admin? %> |
 <%= link_to 'Back', rulemakings_path, :class => "button" %>
 <%= link_to 'assign products to this rulemaking', assign_products_rulemaking_path(@rulemaking), :class => "button" if admin? %>
+<%= link_to 'assign contractors to this rulemaking', assign_contractors_rulemaking_path(@rulemaking), :class => "button" if admin? %>

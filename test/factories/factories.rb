@@ -15,6 +15,11 @@ Factory.define :activity do |a|
     a.sort { Factory.next(:integer)}
   end
 
+  Factory.define :contractor do |c|
+    c.contractor { Factory.next(:string) }
+    c.abbreviation { Factory.next(:string) }
+  end
+
 Factory.define :date_category do |d|
   d.date_category { Factory.next(:string) }
 end

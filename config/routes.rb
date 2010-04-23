@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :contractors
+
   map.resources :revisions
 
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
@@ -19,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :date_categories
 
-  map.resources :rulemakings, :member => { :assign_products => :get, :save_products => :post }
+  map.resources :rulemakings, :member => { :assign_products => :get, :save_products => :post, :assign_contractors => :get, :save_contractors => :post }
 
   map.resources :activities
 
