@@ -21,9 +21,16 @@
 </p>
 
 <p>
-  <b>Contractors:</b>
+  <b>Contractors:</b> <!--pull this method out into a helper -->
   <% @contractors.each do |c| %>
     <%= c.abbreviation + ", " %>
+  <%  end %>
+</p>
+
+<p>
+  <b>Driver(s):</b>
+  <% @drivers.each do |d| %>
+    <%= d.driver + ", " %>
   <%  end %>
 </p>
 

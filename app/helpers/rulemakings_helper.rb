@@ -15,4 +15,10 @@ module RulemakingsHelper
       milestone ? milestone.milestone : '--'
     end
   end
+
+  def list_rulemaking_attributes(instance_variable, attribute)
+       instance_variable.each do |n|
+       n.attribute + ", "
+    end
+  end
 end

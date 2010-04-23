@@ -2,44 +2,52 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :rule %><br />
+    <%= f.label :rule %>
     <%= f.text_field :rule %>
-  </p>
-  <p>
-    <%= f.label :rule_type_id %><br />
+
+    <%= f.label :rule_type_id %>
     <%= f.collection_select :rule_type_id, RuleType.all, :id, :rule_type %>
-  </p>
-  <p>
-    <%= f.label :notes %><br />
-    <%= f.text_area :notes %>
-  </p>
-  <p>
-    <%= f.label :doe_project_manager_id %><br />
+
+    <%= f.label :doe_project_manager_id %>
     <%= f.collection_select :doe_project_manager_id, DoeProjectManager.all, :id, :project_manager %>
   </p>
   <p>
-    <%= f.label :legislative_deadline %><br />
+    <%= f.label :legislative_deadline %>
     <%= f.date_select :legislative_deadline %>
-  </p>
-  <p>
-    <%= f.label :phase_id %><br />
+
+    <%= f.label :phase_id %>
     <%= f.collection_select :phase_id, Phase.all, :id, :phase  %>
-  </p>
-  <p>
-    <%= f.label :activity_id %><br />
+
+    <%= f.label :activity_id %>
     <%= f.collection_select :activity_id, Activity.all, :id, :activity %>
   </p>
   <p>
-    <%= f.label :short_name %><br />
+    <%= f.label :short_name %>
     <%= f.text_field :short_name %>
   </p>
-
+  <p>
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </p>
+  <fieldset class="span-10">
+    <legend>Contractors working on this rulemaking:</legend>
   <% for contractor in Contractor.find(:all) %>
-    <div>
-      <%= check_box_tag "rulemaking[contractor_ids][]", contractor.id, @rulemaking.contractors.include?(contractor) %>
-      <%= contractor.contractor %>
-  </div>
+      <div>
+        <%= check_box_tag "rulemaking[contractor_ids][]", contractor.id, @rulemaking.contractors.include?(contractor) %>
+        <%= contractor.contractor %>
+      </div>
   <% end  %>
+    </fieldset>
+
+  <fieldset class="span-12 last">
+    <legend>Legislative drivers associated with this rulemaking:</legend>
+    <% for driver in Driver.find(:all) %>
+    <div>
+      <%= check_box_tag "rulemaking[driver_ids][]", driver.id, @rulemaking.drivers.include?(driver) %>
+      <%= driver.driver %>
+    </div>
+    <%  end %>
+  </fieldset>
   
   <p>
     <%= f.submit 'Save' %>
