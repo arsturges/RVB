@@ -1,5 +1,7 @@
 <% form_for(@rulemaking) do |f| %>
-  <%= f.error_messages %>
+<% if f.error_messages %>
+<div class="error"><%= f.error_messages %></div>
+<% end %>
 
   <p>
     <%= f.label :rule %>
@@ -29,7 +31,8 @@
     <%= f.label :notes %><br>
     <%= f.text_area :notes %>
   </p>
-  <fieldset class="span-10">
+  <div class="span-12">
+    <fieldset>
     <legend>Contractors working on this rulemaking:</legend>
   <% for contractor in Contractor.find(:all) %>
       <div>
@@ -38,16 +41,19 @@
       </div>
   <% end  %>
     </fieldset>
+    </div>
 
-  <fieldset class="span-12 last">
-    <legend>Legislative drivers associated with this rulemaking:</legend>
+  <div class="span-12 last">
+    <fieldset>
+    <legend>Legislation driving this rulemaking:</legend>
     <% for driver in Driver.find(:all) %>
     <div>
       <%= check_box_tag "rulemaking[driver_ids][]", driver.id, @rulemaking.drivers.include?(driver) %>
       <%= driver.driver %>
     </div>
     <%  end %>
-  </fieldset>
+    </fieldset>
+  </div>
   
   <p>
     <%= f.submit 'Save' %>

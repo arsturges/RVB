@@ -13,12 +13,14 @@
 </head>
 
 <body>
-  <div class="container showgrid">
-    
-        <%= render :partial => 'layouts/navigation' %>
-        <p style="color: green"><%= flash[:notice] %></p>
-        <br />
-        <%= yield %>
+  <div class="container">
+    <div class="span-24 last" id="navigation_content">
+      <%= render :partial => 'layouts/navigation' %>
+    </div>
+
+   <div class="span-24 last" id="main_content">
+      <%= yield %>
+   </div>
 
     </div>
 </body>

@@ -6,7 +6,7 @@
   <p>You are logged in as <%=h current_user.login %>. <%= link_to 'Log out', logout_path %>.</p>
 </div>
 
-<div class="span-24 last">
+<div class="span-20">
   <div id="navigation">
   <ul>
     <li><%= link_to "Home", root_path %>  </li>
@@ -14,4 +14,9 @@
     <li><%= link_to  'Rulemakings', rulemakings_path %>  </li>
   </ul>
   </div>
+</div>
+<div class="span-4 last" id="flash_notices_go_here_if_there_are_any">
+  <% if flash[:notice] %> 
+  <div class="success"><%= flash[:notice] %></div>
+  <% end %>
 </div>

@@ -1,14 +1,15 @@
 /* 
-This stylesheet appends and overrides styles set by the BlueprintCSS. The Blueprint files should not be modified.
+This stylesheet appends and overrides styles set by the BlueprintCSS. The Blueprint files should not be modified, so that they can be upgraded later.
 */
 
-/* this div can be used for debugging.
-div {
+ /*this div can be used for debugging. 
+div, fieldset {
     outline-color :red;
     outline-style: solid;
     outline-width: 1px;
 }
 */
+
 body {
     background: #b0b0b0; /*this interferes with showgrid; leave out for now */
 }
@@ -16,7 +17,7 @@ body {
 div.container {
     background-color: #e6e6e6;
 }
-/*=========  table properties  =========== */
+/*============  table properties  =========== */
 
 .datatable {
     border: 1px solid #cccccc;
@@ -46,23 +47,22 @@ tr.even td {background:none;} /* this is to cancel out Blueprint's style. */
     color: #c77405;
     background-color: #fdf5ce;
 }
-
+/*================  Typography ============= */
 h1, h2, h3, h4, h5, h6 {
     color: #1c94c4;
 }
-
 a:link, a:visited {
     text-decoration: none;
 }
 
-/*====== Navigation/header styles  ==========*/
+/*============ Navigation/header styles  ============*/
 #navigation {
-    font-size: 1.75em;
+    font-size: 2em;
 }
 
 #navigation ul {
     list-style: none;
-    margin: 0;
+    margin-bottom: .5em;
     padding: 0;
     padding-top: 1em;
 }

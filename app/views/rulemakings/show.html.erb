@@ -5,6 +5,8 @@
   <%= submit_tag "Go" %>
 </p>
 <% end  %>
+<fieldset>
+  <legend>Rulemaking attributes</legend>
 <p>
   <b>Rule:</b>
   <%=h @rulemaking.rule %>
@@ -59,6 +61,7 @@
   <b>Short name:</b>
   <%=h @rulemaking.short_name %>
 </p>
+</fieldset>
 
 <table class="datatable">
   <tr>
@@ -364,7 +367,6 @@
   </tr>
 </table>
 
-<%= link_to 'Edit', edit_rulemaking_path(@rulemaking), :class => "button" if admin? %> |
+<%= link_to 'Edit', edit_rulemaking_path(@rulemaking), :class => "button" if admin? %>
 <%= link_to 'Back', rulemakings_path, :class => "button" %>
 <%= link_to 'assign products to this rulemaking', assign_products_rulemaking_path(@rulemaking), :class => "button" if admin? %>
-<%= link_to 'assign contractors to this rulemaking', assign_contractors_rulemaking_path(@rulemaking), :class => "button" if admin? %>
