@@ -5,7 +5,7 @@
     Date Category: <%= f.select :date_category_id, DateCategory.all.collect {|d| [d.date_category, d.id]}, :include_blank => true %>
     Milestone between: <%= f.text_field :milestone_gt, :size => 9 %>
     and: <%= f.text_field :milestone_lt, :size => 9 %>
-    Revision: <%= f.collection_select(:revision_number, Revision.all, :id, :revision_date) %> <!--make this dropdown default to the currently-displayed revision number instead of reverting back to the most recent one every time. -->
+    Revision: <%= f.collection_select(:revision_number, Revision.all, :revision_number, :revision_date) %> <!--make this dropdown default to the currently-displayed revision number instead of reverting back to the most recent one every time. -->
     <%= f.submit "Search" %>
 <% end %>
 

@@ -3,6 +3,8 @@ class RulemakingsController < ApplicationController
    before_filter :admin_filter, :except => [:index, :show]
 
   def index
+    params[:search] ||= {}
+    params[:search][:order] ||= 'ascend_by_short_name'
     @search = Rulemaking.search(params[:search])
     #raise @search.inspect
     @rulemakings =  @search.all(:include => [:rule_type, :doe_project_manager, :phase, :activity])
