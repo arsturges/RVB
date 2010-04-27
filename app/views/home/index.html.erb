@@ -3,7 +3,7 @@
   <tr>
       <th><%=order(@search, :by => :short_name, :as => "Rulemaking") %></th>
       <th>Project Manager</th>
-      <th><%=order(@search, :by => :phase, :as=>"Actual Phase <br> as of "+Revision.maximum(:revision_date).to_s) %></th>
+      <th><%=order(@search, :by => :rulemaking_phase, :as=>"Actual Phase <br> as of "+Revision.maximum(:revision_date).to_s) %></th>
       <th><%=order(@search, :by => :activity, :as=>"Actual Activity <br> as of "+Revision.maximum(:revision_date).to_s) %></th>
       <th><%=order(@search, :by => 'milestone_phase', :as=>"Scheduled Phase") %></th>
       <th><%=order(@search, :by => 'milestone_activity', :as=>"Scheduled Activity") %></th>

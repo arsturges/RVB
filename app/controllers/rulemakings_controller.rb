@@ -4,12 +4,14 @@ class RulemakingsController < ApplicationController
 
   def index
     @search = Rulemaking.search(params[:search])
-    @rulemakings =  @search.all(:include => [:rule_type, :doe_project_manager, :phase, :activity], :order=>params[:order])
+    #raise @search.inspect
+    @rulemakings =  @search.all(:include => [:rule_type, :doe_project_manager, :phase, :activity])
+    #raise params[:search].inspect
   end
 
   def show
     @rulemaking = Rulemaking.find(params[:id])
-    @revision_number = params[:revision_number] || Revision.maximum(:revision_number)
+    @revision_number = params[:revision_number].to_i || Revision.maximum(:revision_number)
     @milestones = @rulemaking.milestones.find(:all, :conditions=> {:revision_number => @revision_number})
     @contractors = @rulemaking.contractors
     @drivers = @rulemaking.drivers

@@ -1,6 +1,6 @@
 <% form_for(@rulemaking) do |f| %>
-<% if f.error_messages %>
-<div class="error"><%= f.error_messages %></div>
+<% if !f.error_messages.empty? %>
+<div class="error"><%=  f.error_messages %></div>
 <% end %>
 
   <p>
@@ -28,7 +28,7 @@
     <%= f.text_field :short_name %>
   </p>
   <p>
-    <%= f.label :notes %><br>
+    <%= f.label :notes %><br />
     <%= f.text_area :notes %>
   </p>
   <div class="span-12">

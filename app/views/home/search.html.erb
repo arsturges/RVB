@@ -1,5 +1,5 @@
  <% form_for @search do |f| %>
-    Rulemaking: <%= f.select :rulemaking_id,  Rulemaking.all.collect {|r| [r.short_name, r.id]}, :include_blank => true %>
+    Rulemaking: <%= f.select :rulemaking_id,  Rulemaking.find(:all, :order => :short_name).collect {|r| [r.short_name, r.id]}, :include_blank => true %>
     Phase: <%= f.select :phase_id, Phase.all.collect {|p| [p.phase, p.id]}, :include_blank => true %>
     Activity: <%= f.select :activity_id, Activity.all.collect {|a| [a.activity, a.id]}, :include_blank => true %> <br />
     Date Category: <%= f.select :date_category_id, DateCategory.all.collect {|d| [d.date_category, d.id]}, :include_blank => true %>

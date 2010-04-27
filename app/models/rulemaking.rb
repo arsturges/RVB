@@ -30,5 +30,5 @@ class Rulemaking < ActiveRecord::Base
   named_scope :ascend_by_activity, :order => "activities.activity"
   named_scope :descend_by_activity, :order => "activities.activity desc"
 
-  default_scope :order => "short_name"
+  #default_scope :order => "short_name"
 end

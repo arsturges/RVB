@@ -7,13 +7,13 @@ class Milestone < ActiveRecord::Base
   belongs_to :phase
   belongs_to :activity
   belongs_to :date_category
-  belongs_to :revision, :class_name => 'Revision', :foreign_key => 'revision_number'
+  belongs_to :revision, :class_name => 'Revision', :foreign_key => 'revision_number', :primary_key => 'revision_number'
 
   named_scope :ascend_by_short_name, :order => "rulemakings.short_name", :include => :rulemaking
   named_scope :descend_by_short_name, :order => "rulemakings.short_name desc", :include => :rulemaking
 
-  named_scope :ascend_by_phase, :order => "phases.phase", :include => :phase
-  named_scope :descend_by_phase, :order => "phases.phase desc", :include => :phase
+  named_scope :ascend_by_rulemaking_phase, :order => "rulemakings.phase_id", :include => :phase
+  named_scope :descend_by_rulemaking_phase, :order => "rulemakings.phase_id desc", :include => :phase
 
   named_scope :ascend_by_activity, :order => "activities.activity", :include => {:rulemaking => :activity}
   named_scope :descend_by_activity, :order => "activities.activity desc", :include =>  {:rulemaking => :activity}
