@@ -9,9 +9,9 @@ div, fieldset {
     outline-width: 1px;
 }
 */
-
 body {
     background: #b0b0b0; /*this interferes with showgrid; leave out for now */
+
 }
 
 div.container {
@@ -38,6 +38,7 @@ div.container {
     text-align: center;
     background-color: #f6a828;
     padding: 0.2em;
+    color: #009;
 }
 tr.even td {background:none;} /* this is to cancel out Blueprint's style. */
 .datatable tr.even {background: #e6e6e6;}

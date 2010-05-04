@@ -1,6 +1,16 @@
 require 'test_helper'
 
 class ContractorsControllerTest < ActionController::TestCase
+
+  def setup
+    login
+    @c = Factory(:contractor)
+  end
+
+  def teardown
+    Contractor.destroy_all
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -14,30 +24,30 @@ class ContractorsControllerTest < ActionController::TestCase
 
   test "should create contractor" do
     assert_difference('Contractor.count') do
-      post :create, :contractor => { }
+      post :create, :contractor => { :contractor => "New contractor", :abbreviation => "new Contr." }
     end
 
-    assert_redirected_to contractor_path(assigns(:contractor))
+    assert_redirected_to contractors_path
   end
 
   test "should show contractor" do
-    get :show, :id => contractors(:one).to_param
+    get :show, :id => @c
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => contractors(:one).to_param
+    get :edit, :id => @c
     assert_response :success
   end
 
   test "should update contractor" do
-    put :update, :id => contractors(:one).to_param, :contractor => { }
-    assert_redirected_to contractor_path(assigns(:contractor))
+    put :update, :id => @c, :contractor => { :abbreviation => "shorter" }
+    assert_redirected_to contractors_path
   end
 
   test "should destroy contractor" do
     assert_difference('Contractor.count', -1) do
-      delete :destroy, :id => contractors(:one).to_param
+      delete :destroy, :id => @c
     end
 
     assert_redirected_to contractors_path

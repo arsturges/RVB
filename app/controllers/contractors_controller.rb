@@ -45,7 +45,7 @@ class ContractorsController < ApplicationController
     respond_to do |format|
       if @contractor.save
         flash[:notice] = 'Contractor was successfully created.'
-        format.html { redirect_to(@contractor) }
+        format.html { redirect_to(contractors_url) }
         format.xml  { render :xml => @contractor, :status => :created, :location => @contractor }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class ContractorsController < ApplicationController
     respond_to do |format|
       if @contractor.update_attributes(params[:contractor])
         flash[:notice] = 'Contractor was successfully updated.'
-        format.html { redirect_to(@contractor) }
+        format.html { redirect_to(contractors_url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
