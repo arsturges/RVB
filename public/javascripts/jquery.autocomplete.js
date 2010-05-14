@@ -1,14 +1,13 @@
 /*
- * Autocomplete - jQuery plugin 1.0.2
+ * jQuery Autocomplete plugin 1.1
  *
- * Copyright (c) 2007 Dylan Verheul, Dan G. Switzer, Anjesh Tuladhar, Jörn Zaefferer
+ * Copyright (c) 2009 Jörn Zaefferer
  *
  * Dual licensed under the MIT and GPL licenses:
  *   http://www.opensource.org/licenses/mit-license.php
  *   http://www.gnu.org/licenses/gpl.html
  *
- * Revision: $Id: jquery.autocomplete.js 5747 2008-06-25 18:30:55Z joern.zaefferer $
- *
+ * Revision: $Id: jquery.autocomplete.js 15 2009-08-22 10:30:27Z joern.zaefferer $
  */
 
 ;(function($) {
@@ -90,6 +89,9 @@ $.Autocompleter = function(input, options) {
 	
 	// only opera doesn't trigger keydown multiple times while pressed, others don't work with keypress at all
 	$input.bind(($.browser.opera ? "keypress" : "keydown") + ".autocomplete", function(event) {
+		// a keypress means the input has focus
+		// avoids issue where input had focus before the autocomplete was applied
+		hasFocus = 1;
 		// track last key pressed
 		lastKeyPressCode = event.keyCode;
 		switch(event.keyCode) {
@@ -206,12 +208,31 @@ $.Autocompleter = function(input, options) {
 		var v = selected.result;
 		previousValue = v;
 		
-    var value = $('.payload .name', select.current()).text();
-		var result = select.current();
+		if ( options.multiple ) {
+			var words = trimWords($input.val());
+			if ( words.length > 1 ) {
+				var seperator = options.multipleSeparator.length;
+				var cursorAt = $(input).selection().start;
+				var wordAt, progress = 0;
+				$.each(words, function(i, word) {
+					progress += word.length;
+					if (cursorAt <= progress) {
+						wordAt = i;
+						return false;
+					}
+					progress += seperator;
+				});
+				words[wordAt] = v;
+				// TODO this should set the cursor to the right position, but it gets overriden somewhere
+				//$.Autocompleter.Selection(input, progress + seperator, progress + seperator);
+				v = words.join( options.multipleSeparator );
+			}
+			v += options.multipleSeparator;
+		}
 		
-		$input.val(value);
+		$input.val(v);
 		hideResultsNow();
-		$input.trigger("result", [value, result]);
+		$input.trigger("result", [selected.data, selected.value]);
 		return true;
 	}
 	
@@ -241,22 +262,27 @@ $.Autocompleter = function(input, options) {
 	};
 	
 	function trimWords(value) {
-		if ( !value ) {
+		if (!value)
 			return [""];
-		}
-		var words = value.split( options.multipleSeparator );
-		var result = [];
-		$.each(words, function(i, value) {
-			if ( $.trim(value) )
-				result[i] = $.trim(value);
+		if (!options.multiple)
+			return [$.trim(value)];
+		return $.map(value.split(options.multipleSeparator), function(word) {
+			return $.trim(value).length ? $.trim(word) : null;
 		});
-		return result;
 	}
 	
 	function lastWord(value) {
 		if ( !options.multiple )
 			return value;
 		var words = trimWords(value);
+		if (words.length == 1) 
+			return words[0];
+		var cursorAt = $(input).selection().start;
+		if (cursorAt == value.length) {
+			words = trimWords(value)
+		} else {
+			words = trimWords(value.replace(value.substring(cursorAt), ""));
+		}
 		return words[words.length - 1];
 	}
 	
@@ -270,7 +296,7 @@ $.Autocompleter = function(input, options) {
 			// fill in the value (keep the case the user has typed)
 			$input.val($input.val() + sValue.substring(lastWord(previousValue).length));
 			// select the portion of the value not typed by the user (so the next character will erase)
-			$.Autocompleter.Selection(input, previousValue.length, previousValue.length + sValue.length);
+			$(input).selection(previousValue.length, previousValue.length + sValue.length);
 		}
 	};
 
@@ -294,15 +320,14 @@ $.Autocompleter = function(input, options) {
 							var words = trimWords($input.val()).slice(0, -1);
 							$input.val( words.join(options.multipleSeparator) + (words.length ? options.multipleSeparator : "") );
 						}
-						else
+						else {
 							$input.val( "" );
+							$input.trigger("result", null);
+						}
 					}
 				}
 			);
 		}
-		if (wasVisible)
-			// position cursor at end of input field
-			$.Autocompleter.Selection(input, input.value.length, input.value.length);
 	};
 
 	function receiveData(q, data) {
@@ -319,7 +344,7 @@ $.Autocompleter = function(input, options) {
 	function request(term, success, failure) {
 		if (!options.matchCase)
 			term = term.toLowerCase();
-		var data = null; //cache.load(term);
+		var data = cache.load(term);
 		// recieve the cached data
 		if (data && data.length) {
 			success(term, data);
@@ -416,6 +441,9 @@ $.Autocompleter.Cache = function(options) {
 		if (!options.matchCase) 
 			s = s.toLowerCase();
 		var i = s.indexOf(sub);
+		if (options.matchContains == "word"){
+			i = s.toLowerCase().search("\\b" + sub.toLowerCase());
+		}
 		if (i == -1) return false;
 		return i == 0 || options.matchContains;
 	};
@@ -633,21 +661,17 @@ $.Autocompleter.Select = function (options, input, select, config) {
 	
 	function fillList() {
 		list.empty();
-    // var max = limitNumberOfItems(data.length);
-    // for (var i=0; i < max; i++) {
-    //  if (!data[i])
-    //    continue;
-    //  var formatted = options.formatItem(data[i].data, i+1, max, data[i].value, term);
-    //  if ( formatted === false )
-    //    continue;
-    //  var li = $("<li/>").html( options.highlight(formatted, term) ).addClass(i%2 == 0 ? "ac_even" : "ac_odd").appendTo(list)[0];
-    //  $.data(li, "ac_data", data[i]);
-    // }
-		$(data).appendTo(list);
+		var max = limitNumberOfItems(data.length);
+		for (var i=0; i < max; i++) {
+			if (!data[i])
+				continue;
+			var formatted = options.formatItem(data[i].data, i+1, max, data[i].value, term);
+			if ( formatted === false )
+				continue;
+			var li = $("<li/>").html( options.highlight(formatted, term) ).addClass(i%2 == 0 ? "ac_even" : "ac_odd").appendTo(list)[0];
+			$.data(li, "ac_data", data[i]);
+		}
 		listItems = list.find("li");
-		listItems.each(function(index, element) {
-		  $(element).addClass(index%2 == 0 ? "ac_even" : "ac_odd");
-		});
 		if ( options.selectFirst ) {
 			listItems.slice(0, 1).addClass(CLASSES.ACTIVE);
 			active = 0;
@@ -726,8 +750,7 @@ $.Autocompleter.Select = function (options, input, select, config) {
 		},
 		selected: function() {
 			var selected = listItems && listItems.filter("." + CLASSES.ACTIVE).removeClass(CLASSES.ACTIVE);
-      // return selected && selected.length && $.data(selected[0], "ac_data");
-			return selected && selected.length;
+			return selected && selected.length && $.data(selected[0], "ac_data");
 		},
 		emptyList: function (){
 			list && list.empty();
@@ -738,22 +761,48 @@ $.Autocompleter.Select = function (options, input, select, config) {
 	};
 };
 
-$.Autocompleter.Selection = function(field, start, end) {
-	if( field.createTextRange ){
-		var selRange = field.createTextRange();
-		selRange.collapse(true);
-		selRange.moveStart("character", start);
-		selRange.moveEnd("character", end);
-		selRange.select();
-	} else if( field.setSelectionRange ){
-		field.setSelectionRange(start, end);
-	} else {
-		if( field.selectionStart ){
-			field.selectionStart = start;
-			field.selectionEnd = end;
+$.fn.selection = function(start, end) {
+	if (start !== undefined) {
+		return this.each(function() {
+			if( this.createTextRange ){
+				var selRange = this.createTextRange();
+				if (end === undefined || start == end) {
+					selRange.move("character", start);
+					selRange.select();
+				} else {
+					selRange.collapse(true);
+					selRange.moveStart("character", start);
+					selRange.moveEnd("character", end);
+					selRange.select();
+				}
+			} else if( this.setSelectionRange ){
+				this.setSelectionRange(start, end);
+			} else if( this.selectionStart ){
+				this.selectionStart = start;
+				this.selectionEnd = end;
+			}
+		});
+	}
+	var field = this[0];
+	if ( field.createTextRange ) {
+		var range = document.selection.createRange(),
+			orig = field.value,
+			teststring = "<->",
+			textLength = range.text.length;
+		range.text = teststring;
+		var caretAt = field.value.indexOf(teststring);
+		field.value = orig;
+		this.selection(caretAt, caretAt + textLength);
+		return {
+			start: caretAt,
+			end: caretAt + textLength
+		}
+	} else if( field.selectionStart !== undefined ){
+		return {
+			start: field.selectionStart,
+			end: field.selectionEnd
 		}
 	}
-	field.focus();
 };
 
 })(jQuery);

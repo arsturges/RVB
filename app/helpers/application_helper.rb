@@ -2,7 +2,7 @@
 module ApplicationHelper
 
   def schedule_lag(projected_activity_finish, planned_activity_finish, rulemaking_finish)
-    if rulemaking_finish != projected_activity_finish
+    if rulemaking_finish != projected_activity_finish #can't divide by 0
       ratio = (projected_activity_finish - planned_activity_finish) / (rulemaking_finish - projected_activity_finish)
       number_to_percentage(100 * ratio, :precision => 0)
     else

@@ -1,8 +1,9 @@
  <% form_for @search do |f| %>
-    Rulemaking: <%= f.select :rulemaking_id,  Rulemaking.find(:all, :order => :short_name).collect {|r| [r.short_name, r.id]}, :include_blank => true %>
-    Phase: <%= f.select :phase_id, Phase.all.collect {|p| [p.phase, p.id]}, :include_blank => true %>
-    Activity: <%= f.select :activity_id, Activity.all.collect {|a| [a.activity, a.id]}, :include_blank => true %> <br />
-    Date Category: <%= f.select :date_category_id, DateCategory.all.collect {|d| [d.date_category, d.id]}, :include_blank => true %>
+
+   Rulemaking: <%= f.collection_select :rulemaking_id, Rulemaking.all(:order => :short_name), :id, :short_name, :include_blank => true %>
+    Phase: <%= f.collection_select :phase_id, Phase.all, :id, :phase, :include_blank => true %>
+    Activity: <%= f.collection_select :activity_id, Activity.all, :id, :activity, :include_blank => true %><br />
+    Date Category: <%= f.collection_select :date_category_id, DateCategory.all, :id, :date_category, :include_blank => true %>
     Milestone between: <%= f.text_field :milestone_gt, :size => 9 %>
     and: <%= f.text_field :milestone_lt, :size => 9 %>
     Revision: <%= f.collection_select(:revision_number, Revision.all, :revision_number, :revision_date) %>

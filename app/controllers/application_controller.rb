@@ -2,6 +2,7 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+   filter_parameter_logging :password, :password_confirmation
 
   include AuthenticatedSystem #this comes from the restful_authentication plugin
   layout 'application'
@@ -12,7 +13,6 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
-
 
   #for views
   def admin?

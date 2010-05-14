@@ -12,8 +12,8 @@ class RulemakingsController < ApplicationController
   end
 
   def show
-    @rulemaking = Rulemaking.find(params[:id])
-    @revision_number = params[:revision_number].to_i || Revision.maximum(:revision_number)
+    @rulemaking = Rulemaking.find(params[:id]) 
+    @revision_number = params[:revision_number] || Revision.maximum(:revision_number) #took out a to_i to fix this being set to 0. Will cause more problems?
     @milestones = @rulemaking.milestones.find(:all, :conditions=> {:revision_number => @revision_number})
     @contractors = @rulemaking.contractors
     @drivers = @rulemaking.drivers

@@ -162,17 +162,4 @@ jQuery(function($) {
     var country = $(this).val();
     syncState(country);
   });
-  
-  $("input#venue_name").autocomplete('/pilotport/venues/autocomplete', {
-    parse: function(data) { return data; },
-    formatItem: function(row) { return row; },
-    highlight: function(value, term) { return value; }
-  }).result(function(event, value, li) {
-    $('input#venue_url').val($('.payload .url', li).text());
-    $('input#venue_city').val($('.payload .city', li).text());
-    var country = $('.payload .country', li).text();
-    $('select#venue_country').val(country);
-    syncState(country);
-    $('#venue_state').val($('.payload .state', li).text());
-  });
 });
