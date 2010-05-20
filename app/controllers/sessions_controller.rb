@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
     else
       flash[:notice] = "Invalid login credentials."
       # flash.now[:error] = "Invalid login credentials." # this was recommended by rbates in rails. Don't know why it doesn't work.
-      render :action => 'new'
+      render :action => 'new', :layout => false
     end
   end
 

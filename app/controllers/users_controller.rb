@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
   # render new.rhtml
-  before_filter :admin_filter, :except => []
+  before_filter :admin_filter, :except => [:edit, :update]
+  before_filter :get_user, :only => [:edit, :update]
 
   def new
+    @user = User.new
   end
 
   def index
@@ -29,5 +31,23 @@ class UsersController < ApplicationController
     else
       render :action => 'new'
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update_attributes(params[:user])
+      if current_user.admin? && current_user != @user #think about this more later
+        @user.update_attribute(:admin,  params[:user][:admin])
+      end
+      redirect_to '/'
+    else
+      render 'edit'
+    end
+  end
+protected
+  def get_user
+    @user = current_user.admin? ? User.find(params[:id]) : current_user
   end
 end
