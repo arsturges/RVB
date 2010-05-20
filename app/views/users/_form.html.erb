@@ -23,8 +23,8 @@
 <%= f.password_field :password_confirmation %></p>
 
 <% if admin? %>
-<p><%= f.label :admin %><br /></p>
-<%= f.check_box :admin %>
+  <p><%= f.label :admin %><%= f.check_box :admin, :disabled =>  current_user == @user %>
+  <%= "(An admin cannot revoke her own admin privileges.)" unless current_user != @user %></p>
 <% end %>
 
 <p><%= submit_tag 'Save' %></p>

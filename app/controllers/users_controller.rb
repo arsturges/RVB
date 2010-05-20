@@ -38,15 +38,17 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(params[:user])
-      if current_user.admin? && current_user != @user #think about this more later
+      if current_user.admin? && current_user != @user #think more about user privileges policy later
         @user.update_attribute(:admin,  params[:user][:admin])
       end
+      flash[:notice] = "User changes for " + @user.login + " were successfully saved."
       redirect_to '/'
     else
       render 'edit'
     end
   end
-protected
+
+  protected
   def get_user
     @user = current_user.admin? ? User.find(params[:id]) : current_user
   end
