@@ -1,4 +1,5 @@
 <% form_tag(rulemaking_path(@rulemaking), {:method => :get}) do  %>
+
 <p>
   <b>Revision Date:</b>
   <%= select_tag :revision_number, options_for_select(Revision.all.collect {|r| [r.revision_date, r.revision_number]}, @revision_number) %>
@@ -48,12 +49,13 @@
 </p>
 
 <p>
-  <b>Phase:</b>
+  <b>Scheduled Phase:</b>
   <%=h @rulemaking.phase.try(:phase) %>
+ 
 </p>
 
 <p>
-  <b>Activity:</b>
+  <b>Scheduled Activity:</b>
   <%=h @rulemaking.activity.try(:activity) %>
 </p>
 

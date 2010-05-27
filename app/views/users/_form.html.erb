@@ -16,12 +16,16 @@
 <p><label for="email">Email</label><br/>
 <%= f.text_field :email %></p>
 
+<fieldset>
+  <legend>Update Password:</legend>
+
+
 <p><label for="password">Password</label><br/>
 <%= f.password_field :password %></p>
 
 <p><label for="password_confirmation">Confirm Password</label><br/>
 <%= f.password_field :password_confirmation %></p>
-
+</fieldset>
 <% if admin? %>
   <p><%= f.label :admin %><%= f.check_box :admin, :disabled =>  current_user == @user %>
   <%= "(An admin cannot revoke her own admin privileges.)" unless current_user != @user %></p>
