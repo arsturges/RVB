@@ -20,7 +20,7 @@ class RulemakingsControllerTest < ActionController::TestCase
 
   test "should create rulemaking" do
     assert_difference('Rulemaking.count') do
-      post :create, :rulemaking => {:rule=>"mWO rulemaking", :rule_type_id=>2, :doe_project_manager_id=>4, :legislative_deadline=>"2022-09-02", :activity_id=>4, :phase_id=>2, :short_name=>"short name" }
+      post :create, :rulemaking => {:rule=>"mWO rulemaking", :rule_type_id=>2, :doe_project_manager_id=>4, :legislative_deadline=>"2022-09-02", :short_name=>"short name" }
     end
 
     assert_redirected_to rulemaking_path(assigns(:rulemaking))
@@ -37,7 +37,7 @@ class RulemakingsControllerTest < ActionController::TestCase
   end
 
   test "should update rulemaking" do
-    put :update, :id => r.id, :rulemaking => {:rule=>"mWO rulemaking updated", :rule_type_id=>3, :doe_project_manager_id=>1, :legislative_deadline=>"2012-09-02", :activity_id=>4, :phase_id=>1, :short_name=>"shorter name" }
+    put :update, :id => r.id, :rulemaking => {:rule=>"mWO rulemaking updated", :rule_type_id=>3, :doe_project_manager_id=>1, :legislative_deadline=>"2012-09-02", :short_name=>"shorter name" }
     assert_redirected_to rulemaking_path(assigns(:rulemaking))
   end
 

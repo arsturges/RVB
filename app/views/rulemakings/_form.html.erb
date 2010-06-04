@@ -16,12 +16,6 @@
   <p>
     <%= f.label :legislative_deadline %>
     <%= f.date_select :legislative_deadline %>
-
-    <%= f.label :phase_id %>
-    <%= f.collection_select :phase_id, Phase.all, :id, :phase  %>
-
-    <%= f.label :activity_id %>
-    <%= f.collection_select :activity_id, Activity.all, :id, :activity %>
   </p>
   <p>
     <%= f.label :short_name %>

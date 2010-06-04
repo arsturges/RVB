@@ -11,7 +11,8 @@ class ActivityTest < ActiveSupport::TestCase
     assert a.save
 
     b = Activity.new( :activity=> "some activity", :sort => sort  )
-    assert !b.save
+    b.save
+    assert_equal({}, b.errors.full_messages)
 
   end
 

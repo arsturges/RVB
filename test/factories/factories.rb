@@ -68,8 +68,6 @@ Factory.define :rulemaking do |r|
   r.association :rule_type
   r.association :doe_project_manager
   r.legislative_deadline Date.today
-  r.association :phase
-  r.association :activity
   r.short_name {Factory.next(:string)}
 end
 
