@@ -24,7 +24,7 @@ class MilestonesController < ApplicationController
   end
 
   def set_milestone_date
-    attribs = {:activity_id => params[:activity], :phase_id => params[:phase], :date_category_id => params[:date_category], :rulemaking_id => params[:rulemaking]}
+    attribs = {:activity_id => params[:task], :phase_id => params[:phase], :date_category_id => params[:date_category], :rulemaking_id => params[:rulemaking]}
     @milestone = Milestone.find(:first, :conditions => attribs) || Milestone.create(attribs)
   @milestone.update_attribute(:milestone, params[:milestone_date])
   render :nothing => true

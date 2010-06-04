@@ -2,7 +2,7 @@
 
    Rulemaking: <%= f.collection_select :rulemaking_id, Rulemaking.all(:order => :short_name), :id, :short_name, :include_blank => true %>
     Phase: <%= f.collection_select :phase_id, Phase.all, :id, :phase, :include_blank => true %>
-    Activity: <%= f.collection_select :activity_id, Activity.all, :id, :activity, :include_blank => true %><br />
+    Task: <%= f.collection_select :task_id, Task.all, :id, :task, :include_blank => true %><br />
     Date Category: <%= f.collection_select :date_category_id, DateCategory.all, :id, :date_category, :include_blank => true %>
     Milestone between: <%= f.text_field :milestone_gt, :size => 9 %>
     and: <%= f.text_field :milestone_lt, :size => 9 %>
@@ -14,7 +14,7 @@
   <tr>
       <th><%=order(@search, :by => :short_name, :as => "Rulemaking") %></th>
       <th><%=order(@search, :by => :milestone_phase, :as => "Phase") %></th>
-      <th><%=order(@search, :by => :milestone_activity, :as => "Activity") %></th>
+      <th><%=order(@search, :by => :milestone_task, :as => "Task") %></th>
       <th><%=order(@search, :by => :date_category) %></th>
       <th><%=order(@search, :by => :milestone) %></th>
       <th>Time from Today</th>
@@ -23,7 +23,7 @@
   <tr class="<%= cycle('odd', 'even') %>" >
     <td><%= link_to(milestone.rulemaking.short_name, rulemaking_path(milestone.rulemaking_id)) %></td>
     <td><%= h milestone.phase.phase %> </td>
-    <td><%= h milestone.activity.activity %> </td>
+    <td><%= h milestone.task.task %> </td>
     <td><%= h milestone.date_category.date_category %> </td>
     <td><%= h milestone.milestone %></td>
     <td><%= distance_of_time_in_words(Date.today, milestone.milestone)  + (milestone.milestone >  Date.today ? " from now" : " ago") unless milestone.milestone < '1970-01-01'.to_date   %> </td>

@@ -3,9 +3,9 @@ require 'test_helper'
 class MilestoneTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   test "shouldn't allow blanks" do
-    a=Milestone.create(:rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>3, :milestone=>Date.today, :revision_number => 1)
-    b=Milestone.create(:rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>4, :milestone=>Date.today, :revision_number => 1)
-    c=Milestone.create(:rulemaking_id=>30, :phase_id=>2, :activity_id=>4, :date_category_id=>5, :milestone=>Date.today, :revision_number => 1)
+    a=Milestone.create(:rulemaking_id=>30, :phase_id=>2, :task_id =>4, :date_category_id=>3, :milestone=>Date.today, :revision_number => 1)
+    b=Milestone.create(:rulemaking_id=>30, :phase_id=>2, :task_id =>4, :date_category_id=>4, :milestone=>Date.today, :revision_number => 1)
+    c=Milestone.create(:rulemaking_id=>30, :phase_id=>2, :task_id  =>4, :date_category_id=>5, :milestone=>Date.today, :revision_number => 1)
 
     b.date_category_id = 3
     assert !b.save
@@ -19,10 +19,10 @@ class MilestoneTest < ActiveSupport::TestCase
     assert !a.save
 
     a.phase_id=3
-    a.activity_id=""
+    a.task_id=""
     assert !a.save
 
-    a.activity_id=3
+    a.task_id=3
     a.date_category_id=""
     assert !a.save
 

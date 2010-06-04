@@ -22,7 +22,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :rulemakings, :member => { :assign_products => :get, :save_products => :post, :assign_contractors => :get, :save_contractors => :post }
 
-  map.resources :activities
+  map.resources :tasks
 
   map.resources :doe_project_managers
 

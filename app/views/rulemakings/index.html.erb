@@ -6,7 +6,7 @@
     <th><%=order(@search, :by => :doe_project_manager) %></th>
     <th><%=order(@search, :by => :legislative_deadline) %></th>
     <th>Rulemaking Phase<%#=order(@search, :by => :phase) %></th>
-    <th>Rulemaking Activity<%#=order(@search, :by => :activity) %></th>
+    <th>Rulemaking Task<%#=order(@search, :by => :task) %></th>
     <th><%=order(@search, :by => :short_name) %></th>
   </tr>
 
@@ -17,10 +17,9 @@
     <td><%=h rulemaking.doe_project_manager.try(:project_manager) %></td>
     <td><%=h rulemaking.legislative_deadline if rulemaking.legislative_deadline %></td>
     <td><%= rulemaking.phase %></td>
-    <td><%=h rulemaking.activity  %></td>
+    <td><%=h rulemaking.task  %></td>
     <td><%=h rulemaking.short_name %></td>
     <% if admin? %>
-    <td><%= link_to 'Edit', edit_rulemaking_path(rulemaking) %></td>
     <td><%= link_to 'Destroy', rulemaking, :confirm => 'Are you sure?', :method => :delete %></td>
     <% end -%>
   </tr>

@@ -9,24 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100604200149) do
-
-  create_table "activities", :force => true do |t|
-    t.string   "activity"
-    t.string   "activity_abbreviation"
-    t.integer  "sort"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "artists", :force => true do |t|
-    t.string   "first"
-    t.string   "last"
-    t.date     "birth"
-    t.date     "death"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20100604214447) do
 
   create_table "contractors", :force => true do |t|
     t.string   "contractor"
@@ -68,7 +51,7 @@ ActiveRecord::Schema.define(:version => 20100604200149) do
   create_table "milestones", :force => true do |t|
     t.integer  "rulemaking_id"
     t.integer  "phase_id"
-    t.integer  "activity_id"
+    t.integer  "task_id"
     t.integer  "date_category_id"
     t.date     "milestone"
     t.integer  "revision_number"
@@ -76,11 +59,11 @@ ActiveRecord::Schema.define(:version => 20100604200149) do
     t.datetime "updated_at"
   end
 
-  add_index "milestones", ["activity_id"], :name => "index_milestones_on_activity_id"
   add_index "milestones", ["date_category_id"], :name => "index_milestones_on_date_category_id"
   add_index "milestones", ["phase_id"], :name => "index_milestones_on_phase_id"
   add_index "milestones", ["revision_number"], :name => "index_milestones_on_revision_number"
   add_index "milestones", ["rulemaking_id"], :name => "index_milestones_on_rulemaking_id"
+  add_index "milestones", ["task_id"], :name => "index_milestones_on_activity_id"
 
   create_table "phases", :force => true do |t|
     t.string   "phase"
@@ -124,6 +107,14 @@ ActiveRecord::Schema.define(:version => 20100604200149) do
 
   create_table "sectors", :force => true do |t|
     t.string   "sector"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasks", :force => true do |t|
+    t.string   "task"
+    t.string   "task_abbreviation"
+    t.integer  "sort"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

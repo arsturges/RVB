@@ -20,7 +20,7 @@ class MilestonesControllerTest < ActionController::TestCase
 
   test "should create milestone" do
     assert_difference('Milestone.count') do
-    post :create, :milestone => {:rulemaking_id=>Factory.next(:integer), :phase_id=>Factory.next(:integer), :activity_id=>Factory.next(:integer), :date_category_id=>Factory.next(:integer), :revision_number=> Factory.next(:integer),  :milestone=>"2011-02-04" }
+    post :create, :milestone => {:rulemaking_id=>Factory.next(:integer), :phase_id=>Factory.next(:integer), :task_id=>Factory.next(:integer), :date_category_id=>Factory.next(:integer), :revision_number=> Factory.next(:integer),  :milestone=>"2011-02-04" }
     end
 
     assert_redirected_to milestone_path(assigns(:milestone))
@@ -37,7 +37,7 @@ class MilestonesControllerTest < ActionController::TestCase
   end
 
   test "should update milestone" do
-    put :update, :id => m.id, :milestone => {:rulemaking_id=>15, :phase_id=>7, :activity_id=>1, :date_category_id=>2, :milestone=>"2012-02-04" }
+    put :update, :id => m.id, :milestone => {:rulemaking_id=>15, :phase_id=>7, :task_id=>1, :date_category_id=>2, :milestone=>"2012-02-04" }
     assert_redirected_to milestone_path(assigns(:milestone))
   end
 

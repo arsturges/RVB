@@ -1,12 +1,12 @@
 <table class="datatable">
-      <caption>Current Activities</caption>
+      <caption>Current Tasks</caption>
   <tr>
       <th><%=order(@search, :by => :short_name, :as => "Rulemaking") %></th>
       <th>Project Manager</th>
       <th><%=order(@search, :by => :milestone_phase, :as=>"Milestone Phase <br> as of "+Revision.maximum(:revision_date).to_s) %></th>
-      <th><%=order(@search, :by => 'milestone_activity', :as=>"Milestone Activity") %></th>
+      <th><%=order(@search, :by => 'milestone_task', :as=>"Milestone Task") %></th>
       <th>Rulemaking Phase</th>
-      <th>Rulemaking Activity <br /> as of <%=  Revision.maximum(:revision_date).to_s %></th>
+      <th>Rulemaking Task <br /> as of <%=  Revision.maximum(:revision_date).to_s %></th>
       <th>Legislative Deadline</th>
       <th>Projected Finish</th>
       <th>Schedule Lag</th>
@@ -17,14 +17,14 @@
     <td><%= link_to(milestone.rulemaking.short_name, rulemaking_path(milestone.rulemaking_id)) %></td>
     <td><%= h milestone.rulemaking.doe_project_manager.try(:project_manager) %> </td>
     <td><%= h milestone.phase.phase %> </td>
-    <td><%= h milestone.activity.activity %> </td>
+    <td><%= h milestone.task.task %> </td>
     <td><%= h  milestone.rulemaking.phase %> </td>
-    <td><%= h milestone.rulemaking.activity  %> </td>
+    <td><%= h milestone.rulemaking.task %> </td>
     <td><%= h milestone.rulemaking.try(:legislative_deadline) %> </td>
     <td><%= h milestone.milestone %></td>
     <!--where in the application should this next line go? This seems like too much logic in the view.-->
-    <%# planned_finish = @planned_finishes.detect{|i|i.rulemaking_id == milestone.rulemaking_id and i.phase_id == milestone.phase_id and i.activity_id == milestone.activity_id }  %>
-     <% planned_finish = Milestone.find(:first, :include => [:rulemaking, :phase, :activity, :date_category, :revision], :conditions => {:date_category_id => 2, :rulemaking_id => milestone.rulemaking_id, :phase_id => milestone.phase_id, :activity_id => milestone.activity_id}) %>
+    <%# planned_finish = @planned_finishes.detect{|i|i.rulemaking_id == milestone.rulemaking_id and i.phase_id == milestone.phase_id and i.task_id == milestone.task_id }  %>
+     <% planned_finish = Milestone.find(:first, :include => [:rulemaking, :phase, :task, :date_category, :revision], :conditions => {:date_category_id => 2, :rulemaking_id => milestone.rulemaking_id, :phase_id => milestone.phase_id, :task_id => milestone.task_id}) %>
     <td>
       <% if planned_finish && milestone.rulemaking.legislative_deadline %>
           <%= schedule_lag(milestone.milestone, planned_finish.milestone, milestone.rulemaking.legislative_deadline) %>
@@ -32,4 +32,4 @@
     </td>
   </tr>
   <% end %>
-    </table>
+ </table>

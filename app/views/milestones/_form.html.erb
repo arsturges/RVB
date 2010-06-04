@@ -11,8 +11,8 @@
     <%= f.collection_select :phase_id, Phase.all, :id, :phase %>
   </p>
   <p>
-    <%= f.label :activity_id %><br />
-    <%= f.collection_select :activity_id, Activity.all, :id, :activity %>
+    <%= f.label :task_id %><br />
+    <%= f.collection_select :task_id, Task.all, :id, :task %>
   </p>
   <p>
     <%= f.label :date_category_id %><br />

@@ -7,7 +7,7 @@ class RulemakingsController < ApplicationController
     params[:search][:order] ||= 'ascend_by_short_name'
     @search = Rulemaking.search(params[:search])
     #raise @search.inspect
-    @rulemakings =  @search.all(:include => [:rule_type, :doe_project_manager ])#, :phase, :activity])
+    @rulemakings =  @search.all(:include => [:rule_type, :doe_project_manager ])#, :phase, :task])
     #raise params[:search].inspect
   end
 

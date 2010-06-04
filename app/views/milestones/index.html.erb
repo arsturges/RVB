@@ -5,7 +5,7 @@
     <th>ID</th>
     <th>Rulemaking</th>
     <th>Phase</th>
-    <th>Activity</th>
+    <th>Task</th>
     <th>Date category</th>
     <th>Milestone</th>
     <th>Revision Number</th>
@@ -16,7 +16,7 @@
     <td><%=h milestone.id %></td>
     <td><%=h milestone.rulemaking.try(:short_name) %></td>
     <td><%=h milestone.phase.phase%></td>
-    <td><%=h milestone.activity.activity %></td>
+    <td><%=h milestone.task.task %></td>
     <td><%=h milestone.date_category.date_category %></td>
     <td><%=h milestone.milestone %></td>
     <td><%=h milestone.revision_number %></td>

@@ -10,11 +10,6 @@
     "#{n}"
   end
 
-Factory.define :activity do |a|
-    a.activity { Factory.next(:string)}
-    a.sort { Factory.next(:integer)}
-  end
-
   Factory.define :contractor do |c|
     c.contractor { Factory.next(:string) }
     c.abbreviation { Factory.next(:string) }
@@ -47,7 +42,7 @@ end
 Factory.define :milestone do |m|
   m.association :rulemaking
   m.association :phase
-  m.association :activity
+  m.association :task
   m.association :date_category
   m.milestone Date.today
   m.association :revision#_number, :factory => :revision
@@ -74,3 +69,8 @@ end
 Factory.define :sector do |s|
   s.sector { Factory.next(:string)}
 end
+
+Factory.define :task do |t|
+    t.task { Factory.next(:string)}
+    t.sort { Factory.next(:integer)}
+  end

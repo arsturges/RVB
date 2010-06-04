@@ -1,0 +1,19 @@
+<% form_for(@task) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :task %><br />
+    <%= f.text_field :task %>
+  </p>
+  <p>
+    <%= f.label :task_abbreviation %><br />
+    <%= f.text_field :task_abbreviation %>
+  </p>
+  <p>
+    <%= f.label :sort %><br />
+    <%= f.text_field :sort %>
+  </p>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>
