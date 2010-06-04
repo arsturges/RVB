@@ -13,8 +13,8 @@
 <table class="datatable">
   <tr>
       <th><%=order(@search, :by => :short_name, :as => "Rulemaking") %></th>
-      <th><%=order(@search, :by => :phase) %></th>
-      <th><%=order(@search, :by => :activity) %></th>
+      <th><%=order(@search, :by => :milestone_phase, :as => "Phase") %></th>
+      <th><%=order(@search, :by => :milestone_activity, :as => "Activity") %></th>
       <th><%=order(@search, :by => :date_category) %></th>
       <th><%=order(@search, :by => :milestone) %></th>
       <th>Time from Today</th>

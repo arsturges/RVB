@@ -2,7 +2,7 @@
 
 <p>
   <b>Revision Date:</b>
-  <%= select_tag :revision_number, options_for_select(Revision.all.collect {|r| [r.revision_date, r.revision_number]}, @revision_number) %>
+  <%= select_tag :revision_number, options_for_select(Revision.all.collect {|r| [r.revision_date, r.revision_number]}, @revision_number.to_i) %>
   <%= submit_tag "Go" %>
 </p>
 <% end  %>
@@ -50,13 +50,12 @@
 
 <p>
   <b>Scheduled Phase:</b>
-  <%=h @rulemaking.phase.try(:phase) %>
- 
+  <%=@rulemaking.phase %>
 </p>
 
 <p>
   <b>Scheduled Activity:</b>
-  <%=h @rulemaking.activity.try(:activity) %>
+  <%= @rulemaking.activity %>
 </p>
 
 <p>

@@ -12,8 +12,8 @@ class Milestone < ActiveRecord::Base
   named_scope :ascend_by_short_name, :order => "rulemakings.short_name", :include => :rulemaking
   named_scope :descend_by_short_name, :order => "rulemakings.short_name desc", :include => :rulemaking
 
-#  named_scope :ascend_by_rulemaking_phase, :order => "rulemakings.phase_id", :include => :phase
-#  named_scope :descend_by_rulemaking_phase, :order => "rulemakings.phase_id desc", :include => :phase
+  named_scope :ascend_by_rulemaking_phase, :order => "rulemakings.phase_id", :include => :phase
+  named_scope :descend_by_rulemaking_phase, :order => "rulemakings.phase_id desc", :include => :phase
 
   named_scope :ascend_by_activity, :order => "activities.activity", :include => {:rulemaking => :activity}
   named_scope :descend_by_activity, :order => "activities.activity desc", :include =>  {:rulemaking => :activity}
@@ -26,5 +26,7 @@ class Milestone < ActiveRecord::Base
 
   named_scope :ascend_by_milestone_activity, :order => "activities.activity", :include => :activity
   named_scope :descend_by_milestone_activity, :order => "activities.activity desc", :include => :activity
+  
+  named_scope :by_revision, lambda { |rn| {:conditions=> {:revision_number => rn}}}
   
 end

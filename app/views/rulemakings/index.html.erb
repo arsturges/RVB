@@ -5,8 +5,8 @@
     <th><%=order(@search, :by => :rule_type) %></th>
     <th><%=order(@search, :by => :doe_project_manager) %></th>
     <th><%=order(@search, :by => :legislative_deadline) %></th>
-    <th><%=order(@search, :by => :phase) %></th>
-    <th><%=order(@search, :by => :activity) %></th>
+    <th>Rulemaking Phase<%#=order(@search, :by => :phase) %></th>
+    <th>Rulemaking Activity<%#=order(@search, :by => :activity) %></th>
     <th><%=order(@search, :by => :short_name) %></th>
   </tr>
 
@@ -16,8 +16,8 @@
     <td><%=h rulemaking.rule_type.rule_type_abbreviation %></td>
     <td><%=h rulemaking.doe_project_manager.try(:project_manager) %></td>
     <td><%=h rulemaking.legislative_deadline if rulemaking.legislative_deadline %></td>
-    <td><%=h rulemaking.phase.phase unless rulemaking.phase_id == 0%></td>
-    <td><%=h rulemaking.activity.activity unless rulemaking.activity_id ==0 %></td>
+    <td><%= rulemaking.phase %></td>
+    <td><%=h rulemaking.activity  %></td>
     <td><%=h rulemaking.short_name %></td>
     <% if admin? %>
     <td><%= link_to 'Edit', edit_rulemaking_path(rulemaking) %></td>

@@ -9,12 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100423190729) do
+ActiveRecord::Schema.define(:version => 20100604182329) do
 
   create_table "activities", :force => true do |t|
     t.string   "activity"
     t.string   "activity_abbreviation"
     t.integer  "sort"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "artists", :force => true do |t|
+    t.string   "first"
+    t.string   "last"
+    t.date     "birth"
+    t.date     "death"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -66,6 +75,12 @@ ActiveRecord::Schema.define(:version => 20100423190729) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "milestones", ["activity_id"], :name => "index_milestones_on_activity_id"
+  add_index "milestones", ["date_category_id"], :name => "index_milestones_on_date_category_id"
+  add_index "milestones", ["phase_id"], :name => "index_milestones_on_phase_id"
+  add_index "milestones", ["revision_number"], :name => "index_milestones_on_revision_number"
+  add_index "milestones", ["rulemaking_id"], :name => "index_milestones_on_rulemaking_id"
 
   create_table "phases", :force => true do |t|
     t.string   "phase"

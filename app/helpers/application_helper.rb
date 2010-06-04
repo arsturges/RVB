@@ -1,6 +1,5 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-
   def schedule_lag(projected_activity_finish, planned_activity_finish, rulemaking_finish)
     if rulemaking_finish != projected_activity_finish #can't divide by 0
       ratio = (projected_activity_finish - planned_activity_finish) / (rulemaking_finish - projected_activity_finish)
@@ -9,5 +8,4 @@ module ApplicationHelper
       puts "--"
     end
   end
-
 end

@@ -7,14 +7,14 @@ class RulemakingsController < ApplicationController
     params[:search][:order] ||= 'ascend_by_short_name'
     @search = Rulemaking.search(params[:search])
     #raise @search.inspect
-    @rulemakings =  @search.all(:include => [:rule_type, :doe_project_manager, :phase, :activity])
+    @rulemakings =  @search.all(:include => [:rule_type, :doe_project_manager ])#, :phase, :activity])
     #raise params[:search].inspect
   end
 
   def show
     @rulemaking = Rulemaking.find(params[:id]) 
     @revision_number = params[:revision_number] || Revision.maximum(:revision_number) #took out a to_i to fix this being set to 0. Will cause more problems?
-    @milestones = @rulemaking.milestones.find(:all, :conditions=> {:revision_number => @revision_number})
+    @milestones = @rulemaking.milestones.by_revision(@revision_number)
     @contractors = @rulemaking.contractors
     @drivers = @rulemaking.drivers
 

@@ -41,7 +41,7 @@ class RevisionsController < ApplicationController
   # POST /revisions.xml
   def create
     @revision = Revision.new(params[:revision])
-
+    @revision.revision_number = Revision.maximum(:revision_number) + 1
     respond_to do |format|
       if @revision.save
         flash[:notice] = 'Revision was successfully created.'
