@@ -11,11 +11,11 @@
     <%= f.collection_select :rule_type_id, RuleType.all, :id, :rule_type %>
 
     <%= f.label :doe_project_manager_id %>
-    <%= f.collection_select :doe_project_manager_id, DoeProjectManager.all, :id, :project_manager %>
+    <%= f.collection_select :doe_project_manager_id, DoeProjectManager.all, :id, :project_manager, :include_blank => true %>
   </p>
   <p>
     <%= f.label :legislative_deadline %>
-    <%= f.date_select :legislative_deadline %>
+    <%= f.date_select :legislative_deadline, :include_blank => true %>
   </p>
   <p>
     <%= f.label :short_name %>

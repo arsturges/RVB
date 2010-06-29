@@ -1,5 +1,5 @@
 class Rulemaking < ActiveRecord::Base
-  validates_presence_of :rule, :rule_type_id, :doe_project_manager_id, :legislative_deadline, :short_name
+  validates_presence_of :rule, :rule_type_id, :doe_project_manager_id, :short_name #, :legislative_deadline
   validates_numericality_of :rule_type_id, :doe_project_manager_id
   validates_uniqueness_of :short_name
 

@@ -8,8 +8,8 @@
   <%= stylesheet_link_tag "ui-lightness/jquery-ui-1.7.2.custom" %>
   <%= stylesheet_link_tag 'screen', :media => "screen, projection" %> <!--Blueprint CSS -->
   <%= stylesheet_link_tag 'print', :media => "print" %><!--Blueprint CSS -->
-  <!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]--><!--Blueprint CSS -->
-  <%= stylesheet_link_tag 'styles' %>
+  <!--[if lt IE 8]><%= stylesheet_link_tag 'ie', :media => "screen, projection" %> <![endif]--><!--Blueprint CSS -->
+  <%= stylesheet_link_tag 'styles', :media => "screen, projection" %>
 </head>
 
 <body>
