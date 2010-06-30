@@ -8,7 +8,9 @@
   <%= stylesheet_link_tag "ui-lightness/jquery-ui-1.7.2.custom" %>
   <%= stylesheet_link_tag 'screen', :media => "screen, projection" %> <!--Blueprint CSS -->
   <%= stylesheet_link_tag 'print', :media => "print" %><!--Blueprint CSS -->
-  <!--[if lt IE 8]><%= stylesheet_link_tag 'ie', :media => "screen, projection" %> <![endif]--><!--Blueprint CSS -->
+  <!--[if lt IE 8]><%= stylesheet_link_tag 'ie', :media => "screen, projection" %><![endif]--><!--Blueprint CSS -->
+  <!--Bug: the above line is not loading ie.css correctly from computers using < IE8. -->
+  
   <%= stylesheet_link_tag 'styles', :media => "screen, projection" %>
 </head>
 
