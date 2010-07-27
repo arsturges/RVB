@@ -13,5 +13,7 @@ class DriverTest < ActiveSupport::TestCase
   test "should't allow nil fields" do
     f = Factory.build(:driver, :driver=>nil)
     assert !f.save
+
+
   end
 end

@@ -22,7 +22,6 @@ class RulemakingsControllerTest < ActionController::TestCase
     assert_difference('Rulemaking.count') do
       post :create, :rulemaking => {:rule=>"mWO rulemaking", :rule_type_id=>2, :doe_project_manager_id=>4, :legislative_deadline=>"2022-09-02", :short_name=>"short name" }
     end
-
     assert_redirected_to rulemaking_path(assigns(:rulemaking))
   end
 
@@ -65,8 +64,8 @@ class RulemakingsControllerTest < ActionController::TestCase
 
   test "should remove product assignment from rulemaking" do
     assert_equal p.rulemaking, r
-    post :save_products, :id => r.id, :products => [p.id]
+    post :save_products, :id => r.id, :products => nil
     assert_redirected_to :action => :show
-     assert_nil(Product.find(p.id).rulemaking)
+    assert_nil(Product.find(p.id).rulemaking)
   end
 end

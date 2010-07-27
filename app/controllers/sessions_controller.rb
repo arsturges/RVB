@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
     else
       flash[:notice] = "Invalid login credentials."
       # flash.now[:error] = "Invalid login credentials." # this was recommended by rbates in rails. Don't know why it doesn't work.
-      render :action => 'new', :layout => false
+      render :action => 'new', :layout => false #is the :layout => false part redundant to the line in the new method?
     end
   end
 
@@ -35,6 +35,7 @@ class SessionsController < ApplicationController
     cookies.delete :auth_token
     reset_session
     flash[:notice] = "You have been logged out."
-    redirect_back_or_default('/')
+    #redirect_back_or_default('/')
+    redirect_to :action => "new", :controller => "sessions"
   end
 end
