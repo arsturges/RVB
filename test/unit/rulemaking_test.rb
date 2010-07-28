@@ -2,6 +2,12 @@ require 'test_helper'
 
 class RulemakingTest < ActiveSupport::TestCase
   # Replace this with your real tests.
+
+  test "should save new valid rulemaking" do
+    r = Factory.build(:rulemaking)
+    assert r.save, "failed to save a valid rulemaking"
+  end
+
   test "rulemaking should not save with empty fields" do
     r = Rulemaking.new
     assert !r.save, "Saved the rulemaking without anything"
@@ -19,7 +25,7 @@ class RulemakingTest < ActiveSupport::TestCase
     assert !r.save, "saved with missing fields"
 
     r.short_name = "MWO STD short title"
-    assert r.save
+    assert r.save, "failed to save a valid rulemaking"
   end
 
   test "rulemaking should not save with non-numeric foreign keys" do
@@ -27,18 +33,18 @@ class RulemakingTest < ActiveSupport::TestCase
 
     r.doe_project_manager_id="Charles"
     r.save
-    assert !r.save
+    assert !r.save, "saved rulemaking with string for project_manager_id"
 
     r.rule_type_id = "one"
     r.save
-    assert !r.save
+    assert !r.save, "saved with string in numeric field rulemaking"
 
     r.doe_project_manager_id=3
     r.rule_type_id=2
     r.rule="text"
     r.legislative_deadline="2010-02-04"
     r.short_name="text"
-    assert r.save
+    assert r.save, "failed to save valid rulemaking"
   end
 
   test "rulemaking should not save duplicate short name" do
@@ -50,7 +56,7 @@ class RulemakingTest < ActiveSupport::TestCase
     r.rule="text"
     r.legislative_deadline="2010-02-04"
     r.short_name="text"
-    assert r.save
+    assert r.save, "failed to save a valid rulemaking"
 
     s = Rulemaking.new
     s.doe_project_manager_id=3
