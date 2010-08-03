@@ -5,13 +5,12 @@ class TaskTest < ActiveSupport::TestCase
   sort = Factory.next(:integer).to_i
 
   test "should save new task" do
-    a = Task.new( :task=> "some task", :sort => sort  )
+    a = Factory(:task)
     assert a.save, "it failed to save a new task"
   end
 
-
   test "shouldn't allow same task and sort" do
-    a = Task.new( :task=> "some task", :sort => sort  )
+    a = Task.new( :task=> "some task", :sort => sort )
     assert a.save, "it failed to save a proper task"
 
     b = Task.new( :task=> "some task", :sort => sort+1  )

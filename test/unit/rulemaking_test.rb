@@ -6,6 +6,7 @@ class RulemakingTest < ActiveSupport::TestCase
   test "should save new valid rulemaking" do
     r = Factory.build(:rulemaking)
     assert r.save, "failed to save a valid rulemaking"
+    assert_equal (1, Rulemaking.count, "there should be 1 rulemaking")
   end
 
   test "rulemaking should not save with empty fields" do
@@ -49,21 +50,13 @@ class RulemakingTest < ActiveSupport::TestCase
 
   test "rulemaking should not save duplicate short name" do
     
-    r = Rulemaking.new
+    t = Factory(:rulemaking)
 
-    r.doe_project_manager_id=3
-    r.rule_type_id=2
-    r.rule="text"
-    r.legislative_deadline="2010-02-04"
-    r.short_name="text"
-    assert r.save, "failed to save a valid rulemaking"
+    t.short_name="test short name"
+    assert t.save, "failed to save a valid rulemaking"
 
-    s = Rulemaking.new
-    s.doe_project_manager_id=3
-    s.rule_type_id=1
-    s.rule="more text"
-    s.legislative_deadline="2010-02-04"
-    s.short_name="text"
-    assert !s.save
+    u = Factory(:rulemaking)
+    u.short_name="test short name"
+    assert !u.save, "saved a rulemaking with a duplicate short_name"
   end
 end
